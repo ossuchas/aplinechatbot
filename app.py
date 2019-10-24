@@ -7,13 +7,18 @@ from marshmallow import ValidationError
 from db import db
 from ma import ma
 
+from resources.chatbot import ChatBot, ChatBotRegister
+
 app = Flask(__name__)
 
+api = Api(app, prefix="/api/v1")
 
 @app.route('/')
 def hello_world():
     return 'AP Line Chat Bot Hello World!'
 
+api.add_resource(ChatBot, "/webhook")
+api.add_resource(ChatBotRegister, "/register")
 
 if __name__ == '__main__':
     db.init_app(app)
