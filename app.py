@@ -14,10 +14,6 @@ app = Flask(__name__)
 def hello_world():
     return 'AP Line Chat Bot Hello World!'
 
-@app.route('/webhook')
-def hello_world():
-    return 'Def Webhhok for AP!'
-
 
 if __name__ == '__main__':
     db.init_app(app)
