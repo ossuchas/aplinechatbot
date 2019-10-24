@@ -12,6 +12,9 @@ class ChatBot(Resource):
 class ChatBotRegister(Resource):
     @classmethod
     def post(cls):
+        # payload = request.json
+        payload = request.get_json()
+
         try:
             return {"message": "Save Successfully"}, 201
         except:
