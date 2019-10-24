@@ -11,3 +11,4 @@ minio
 Pillow
 requests
 gunicorn
+python-dotenv
