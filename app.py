@@ -13,9 +13,11 @@ app = Flask(__name__)
 
 api = Api(app, prefix="/api/v1")
 
+
 @app.route('/')
 def hello_world():
     return 'AP Line Chat Bot Hello World!'
+
 
 api.add_resource(ChatBot, "/webhook")
 api.add_resource(ChatBotRegister, "/register")
