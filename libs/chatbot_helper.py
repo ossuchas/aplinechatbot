@@ -11,14 +11,14 @@ def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
     print(Authorization)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization':Authorization
+        'Authorization': Authorization
     }
 
     data = {
-        "replyToken":Reply_token,
-        "messages":[{
-            "type":"text",
-            "text":TextMessage
+        "replyToken": Reply_token,
+        "messages": [{
+            "type": "text",
+            "text": TextMessage + "1234"
         }]
     }
     # print(data)
