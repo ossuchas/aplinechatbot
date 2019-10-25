@@ -6,6 +6,7 @@ import json
 LINE_API = os.environ.get("LINE_API")
 
 def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
+    print(LINE_API)
     # LINE_API = 'https://api.line.me/v2/bot/message/reply'
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token)
