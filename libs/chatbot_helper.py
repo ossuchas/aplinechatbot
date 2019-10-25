@@ -2,12 +2,13 @@ import os
 import re
 from requests import Response, post
 import json
+from config import *
 
-LINE_API = os.environ.get("LINE_API")
+# LINE_API = os.environ.get("LINE_API")
 
 def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
-    print(LINE_API)
     # LINE_API = 'https://api.line.me/v2/bot/message/reply'
+    print(LINE_API)
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token)
     print(Authorization)
