@@ -11,23 +11,19 @@ from config import CHANNEL_ACCESS_TOKEN
 class ChatBot(Resource):
     @classmethod
     def get(cls):
-        print("xx")
         return {"message": "Hello World"}, 200
 
 
 class ChatBotRegister(Resource):
     @classmethod
     def post(cls):
-        # payload = request.json
         payload = request.get_json()
-        print(payload)
         reply_token = payload['events'][0]['replyToken']
-        print(reply_token)
+        msg_type = payload['events'][0]['message']['type']
         message = payload['events'][0]['message']['text']
-        print(message)
         reply_msg = message
 
-        chatbot_helper.replyMsg(reply_token,reply_msg,CHANNEL_ACCESS_TOKEN)
+        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
 
-        return {"message":"Save Successful"}, 201
+        return {"message": "Register Line Push and Reply Message Successful"}, 201
 
