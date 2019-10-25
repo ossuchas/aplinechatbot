@@ -3,9 +3,10 @@ import re
 from requests import Response, post
 import json
 
+LINE_API = os.environ.get("LINE_API")
 
 def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
-    LINE_API = 'https://api.line.me/v2/bot/message/reply'
+    # LINE_API = 'https://api.line.me/v2/bot/message/reply'
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token)
     print(Authorization)
