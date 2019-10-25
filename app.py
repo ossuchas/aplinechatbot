@@ -12,6 +12,11 @@ from resources.chatbot import ChatBot, ChatBotRegister
 app = Flask(__name__)
 
 api = Api(app, prefix="/api/v1")
+CORS(app, resources=r"/api/*", allow_headers="Content-Type")
+
+load_dotenv(".env", verbose=True)
+app.config.from_object("config")
+app.config.from_envvar("APPLICATION_SETTING")
 
 
 @app.route('/')
