@@ -22,25 +22,28 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
     # }
 
     data = {
-  "type": "template",
-  "altText": "this is a confirm template",
-  "template": {
-    "type": "confirm",
-    "actions": [
-      {
-        "type": "uri",
-        "label": "Yes",
-        "uri": "http://www.google.com"
-      },
-      {
-        "type": "message",
-        "label": "No",
-        "text": "No"
-      }
-    ],
-    "text": "Continue?"
-  }
-}
+        "replyToken": Reply_token,
+        "messages": [{
+            "type": "template",
+            "altText": "this is a confirm template",
+            "template": {
+                "type": "confirm",
+                "actions": [
+                    {
+                        "type": "uri",
+                        "label": "Yes",
+                        "uri": "http://www.google.com"
+                    },
+                    {
+                        "type": "message",
+                        "label": "No",
+                        "text": "No"
+                    }
+                ],
+                "text": "Continue?"
+            }
+        }]
+    }
 
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
