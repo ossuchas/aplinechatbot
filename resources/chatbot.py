@@ -2,6 +2,10 @@ import traceback
 from flask_restful import Resource
 from flask import request
 
+from libs import chatbot_helper
+
+
+CHANNEL_ACCESS_TOKEN="wXjIZWvNNerxSVIpFVomPA4baBMaXhZtSJdJT11Uw4E8IOqzoJ+DGo++h/TPthxBM2LbrPCpiWiZX0GkXXENi9FE0DccFs0d6fSgntVhbj7Kf1iWp3hwXtJUOYSm5Dib7jC121/2bDpT1b0bIP1N4wdB04t89/1O/w1cDnyilFU="
 
 class ChatBot(Resource):
     @classmethod
@@ -16,12 +20,13 @@ class ChatBotRegister(Resource):
         # payload = request.json
         payload = request.get_json()
         print(payload)
-        Reply_token = payload['events'][0]['replyToken']
-        print(Reply_token)
+        reply_token = payload['events'][0]['replyToken']
+        print(reply_token)
         message = payload['events'][0]['message']['text']
         print(message)
+        reply_msg = message
 
-        try:
-            return {"message": "Save Successfully"}, 201
-        except:
-            return {"message": "Failed to Save"}, 500
+        chatbot_helper.replyMsg(reply_token,reply_msg,CHANNEL_ACCESS_TOKEN)
+
+        return {"message":"Save Successful"}, 201
+
