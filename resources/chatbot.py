@@ -20,7 +20,11 @@ class ChatBotRegister(Resource):
         payload = request.get_json()
         reply_token = payload['events'][0]['replyToken']
         msg_type = payload['events'][0]['message']['type']
-        message = payload['events'][0]['message']['text']
+        if msg_type == 'text':
+            message = payload['events'][0]['message']['text']
+        else:
+            message = 'รบกวนระบุคำถามที่สนใจสอบถามด้วยค่ะ'
+
         reply_msg = message
 
         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
