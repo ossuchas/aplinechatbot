@@ -1,14 +1,12 @@
 import os
 import re
-from requests import Response, post
+import requests
 import json
-from config import *
+from config import LINE_API
 
-# LINE_API = os.environ.get("LINE_API")
 
 def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
     # LINE_API = 'https://api.line.me/v2/bot/message/reply'
-    print(LINE_API)
 
     Authorization = 'Bearer {}'.format(Line_Acees_Token)
     print(Authorization)
@@ -24,10 +22,7 @@ def replyMsg(Reply_token, TextMessage, Line_Acees_Token):
             "text": TextMessage + "1234"
         }]
     }
-    # print(data)
 
-    #data = json.dumps(data)
-    # print(data)
-    # r = requests.post(LINE_API, headers=headers, data=data)
-    response = post(LINE_API, data=json.dumps(data), headers=headers)
+    session = requests.Session()
+    response = session.post(LINE_API, data=json.dumps(data), headers=headers)
     return 200
