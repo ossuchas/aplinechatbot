@@ -1,5 +1,3 @@
-# Python runtime with pyodbc to connect to SQL Server
-#FROM python:3
 FROM ubuntu:18.04
 
 # apt-get and system utilities
@@ -51,12 +49,6 @@ RUN pip3 install pyodbc
 # install additional utilities
 RUN apt-get update && apt-get install gettext nano vim -y
 
-# add sample code
-#RUN mkdir /sample
-#ADD . /sample
-#WORKDIR /sample
-
-#CMD /bin/bash ./entrypoint.sh
 WORKDIR /home/ubuntu/src/app
 COPY requirements.txt .
 
@@ -66,6 +58,5 @@ COPY . .
 
 EXPOSE 5000
 
-#ENV PYTHONPATH "${PYTONPATH}:."
 CMD ["python3", "app.py"]
 
