@@ -17,9 +17,10 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
         "replyToken": Reply_token,
         "messages": [{
             "type": "text",
-            "text": TextMessage + "1234"
+            "text": TextMessage
         }]
     }
+
 
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
