@@ -16,7 +16,7 @@ class ChatBotRegister(Resource):
     @classmethod
     def post(cls):
         payload = request.get_json()
-        # print(payload)
+        print(payload)
         reply_token = payload['events'][0]['replyToken']
         userId = payload['events'][0]['source']['userId']
 
