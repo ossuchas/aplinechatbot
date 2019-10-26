@@ -16,7 +16,6 @@ params = 'Driver={ODBC Driver 17 for SQL Server};' \
 params = urllib.parse.quote_plus(params)
 
 SQLALCHEMY_DATABASE_URI = "mssql+pyodbc:///?odbc_connect=%s" % params
-UPLOADED_IMAGES_DEST = os.path.join("static", "images")  # manage root folder
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 PROPAGATE_EXCEPTIONS = True
 JWT_BLACKLIST_ENABLED = True
