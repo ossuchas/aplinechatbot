@@ -24,6 +24,12 @@ class LogChatBotModel(db.Model):
         db.session.add(self)
         db.session.commit()
 
+    def sp_kai(self):
+        sql_statement = """
+           EXECUTE dbo.sp_kai_products @param1 = 0
+           """
+        return db.session.execute(sql_statement).fetchone()
+
     def delete_from_db(self) -> None:
         db.session.delete(self)
         db.session.commit()

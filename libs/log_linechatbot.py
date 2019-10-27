@@ -1,6 +1,5 @@
 from models.log_linechatbot import LogChatBotModel
-from schemas.log_linechatbot import LogChatBotSchema
-
+from models.ICON_EntForms_Products import ICON_EntForms_ProductsModel as crm_pd
 
 def savechatlog2db(replyToken: str = None,
                    source_userId: str = None,
@@ -23,5 +22,9 @@ def savechatlog2db(replyToken: str = None,
     models.packageId = packageId
 
     models.save_to_db()
+
+    # products = crm_pd().sp_find_products()
+
+    # print(products[0], products[1])
 
     return 200
