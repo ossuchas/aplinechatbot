@@ -29,3 +29,5 @@ JWT_BLACKLIST_TOKEN_CHECKS = ["access", "refresh"]
 CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
 # LINE_API="https://api.line.me/v2/bot/message/reply"
 LINE_API = os.environ.get("LINE_API")
+
+REPLY_WORDING = ["ถามหน่อย", "สอบถาม", "มีอะไรจะถาม"]
