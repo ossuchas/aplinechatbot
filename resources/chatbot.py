@@ -71,10 +71,10 @@ class ChatBotRegister(Resource):
         # print(str_json_obj[0]['value'])
         # print(str_json_obj[0]['key'])
 
-        loadjson.loadjsonfile()
-
-        # Reply Message Post API
-        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+        # loadjson.loadjsonfile()
+        #
+        # # Reply Message Post API
+        # chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
 
