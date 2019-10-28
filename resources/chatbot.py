@@ -58,6 +58,10 @@ class ChatBotRegister(Resource):
 
         # reply_msg = "{} {}".format(message, name)
         reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+        str_json_obj = loadjson.loadjsonfile()
+
+        print(str_json_obj[0]['value'])
+        print(str_json_obj[0]['key'])
 
         loadjson.loadjsonfile()
 
