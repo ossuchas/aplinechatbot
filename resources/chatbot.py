@@ -2,7 +2,8 @@ import traceback
 from flask_restful import Resource
 from flask import request
 
-from libs import chatbot_helper, log_linechatbot as logs, crm_products as crm_pd
+from libs import chatbot_helper, log_linechatbot as logs, crm_products as crm_pd, loadjson
+
 from config import CHANNEL_ACCESS_TOKEN
 
 
@@ -57,6 +58,8 @@ class ChatBotRegister(Resource):
 
         # reply_msg = "{} {}".format(message, name)
         reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+
+        loadjson.loadjsonfile()
 
         # Reply Message Post API
         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
