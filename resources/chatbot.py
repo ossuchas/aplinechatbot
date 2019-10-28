@@ -3,7 +3,7 @@ from flask_restful import Resource
 from flask import request
 
 from libs import chatbot_helper, log_linechatbot as logs, crm_products as crm_pd, loadjson
-from config import CHANNEL_ACCESS_TOKEN
+from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING
 
 
 class ChatBot(Resource):
@@ -41,6 +41,13 @@ class ChatBotRegister(Resource):
         if msg_type == 'text':
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
+
+            if message in REPLY_WORDING:
+                reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+
+                # Reply Message Post API
+                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+
         else:
             if msg_type == 'sticker':
                 stickerId = payload['events'][0]['message']['stickerId']
@@ -55,15 +62,13 @@ class ChatBotRegister(Resource):
         # Save Log to DB
         logs.savechatlog2db(reply_token, userId, source_type, timestamps, msg_type, msg_text, stickerId, packageId)
 
-        # reply_msg = "{} {}".format(message, name)
-        reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
-        str_json_obj = loadjson.loadjsonfile()
+        # # reply_msg = "{} {}".format(message, name)
+        # reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+        # str_json_obj = loadjson.loadjsonfile()
+        #
+        # print(str_json_obj[0]['value'])
+        # print(str_json_obj[0]['key'])
 
-        print(str_json_obj[0]['value'])
-        print(str_json_obj[0]['key'])
-
-        # Reply Message Post API
-        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
 
