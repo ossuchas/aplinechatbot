@@ -20,39 +20,72 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
     #         "text": TextMessage
     #     }]
     # }
+    type_msg = {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Header",
+          "align": "center"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "fit"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Body",
+          "align": "center"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Button",
+            "uri": "https://linecorp.com"
+          }
+        }
+      ]
+    },
+    "styles": {
+      "header": {
+        "backgroundColor": "#4E0F0F"
+      },
+      "hero": {
+        "backgroundColor": "#F4F4F4"
+      }
+    }
+  }
+}
 
     data = {
         "replyToken": Reply_token,
-        "messages": [{
-                "type": "template",
-                "altText": "this is a buttons template",
-                "template": {
-                    "type": "buttons",
-                    "actions": [
-                        {
-                            "type": "uri",
-                            "label": "go to google",
-                            "uri": "http://www.google.com"
-                        },
-                        {
-                            "type": "message",
-                            "label": "Action 2",
-                            "text": "Action 2"
-                        },
-                        {
-                            "type": "message",
-                            "label": "Action 3",
-                            "text": "Action 3"
-                        }
-                    ],
-                    "thumbnailImageUrl": "https://sirichaiwatt.com/wp-content/uploads/2018/03/SirichaiwattAtt-01-326x236.jpg",
-                    "title": "บทความดีดี สร้างแรงบันดาลใจ",
-                    "text": "by suchat_s"
-                }
-        }]
+        "messages": [
+          type_msg
+        ]
     }
-
-
 
 
     session = requests.Session()
