@@ -30,4 +30,4 @@ CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
 # LINE_API="https://api.line.me/v2/bot/message/reply"
 LINE_API = os.environ.get("LINE_API")
 
-REPLY_WORDING = ["ถามหน่อย", "สอบถาม", "มีอะไรจะถาม"]
+REPLY_WORDING = ["99999", "00000", "เสี่ยจัสติน"]
