@@ -8,6 +8,7 @@ class LogChatBotModel(db.Model):
 
     logid = db.Column(db.Integer, primary_key=True)
     replyToken = db.Column(db.String(255))
+    source_groupId = db.Column(db.String(255))
     source_userId = db.Column(db.String(255))
     source_type = db.Column(db.String(50))
     timestamps = db.Column(db.String(100))

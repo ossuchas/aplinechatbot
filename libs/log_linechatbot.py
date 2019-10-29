@@ -2,6 +2,7 @@ from models.log_linechatbot import LogChatBotModel
 from models.ICON_EntForms_Products import ICON_EntForms_ProductsModel as crm_pd
 
 def savechatlog2db(replyToken: str = None,
+                   source_groupId: str = None,
                    source_userId: str = None,
                    source_type: str = None,
                    timestamps: str = None,
@@ -13,6 +14,7 @@ def savechatlog2db(replyToken: str = None,
     models = LogChatBotModel()
 
     models.replyToken = replyToken
+    models.source_groupId = source_groupId
     models.source_userId = source_userId
     models.source_type = source_type
     models.timestamps = timestamps

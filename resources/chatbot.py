@@ -21,31 +21,34 @@ class ChatBotRegister(Resource):
         print(payload)
 
         reply_token = payload['events'][0]['replyToken']
-        userId = payload['events'][0]['source']['userId']
-        source_type = payload['events'][0]['source']['type']
 
-        timestamps = payload['events'][0]['timestamp']
-
-        msg_type = payload['events'][0]['message']['type']
-
-        # if userId == 'U80a30a5bad4ea0f5f7995e5050ab8d7e':
-        #     name = 'kai'
-        # elif userId == 'Ua98b38ab3b83f789b1fbc9ebd0a029b9':
-        #     name = 'ying'
-        # else:
-        #     name = ''
-
+        groupId = None
+        userId = None
         stickerId = None
         packageId = None
         msg_text = None
         name = None
+
+        try:
+            groupId = payload['events'][0]['source']['groupId']
+            userId = payload['events'][0]['source']['userId']
+            # print(userId, groupId)
+        except:
+            userId = payload['events'][0]['source']['userId']
+
+        # print(userId, groupId)
+
+        source_type = payload['events'][0]['source']['type']
+        timestamps = payload['events'][0]['timestamp']
+        msg_type = payload['events'][0]['message']['type']
 
         if msg_type == 'text':
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
 
             if message in REPLY_WORDING:
-                reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+                # reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
+                reply_msg = "ขอเวลา Train ซักระยะนะครับ ตอนนี้ขอเป็นผู้ฟังที่ดีก่อน"
 
                 # Reply Message Post API
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
@@ -62,7 +65,7 @@ class ChatBotRegister(Resource):
             message = 'รบกวนระบุคำถามที่สนใจสอบถามด้วยค่ะ'
 
         # Save Log to DB
-        logs.savechatlog2db(reply_token, userId, source_type, timestamps, msg_type, msg_text, stickerId, packageId)
+        logs.savechatlog2db(reply_token, groupId, userId, source_type, timestamps, msg_type, msg_text, stickerId, packageId)
 
         # # reply_msg = "{} {}".format(message, name)
         # reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
