@@ -20,65 +20,153 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
     #         "text": TextMessage
     #     }]
     # }
-    type_msg = {
-  "type": "flex",
-  "altText": "Flex Message",
-  "contents": {
-    "type": "bubble",
-    "direction": "ltr",
-    "header": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
+    type_msg = \
         {
-          "type": "text",
-          "text": "Header",
-          "align": "center"
+            "type": "flex",
+            "altText": "Flex Message",
+            "contents": {
+                "type": "bubble",
+                "direction": "ltr",
+                "header": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "Daily Sale Report",
+                            "size": "lg",
+                            "align": "start",
+                            "weight": "bold",
+                            "color": "#009813"
+                        },
+                        {
+                            "type": "text",
+                            "text": "฿ 2,038,038",
+                            "size": "3xl",
+                            "weight": "bold",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "text",
+                            "text": "Gross Sale",
+                            "size": "lg",
+                            "weight": "bold",
+                            "color": "#000000"
+                        },
+                        {
+                            "type": "text",
+                            "text": "2019.10.31 12:47 (GMT+0700)",
+                            "size": "xs",
+                            "color": "#B2B2B2"
+                        },
+                        {
+                            "type": "text",
+                            "text": "Life ๑ Wireless (60015)",
+                            "margin": "lg",
+                            "size": "lg",
+                            "color": "#000000"
+                        }
+                    ]
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "separator",
+                            "color": "#C3C3C3"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "Gross Sale",
+                                    "color": "#C3C3C3"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "฿ 2,849,398",
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "Walk",
+                                    "color": "#C3C3C3"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "99",
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "Register",
+                                    "color": "#C3C3C3"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "1,038",
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "Book",
+                                    "color": "#C3C3C3"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "฿ 1,308,308",
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "lg",
+                            "color": "#C3C3C3"
+                        }
+                    ]
+                },
+                "footer": {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "View Details",
+                            "size": "lg",
+                            "align": "center",
+                            "color": "#0084B6",
+                            "action": {
+                                "type": "uri",
+                                "label": "View Details",
+                                "uri": "https://google.co.th/"
+                            }
+                        }
+                    ]
+                }
+            }
         }
-      ]
-    },
-    "hero": {
-      "type": "image",
-      "url": "https://developers.line.biz/assets/images/services/bot-designer-icon.png",
-      "size": "full",
-      "aspectRatio": "1.51:1",
-      "aspectMode": "fit"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "Body",
-          "align": "center"
-        }
-      ]
-    },
-    "footer": {
-      "type": "box",
-      "layout": "horizontal",
-      "contents": [
-        {
-          "type": "button",
-          "action": {
-            "type": "uri",
-            "label": "Button",
-            "uri": "https://linecorp.com"
-          }
-        }
-      ]
-    },
-    "styles": {
-      "header": {
-        "backgroundColor": "#4E0F0F"
-      },
-      "hero": {
-        "backgroundColor": "#F4F4F4"
-      }
-    }
-  }
-}
 
     data = {
         "replyToken": Reply_token,
