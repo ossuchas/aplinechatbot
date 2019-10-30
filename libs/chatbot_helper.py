@@ -82,7 +82,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                             "contents": [
                                 {
                                     "type": "text",
-                                    "text": "Gross Sales",
+                                    "text": "Gross Sale",
                                     "color": "#C3C3C3"
                                 },
                                 {
