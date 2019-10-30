@@ -33,22 +33,22 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                     "contents": [
                         {
                             "type": "text",
-                            "text": "Daily Sale Report",
+                            "text": "Accumulate Sales Oct'19",
                             "size": "lg",
                             "align": "start",
                             "weight": "bold",
-                            "color": "#009813"
+                            "color": "#C92028"
                         },
                         {
                             "type": "text",
-                            "text": "฿ 2,038,038",
+                            "text": "฿ 3,519M",
                             "size": "3xl",
                             "weight": "bold",
                             "color": "#000000"
                         },
                         {
                             "type": "text",
-                            "text": "Gross Sale",
+                            "text": "Total Gross Sale",
                             "size": "lg",
                             "weight": "bold",
                             "color": "#000000"
@@ -61,7 +61,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                         },
                         {
                             "type": "text",
-                            "text": "Life ๑ Wireless (60015)",
+                            "text": "All Project @APTHAI",
                             "margin": "lg",
                             "size": "lg",
                             "color": "#000000"
@@ -87,7 +87,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 2,849,398",
+                                    "text": "฿ 3,519,894,522",
                                     "align": "end"
                                 }
                             ]
@@ -98,12 +98,12 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                             "contents": [
                                 {
                                     "type": "text",
-                                    "text": "Walk",
+                                    "text": "Cancel",
                                     "color": "#C3C3C3"
                                 },
                                 {
                                     "type": "text",
-                                    "text": "99",
+                                    "text": "฿ 1,729,575,441",
                                     "align": "end"
                                 }
                             ]
@@ -114,12 +114,12 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                             "contents": [
                                 {
                                     "type": "text",
-                                    "text": "Register",
+                                    "text": "Agreement",
                                     "color": "#C3C3C3"
                                 },
                                 {
                                     "type": "text",
-                                    "text": "1,038",
+                                    "text": "฿ 2,846,496,260",
                                     "align": "end"
                                 }
                             ]
@@ -130,12 +130,12 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                             "contents": [
                                 {
                                     "type": "text",
-                                    "text": "Book",
+                                    "text": "Transfer",
                                     "color": "#C3C3C3"
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 1,308,308",
+                                    "text": "฿ 1,364,440,307",
                                     "align": "end"
                                 }
                             ]
