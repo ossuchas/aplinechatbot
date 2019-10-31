@@ -20,6 +20,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
     #         "text": TextMessage
     #     }]
     # }
+    val = r"฿ 3,588M"
     type_msg = \
         {
             "type": "flex",
@@ -41,7 +42,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                         },
                         {
                             "type": "text",
-                            "text": "฿ 3,519M",
+                            "text": val,
                             "size": "3xl",
                             "weight": "bold",
                             "color": "#000000"
