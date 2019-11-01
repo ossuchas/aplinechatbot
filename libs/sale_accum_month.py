@@ -16,18 +16,18 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
 
     sma_models = SaleMonthAccumModel()
     return_value = sma_models.sp_crm_sale_m_accum()
-    print(return_value.NetTransfer, return_value.TransferUnit, return_value.NetAgreement, return_value.AgreementUnit,
-          return_value.NetBooking, return_value.BookingUnit,
-          return_value.NetCancelBooking, return_value.CancelUnit, return_value.NetBookingM, return_value.MonthSelect)
+    # print(return_value.NetTransfer, return_value.TransferUnit, return_value.NetAgreement, return_value.AgreementUnit,
+    #       return_value.NetBooking, return_value.BookingUnit,
+    #       return_value.NetCancelBooking, return_value.CancelUnit, return_value.NetBookingM, return_value.MonthSelect)
 
 
-    text_header = "Accumulate Sales {}".format(return_value.MonthSelect)
-    total_gross_sale_amnt_hedr = return_value.NetBookingM
-    total_gross_sale_amnt_detl = return_value.NetBooking
-    total_cancel_amnt_detl = return_value.NetCancelBooking
-    total_agreement_amnt_detl = return_value.NetAgreement
+    text_header = "Accumulate Sales {}".format(return_value.MonthSelect.encode("utf-8"))
+    total_gross_sale_amnt_hedr = return_value.NetBookingM.encode("utf-8")
+    total_gross_sale_amnt_detl = return_value.NetBooking.encode("utf-8")
+    total_cancel_amnt_detl = return_value.NetCancelBooking.encode("utf-8")
+    total_agreement_amnt_detl = return_value.NetAgreement.encode("utf-8")
     # total_transfer_amnt_detl = "฿ 1,364,440,309"
-    total_transfer_amnt_detl = return_value.NetTransfer
+    total_transfer_amnt_detl = return_value.NetTransfer.encode("utf-8")
     # timestamps = "2019.10.31 12:47 (GMT+0700)"
     timestamps = datetime.datetime.now().strftime("%Y.%m.%d %H:%M (GMT+0700)")
     type_msg = \
