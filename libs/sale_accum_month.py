@@ -3,6 +3,7 @@ import re
 import requests
 import json
 from config import LINE_API
+from models.sp_crm_sale_m_accum import SaleMonthAccumModel
 
 
 def replyMsg(Reply_token, TextMessage, line_Acees_Token):
@@ -12,7 +13,20 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
         'Authorization': authorization
     }
 
-    val = r"฿ 3,599M"
+    sma_models = SaleMonthAccumModel()
+    return_value = sma_models.sp_crm_sale_m_accum(0)
+    print(return_value.NetTransfer, return_value.TransferUnit)
+    # print(value[0], value[1])
+
+
+    text_header = "Accumulate Sales Oct'19"
+    total_gross_sale_amnt_hedr = "฿ 3,599M"
+    total_gross_sale_amnt_detl = "฿ 3,519,894,522"
+    total_cancel_amnt_detl = "฿ 1,729,575,441"
+    total_agreement_amnt_detl = "฿ 2,846,496,261"
+    # total_transfer_amnt_detl = "฿ 1,364,440,309"
+    total_transfer_amnt_detl = return_value.NetTransfer
+    timestamps = "2019.10.31 12:47 (GMT+0700)"
     type_msg = \
         {
             "type": "flex",
@@ -26,7 +40,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                     "contents": [
                         {
                             "type": "text",
-                            "text": "Accumulate Sales Oct'19",
+                            "text": text_header,
                             "size": "lg",
                             "align": "start",
                             "weight": "bold",
@@ -34,7 +48,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                         },
                         {
                             "type": "text",
-                            "text": val,
+                            "text": total_gross_sale_amnt_hedr,
                             "size": "3xl",
                             "weight": "bold",
                             "color": "#000000"
@@ -48,7 +62,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                         },
                         {
                             "type": "text",
-                            "text": "2019.10.31 12:47 (GMT+0700)",
+                            "text": timestamps,
                             "size": "xs",
                             "color": "#B2B2B2"
                         },
@@ -80,7 +94,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 3,519,894,522",
+                                    "text": total_gross_sale_amnt_detl,
                                     "align": "end"
                                 }
                             ]
@@ -96,7 +110,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 1,729,575,441",
+                                    "text": total_cancel_amnt_detl,
                                     "align": "end"
                                 }
                             ]
@@ -112,7 +126,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 2,846,496,260",
+                                    "text": total_agreement_amnt_detl,
                                     "align": "end"
                                 }
                             ]
@@ -128,7 +142,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                                 },
                                 {
                                     "type": "text",
-                                    "text": "฿ 1,364,440,307",
+                                    "text": total_transfer_amnt_detl,
                                     "align": "end"
                                 }
                             ]
