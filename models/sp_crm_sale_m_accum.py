@@ -8,8 +8,8 @@ class SaleMonthAccumModel(db.Model):
     TransferNumber = db.Column(db.String(50), primary_key=True)
     RunningNumber = db.Column(db.Integer)
 
-    def sp_crm_sale_m_accum(self, param):
+    def sp_crm_sale_m_accum(self):
         sql_statement = """
-           EXEC [dbo].[sp_crm_sale_m_accum] @param = {}
-           """.format(param)
+           EXEC [dbo].[sp_crm_sale_m_accum] @param = 0
+           """
         return db.session.execute(sql_statement).fetchone()
