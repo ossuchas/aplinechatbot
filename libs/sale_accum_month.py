@@ -6,6 +6,7 @@ import requests
 import json
 from config import LINE_API
 from models.sp_crm_sale_m_accum import SaleMonthAccumModel
+from libs import chatbot_helper
 import datetime
 
 
@@ -15,6 +16,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
+
 
     sma_models = SaleMonthAccumModel()
     return_value = sma_models.sp_crm_sale_m_accum()
@@ -189,4 +191,4 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
 
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
-    return response
+    return 201
