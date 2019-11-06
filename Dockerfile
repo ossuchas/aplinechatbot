@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
 
 # Configure timezone and locale
 ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 ENV TZ Asia/Bangkok
 RUN apt-get update \
     && apt-get install -y tzdata \
