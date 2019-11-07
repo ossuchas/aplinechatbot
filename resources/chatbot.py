@@ -51,9 +51,9 @@ class ChatBotRegister(Resource):
             message = msg_text
 
             if message in REPLY_SALCE_ACCM_B_M_WORDING:
-                sale_accum_month.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:
-                sale_accum_month.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
 

@@ -10,7 +10,7 @@ from libs import chatbot_helper
 import datetime
 
 
-def replyMsg(Reply_token, TextMessage, line_Acees_Token):
+def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -19,7 +19,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
 
 
     sma_models = SaleMonthAccumModel()
-    return_value = sma_models.sp_crm_sale_m_accum()
+    return_value = sma_models.sp_crm_sale_m_accum(param_month)
     # print(return_value.NetTransfer, return_value.TransferUnit, return_value.NetAgreement, return_value.AgreementUnit,
     #       return_value.NetBooking, return_value.BookingUnit,
     #       return_value.NetCancelBooking, return_value.CancelUnit, return_value.NetBookingM, return_value.MonthSelect)
@@ -174,7 +174,7 @@ def replyMsg(Reply_token, TextMessage, line_Acees_Token):
                             "action": {
                                 "type": "uri",
                                 "label": "View Details",
-                                "uri": "https://google.co.th/"
+                                "uri": "http://apintranet.com"
                             }
                         }
                     ]
