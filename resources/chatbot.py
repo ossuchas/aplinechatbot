@@ -3,10 +3,11 @@ from flask_restful import Resource
 from flask import request
 
 from libs import chatbot_helper, log_linechatbot as logs, \
-    crm_products as crm_pd, loadjson, \
     sale_accum_month
 
-from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, REPLY_SALCE_ACCM_M_WORDING
+from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
+    REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
+    DEFAULT_REPLY_WORDING
 
 
 class ChatBot(Resource):
@@ -49,15 +50,27 @@ class ChatBotRegister(Resource):
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
 
-            if message in REPLY_WORDING:
-                # reply_msg = "{}".format(crm_pd.find_crm_product_by_id('60018'))
-                reply_msg = "ขอเวลา Train ซักระยะนะครับ ตอนนี้ขอเป็นผู้ฟังที่ดีก่อน"
-
-                # Reply Message Post API
-                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-                # sale_accum_month.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-            if message in REPLY_SALCE_ACCM_M_WORDING:
+            if message in REPLY_SALCE_ACCM_B_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+            elif message in REPLY_SALCE_ACCM_C_M_WORDING:
+                sale_accum_month.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+            elif message in REPLY_WORDING:
+                reply_msg = DEFAULT_REPLY_WORDING
+
+                # Reply Message Default Post API
+                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+            # else:
+            #     reply_msg = DEFAULT_REPLY_WORDING
+            #
+            #     # Reply Message Default Post API
+            #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+
+
+            # if message in REPLY_WORDING:
+            #     reply_msg = DEFAULT_REPLY_WORDING
+            #
+            #     # Reply Message Default Post API
+            #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
 
         else:
             if msg_type == 'sticker':
