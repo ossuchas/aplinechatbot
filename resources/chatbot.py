@@ -3,7 +3,7 @@ from flask_restful import Resource
 from flask import request
 
 from libs import chatbot_helper, log_linechatbot as logs, \
-    sale_accum_month
+    sale_accum_month, beacon_helper
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -66,28 +66,17 @@ class ChatBotRegister(Resource):
 
                 # Reply Message Default Post API
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-            # else:
-            #     reply_msg = DEFAULT_REPLY_WORDING
-            #
-            #     # Reply Message Default Post API
-            #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-
-
-            # if message in REPLY_WORDING:
-            #     reply_msg = DEFAULT_REPLY_WORDING
-            #
-            #     # Reply Message Default Post API
-            #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             msg_text = payload['events'][0]['beacon']['dm']
             stickerId = None
             packageId = None
-            msg_text = None
+
             if userId == 'U80a30a5bad4ea0f5f7995e5050ab8d7e':
                 str_reply = "Hello World Beacon K.{}".format("Suchat S.")
             else:
                 str_reply = "Hello World Beacon"
-            chatbot_helper.replyMsg(reply_token, str_reply, CHANNEL_ACCESS_TOKEN)
+
+            beacon_helper.replyMsg(reply_token, str_reply, CHANNEL_ACCESS_TOKEN)
         else:
             if msg_type == 'sticker':
                 stickerId = payload['events'][0]['message']['stickerId']
@@ -97,7 +86,7 @@ class ChatBotRegister(Resource):
                 packageId = None
                 msg_text = None
 
-            message = 'รบกวนระบุคำถามที่สนใจสอบถามด้วยค่ะ'
+            # message = 'รบกวนระบุคำถามที่สนใจสอบถามด้วยค่ะ'
 
         # Save Log to DB
         logs.savechatlog2db(reply_token, groupId, userId, source_type, timestamps, msg_type, msg_text, stickerId, packageId)
