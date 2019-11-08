@@ -23,6 +23,9 @@ class ChatBotRegister(Resource):
         print(payload)
 
         reply_token = payload['events'][0]['replyToken']
+        # get event type beacon or message
+        events_type = payload['events'][0]['type']
+        # print(events_type)
 
         groupId = None
         userId = None
@@ -42,7 +45,11 @@ class ChatBotRegister(Resource):
 
         source_type = payload['events'][0]['source']['type']
         timestamps = payload['events'][0]['timestamp']
-        msg_type = payload['events'][0]['message']['type']
+        if events_type == 'message':
+            msg_type = payload['events'][0]['message']['type']
+        else:
+            # msg_type = payload['events'][0]['beacon']['hwid']
+            msg_type = 'beacon'
 
         reply_msg = None
 
@@ -71,7 +78,16 @@ class ChatBotRegister(Resource):
             #
             #     # Reply Message Default Post API
             #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-
+        elif msg_type == 'beacon':
+            msg_text = payload['events'][0]['beacon']['dm']
+            stickerId = None
+            packageId = None
+            msg_text = None
+            if userId == 'U80a30a5bad4ea0f5f7995e5050ab8d7e':
+                str_reply = "Hello World Beacon K.{}".format("Suchat S.")
+            else:
+                str_reply = "Hello World Beacon"
+            chatbot_helper.replyMsg(reply_token, str_reply, CHANNEL_ACCESS_TOKEN)
         else:
             if msg_type == 'sticker':
                 stickerId = payload['events'][0]['message']['stickerId']
