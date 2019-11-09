@@ -17,156 +17,102 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
     #     "text": text_msg
     # }
     type_msg = \
-    {
+        {
             "type": "flex",
             "altText": "Flex Message",
             "contents": {
                 "type": "bubble",
                 "hero": {
                     "type": "image",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                    "url": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+                    "align": "start",
                     "size": "full",
-                    "aspectRatio": "20:13",
+                    "aspectRatio": "4:3",
                     "aspectMode": "cover",
                     "action": {
                         "type": "uri",
-                        "label": "Line",
-                        "uri": "https://linecorp.com/"
+                        "label": "Action",
+                        "uri": "https://linecorp.com"
                     }
                 },
                 "body": {
                     "type": "box",
                     "layout": "vertical",
+                    "spacing": "md",
+                    "action": {
+                        "type": "uri",
+                        "label": "Action",
+                        "uri": "https://linecorp.com"
+                    },
                     "contents": [
                         {
                             "type": "text",
-                            "text": "Brown Cafe",
+                            "text": "Mr. Suchat S.",
                             "size": "xl",
-                            "weight": "bold"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "margin": "md",
-                            "contents": [
-                                {
-                                    "type": "icon",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-                                    "size": "sm"
-                                },
-                                {
-                                    "type": "icon",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-                                    "size": "sm"
-                                },
-                                {
-                                    "type": "icon",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-                                    "size": "sm"
-                                },
-                                {
-                                    "type": "icon",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-                                    "size": "sm"
-                                },
-                                {
-                                    "type": "icon",
-                                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png",
-                                    "size": "sm"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": "4.0",
-                                    "flex": 0,
-                                    "margin": "md",
-                                    "size": "sm",
-                                    "color": "#999999"
-                                }
-                            ]
+                            "weight": "bold",
+                            "wrap": True
                         },
                         {
                             "type": "box",
                             "layout": "vertical",
                             "spacing": "sm",
-                            "margin": "lg",
                             "contents": [
                                 {
                                     "type": "box",
                                     "layout": "baseline",
-                                    "spacing": "sm",
                                     "contents": [
                                         {
-                                            "type": "text",
-                                            "text": "Place",
-                                            "flex": 1,
-                                            "size": "sm",
-                                            "color": "#AAAAAA"
+                                            "type": "icon",
+                                            "url": "https://image.flaticon.com/icons/svg/590/590474.svg"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-                                            "flex": 5,
+                                            "text": "Date Of Birth",
+                                            "flex": 0,
+                                            "margin": "sm",
+                                            "weight": "bold"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "14 Oct 1983",
                                             "size": "sm",
-                                            "color": "#666666",
-                                            "wrap": True
+                                            "align": "end",
+                                            "color": "#AAAAAA"
                                         }
                                     ]
                                 },
                                 {
                                     "type": "box",
                                     "layout": "baseline",
-                                    "spacing": "sm",
                                     "contents": [
                                         {
-                                            "type": "text",
-                                            "text": "Time",
-                                            "flex": 1,
-                                            "size": "sm",
-                                            "color": "#AAAAAA"
+                                            "type": "icon",
+                                            "url": "https://image.flaticon.com/icons/svg/747/747310.svg"
                                         },
                                         {
                                             "type": "text",
-                                            "text": "10:00 - 23:00",
-                                            "flex": 5,
+                                            "text": "Date Of Hired",
+                                            "flex": 0,
+                                            "margin": "sm",
+                                            "weight": "bold"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "2 Jan 2019",
                                             "size": "sm",
-                                            "color": "#666666",
-                                            "wrap": True
+                                            "align": "end",
+                                            "color": "#AAAAAA"
                                         }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                "footer": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "flex": 0,
-                    "spacing": "sm",
-                    "contents": [
-                        {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "CALL",
-                                "uri": "https://linecorp.com"
-                            },
-                            "height": "sm",
-                            "style": "link"
                         },
                         {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "WEBSITE",
-                                "uri": "https://linecorp.com"
-                            },
-                            "height": "sm",
-                            "style": "link"
-                        },
-                        {
-                            "type": "spacer",
-                            "size": "sm"
+                            "type": "text",
+                            "text": "Assistant Team Leader: IT Business Analysis",
+                            "size": "sm",
+                            "color": "#AAAAAA",
+                            "wrap": True
                         }
                     ]
                 }
