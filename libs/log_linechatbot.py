@@ -1,5 +1,5 @@
 from models.log_linechatbot import LogChatBotModel
-from models.ICON_EntForms_Products import ICON_EntForms_ProductsModel as crm_pd
+
 
 def savechatlog2db(replyToken: str = None,
                    source_groupId: str = None,
@@ -9,7 +9,10 @@ def savechatlog2db(replyToken: str = None,
                    message_type: str = None,
                    message_text: str = None,
                    stickerId: str = None,
-                   packageId: str = None) -> int:
+                   packageId: str = None,
+                   beacon_hwid: str = None,
+                   beacon_dm: str = None,
+                   beacon_type: str = None) -> int:
 
     models = LogChatBotModel()
 
@@ -22,6 +25,9 @@ def savechatlog2db(replyToken: str = None,
     models.message_text = message_text
     models.stickerId = stickerId
     models.packageId = packageId
+    models.beacon_hwid = beacon_hwid
+    models.beacon_dm = beacon_dm
+    models.beacon_type = beacon_type
 
     models.save_to_db()
 
