@@ -9,6 +9,9 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING
 
+from models.chatbot_mst_user import MstUserModel
+from schemas.chatbot_mst_user import MstUserSchema
+
 
 class ChatBot(Resource):
     @classmethod
@@ -71,12 +74,12 @@ class ChatBotRegister(Resource):
             stickerId = None
             packageId = None
 
-            if userId == 'U80a30a5bad4ea0f5f7995e5050ab8d7e':
-                str_reply = "Hello World Beacon K.{}".format("Suchat S.")
-            else:
-                str_reply = "Hello World Beacon"
+            user = MstUserModel().find_by_token_id(userId)
 
-            beacon_helper.replyMsg(reply_token, str_reply, CHANNEL_ACCESS_TOKEN)
+            if user:
+            # if userId == 'U80a30a5bad4ea0f5f7995e5050ab8d7e':
+                str_reply = "Hello World Beacon K.{}".format(user.user_full_name)
+                beacon_helper.replyMsg(reply_token, str_reply, CHANNEL_ACCESS_TOKEN)
         else:
             if msg_type == 'sticker':
                 stickerId = payload['events'][0]['message']['stickerId']
