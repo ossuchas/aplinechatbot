@@ -166,16 +166,22 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                     "layout": "horizontal",
                     "contents": [
                         {
-                            "type": "text",
-                            "text": "View Details",
-                            "size": "lg",
+                            # "type": "text",
+                            # "text": "View Details",
+                            # "size": "lg",
+                            # "align": "center",
+                            # "color": "#0084B6",
+                            # "action": {
+                            #     "type": "uri",
+                            #     "label": "View Details",
+                            #     "uri": "http://apintranet.com"
+                            # }
+                            "type": "image",
+                            "url": "https://www.intellyticshub.com/assets/img/tableau.jpg",
                             "align": "center",
-                            "color": "#0084B6",
-                            "action": {
-                                "type": "uri",
-                                "label": "View Details",
-                                "uri": "http://apintranet.com"
-                            }
+                            "size": "full",
+                            "aspectRatio": "1.51:1",
+                            "aspectMode": "cover"
                         }
                     ]
                 }
