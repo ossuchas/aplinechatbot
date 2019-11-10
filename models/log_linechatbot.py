@@ -21,11 +21,12 @@ class LogChatBotModel(db.Model):
     beacon_hwid = db.Column(db.String(20))
     beacon_dm = db.Column(db.String(1000))
     beacon_type = db.Column(db.String(50))
+    beacon_entrydate = db.Column(db.DateTime)
 
-    createby = db.Column(db.String(50), default='autobot')
-    createdate = db.Column(db.DateTime, default=datetime.now())
-    modifyby = db.Column(db.String(50), default='autobot')
-    modifydate = db.Column(db.DateTime, default=datetime.now())
+    # createby = db.Column(db.String(50), default='autobot')
+    # createdate = db.Column(db.DateTime, default=datetime.now())
+    # modifyby = db.Column(db.String(50), default='autobot')
+    # modifydate = db.Column(db.DateTime, default=datetime.now())
 
     @classmethod
     def find_by_id(cls, _logid: int) -> "LogChatBotModel":
@@ -35,7 +36,7 @@ class LogChatBotModel(db.Model):
     def find_by_token_beacon_today(cls, _user_id: str) -> "LogChatBotModel":
         return cls.query.filter((cls.source_userId == _user_id),
                                 (cls.message_type == 'beacon'),
-                                (cast(cls.createdate, DATE) == date.today())).all()
+                                (cast(cls.beacon_entrydate, DATE) == date.today())).all()
 
     def save_to_db(self) -> None:
         db.session.add(self)

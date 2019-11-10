@@ -1,4 +1,5 @@
 from models.log_linechatbot import LogChatBotModel
+from datetime import datetime
 
 
 def savechatlog2db(replyToken: str = None,
@@ -28,6 +29,7 @@ def savechatlog2db(replyToken: str = None,
     models.beacon_hwid = beacon_hwid
     models.beacon_dm = beacon_dm
     models.beacon_type = beacon_type
+    models.beacon_entrydate = datetime.now()
 
     models.save_to_db()
 
