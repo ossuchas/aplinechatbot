@@ -46,7 +46,7 @@ def replyMsg(reply_token: str = None, text_msg: str = None, line_aceess_token: s
                                 "action": {
                                     "type": "message",
                                     "label": "action",
-                                    "text": "ยอดขายเดือนนี้"
+                                    "text": "ยอดขายบ้านเดี่ยว"
                                 }
                             },
                             {
