@@ -239,7 +239,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "type": "text",
                                         "text": "Transfer (M)",
                                         "wrap": True,
-                                        "color": "#C3C3C3",
+                                        "color": "#808080",
                                         "size": "sm"
                                     },
                                     {
@@ -258,7 +258,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -274,7 +274,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Grs. Presale(M)",
                                         "wrap": True,
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -308,7 +308,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Net Presales (M)",
                                         "wrap": True,
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -326,7 +326,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -342,7 +342,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Net Presales + Pre-Cancel (M)",
                                         "wrap": True,
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -375,7 +375,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "type": "text",
                                         "text": "Pre-Cancel (M)",
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -412,7 +412,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "type": "text",
                                         "text": "Transfer (U.)",
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -430,7 +430,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -447,7 +447,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Grs. Presale (U.)",
                                         "wrap": True,
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -480,7 +480,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "type": "text",
                                         "text": "Net Presales (U.)",
                                         "size": "sm",
-                                        "color": "#C3C3C3",
+                                        "color": "#808080",
                                         "wrap": True
                                     },
                                     {
@@ -515,7 +515,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Net Presales + Pre-Cancel (U)",
                                         "wrap": True,
                                         "size": "sm",
-                                        "color": "#C3C3C3"
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
@@ -548,7 +548,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "type": "text",
                                         "text": "Pre-Cancel (U.)",
                                         "wrap": True,
-                                        "color": "#C3C3C3",
+                                        "color": "#808080",
                                         "size": "sm"
                                     },
                                     {
