@@ -186,6 +186,21 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                 {
                     "type": "bubble",
                     "size": "giga",
+                    "hero": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Lead Indicator (LL)",
+                                "size": "xl",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "offsetStart": "20px"
+                            }
+                        ],
+                        "height": "30px"
+                    },
                     "body": {
                         "type": "box",
                         "layout": "vertical",
@@ -258,7 +273,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
+                                        "url": "https://i.ibb.co/y0hQkxb/yellow-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -326,7 +341,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -430,7 +445,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/WsrZc6P/yellow.png",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
                                         "offsetTop": "3px"
@@ -580,32 +595,224 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Lead Indicator",
+                                        "text": "BG1 : SDH",
                                         "weight": "bold",
-                                        "size": "xl",
-                                        "color": "#c92028",
-                                        "decoration": "underline"
+                                        "color": "#808080",
+                                        "size": "xl"
                                     }
                                 ],
                                 "position": "absolute",
-                                "offsetTop": "3%",
-                                "offsetStart": "5%"
+                                "offsetTop": "4%",
+                                "offsetStart": "5%",
+                                "paddingAll": "2px"
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "md"
                             },
                             {
                                 "type": "box",
-                                "layout": "vertical",
+                                "layout": "baseline",
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": ":: Total  BG1 : SDH ::",
-                                        "weight": "bold",
-                                        "color": "#808080"
+                                        "text": "Walk",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1,378",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1110",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/y0hQkxb/yellow-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
                                     }
-                                ],
-                                "position": "absolute",
-                                "offsetTop": "11%",
-                                "offsetStart": "5%",
-                                "paddingAll": "2px"
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "2nd Walk++",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "354",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "278",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Conversion",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "12",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "12",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/y0hQkxb/yellow-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "ห้องผ่าน QC",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "112",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "164",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "ลูกค้าเข้าตรวจ",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "126",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "84",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "ลูกค้ารับห้อง",
+                                        "wrap": True,
+                                        "color": "#808080",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "92",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "83",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/y0hQkxb/yellow-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -614,20 +821,27 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                         "layout": "vertical",
                         "contents": [
                             {
-                                "type": "separator"
-                            },
-                            {
                                 "type": "text",
                                 "text": "2019.10.31 12:47 (GMT+0700)",
                                 "size": "xxs",
-                                "color": "#B2B2B2",
                                 "align": "end",
-                                "offsetEnd": "4%"
+                                "offsetEnd": "4%",
+                                "offsetTop": "-5px",
+                                "color": "#FFFFFF"
                             }
                         ]
+                    },
+                    "styles": {
+                        "hero": {
+                            "backgroundColor": "#c92028",
+                            "separator": True
+                        },
+                        "footer": {
+                            "separator": True,
+                            "backgroundColor": "#c92028"
+                        }
                     }
                 }
-
         }
 
     data = {

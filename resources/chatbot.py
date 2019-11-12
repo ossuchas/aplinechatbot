@@ -4,13 +4,15 @@ from flask import request
 
 from libs import chatbot_helper, log_linechatbot as logs, \
     sale_accum_month, beacon_helper, menu_01_sale as m1, \
-    menu_01_sale_timeline as m1_SDH
+    menu_01_sale_timeline as m1_SDH, \
+    leadlag_bg_all, leadlag_bg_project, leadlag_bg_sub
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
     MENU_01, MENU_02, MENU_03, MENU_04, MENU_05, MENU_06, \
-    MENU_01_01_SDH, MENU_02_01_TH, MENU_03_01_CD1, MENU_04_01_CD2
+    MENU_01_01_SDH, MENU_02_01_TH, MENU_03_01_CD1, MENU_04_01_CD2, \
+    LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB
 
 from models.chatbot_mst_user import MstUserModel
 from models.log_linechatbot import LogChatBotModel
@@ -75,10 +77,13 @@ class ChatBotRegister(Resource):
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in MENU_04:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
-            # elif message in MENU_05:
-            #     sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
-            # elif message in MENU_06:
-            #     sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
+            # Lead Lag
+            elif message in LL_MSG_All:
+                leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif message in LL_MSG_SUB:
+                leadlag_bg_sub.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif message in LL_MSG_PROJ:
+                leadlag_bg_project.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_B_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:
