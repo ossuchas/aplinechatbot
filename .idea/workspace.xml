@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/sale_accum_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/sale_accum_month.py" afterDir="false" />
-    </list>
+    <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +88,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/sale_accum_month.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="209">
               <caret line="592" column="16" selection-start-line="592" selection-start-column="16" selection-end-line="592" selection-end-column="16" />
               <folding>
                 <element signature="e#25#34#0" expanded="true" />
@@ -348,23 +345,22 @@
       <workItem from="1573431651140" duration="1610000" />
       <workItem from="1573478735423" duration="1355000" />
       <workItem from="1573506413488" duration="2059000" />
-      <workItem from="1573542706727" duration="1469000" />
+      <workItem from="1573542706727" duration="2259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83234000" />
+    <option name="totallyTimeSpent" value="84024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31694403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3747954" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3747954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,7 +369,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2700491" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2700491" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,7 +397,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1573542847602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1573549065551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="debuggerHistoryManager">
@@ -662,7 +658,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/sale_accum_month.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="209">
           <caret line="592" column="16" selection-start-line="592" selection-start-column="16" selection-end-line="592" selection-end-column="16" />
           <folding>
             <element signature="e#25#34#0" expanded="true" />

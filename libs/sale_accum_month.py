@@ -197,7 +197,8 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                     {
                                         "type": "text",
                                         "text": "QTD",
-                                        "weight": "bold"
+                                        "weight": "bold",
+                                        "color": "#808080"
                                     }
                                 ],
                                 "offsetEnd": "-73%"
@@ -214,14 +215,16 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "text": "Target",
                                         "align": "end",
                                         "offsetEnd": "-20px",
-                                        "weight": "bold"
+                                        "weight": "bold",
+                                        "color": "#808080"
                                     },
                                     {
                                         "type": "text",
                                         "text": "Actual",
                                         "align": "end",
                                         "offsetEnd": "20px",
-                                        "weight": "bold"
+                                        "weight": "bold",
+                                        "color": "#808080"
                                     }
                                 ]
                             },
@@ -258,7 +261,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -292,7 +295,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -326,7 +329,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -360,7 +363,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -393,7 +396,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -430,7 +433,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ],
                                 "margin": "xs"
@@ -465,7 +468,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -499,7 +502,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -533,7 +536,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -567,7 +570,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                         "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
                                         "offsetEnd": "1px",
                                         "offsetBottom": "2px",
-                                        "offsetTop": "1px"
+                                        "offsetTop": "3px"
                                     }
                                 ]
                             },
@@ -587,6 +590,39 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
                                 "position": "absolute",
                                 "offsetTop": "3%",
                                 "offsetStart": "5%"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": ":: Total  BG1 : SDH ::",
+                                        "weight": "bold",
+                                        "color": "#808080"
+                                    }
+                                ],
+                                "position": "absolute",
+                                "offsetTop": "11%",
+                                "offsetStart": "5%",
+                                "paddingAll": "2px"
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "text",
+                                "text": "2019.10.31 12:47 (GMT+0700)",
+                                "size": "xxs",
+                                "color": "#B2B2B2",
+                                "align": "end",
+                                "offsetEnd": "4%"
                             }
                         ]
                     }
