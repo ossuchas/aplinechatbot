@@ -34,158 +34,564 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, param_month: str =
     total_transfer_amnt_detl = return_value.NetTransfer
     # timestamps = "2019.10.31 12:47 (GMT+0700)"
     timestamps = datetime.datetime.now().strftime("%Y.%m.%d %H:%M (GMT+0700)")
+    # type_msg = \
+    #     {
+    #         "type": "flex",
+    #         "altText": "Flex Message",
+    #         "contents": {
+    #             "type": "bubble",
+    #             "direction": "ltr",
+    #             "header": {
+    #                 "type": "box",
+    #                 "layout": "vertical",
+    #                 "contents": [
+    #                     {
+    #                         "type": "text",
+    #                         "text": text_header,
+    #                         "size": "lg",
+    #                         "align": "start",
+    #                         "weight": "bold",
+    #                         "color": "#C92028"
+    #                     },
+    #                     {
+    #                         "type": "text",
+    #                         "text": total_gross_sale_amnt_hedr,
+    #                         "size": "3xl",
+    #                         "weight": "bold",
+    #                         "color": "#000000"
+    #                     },
+    #                     {
+    #                         "type": "text",
+    #                         "text": "Total Gross Sale",
+    #                         "size": "lg",
+    #                         "weight": "bold",
+    #                         "color": "#000000"
+    #                     },
+    #                     {
+    #                         "type": "text",
+    #                         "text": timestamps,
+    #                         "size": "xs",
+    #                         "color": "#B2B2B2"
+    #                     },
+    #                     {
+    #                         "type": "text",
+    #                         "text": "All Project @APTHAI",
+    #                         "margin": "lg",
+    #                         "size": "lg",
+    #                         "color": "#000000"
+    #                     }
+    #                 ]
+    #             },
+    #             "body": {
+    #                 "type": "box",
+    #                 "layout": "vertical",
+    #                 "contents": [
+    #                     {
+    #                         "type": "separator",
+    #                         "color": "#C3C3C3"
+    #                     },
+    #                     {
+    #                         "type": "box",
+    #                         "layout": "baseline",
+    #                         "contents": [
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": "Gross Sales",
+    #                                 "color": "#C3C3C3"
+    #                             },
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": total_gross_sale_amnt_detl,
+    #                                 "align": "end"
+    #                             }
+    #                         ]
+    #                     },
+    #                     {
+    #                         "type": "box",
+    #                         "layout": "baseline",
+    #                         "contents": [
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": "Cancel",
+    #                                 "color": "#C3C3C3"
+    #                             },
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": total_cancel_amnt_detl,
+    #                                 "align": "end"
+    #                             }
+    #                         ]
+    #                     },
+    #                     {
+    #                         "type": "box",
+    #                         "layout": "baseline",
+    #                         "contents": [
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": "Agreement",
+    #                                 "color": "#C3C3C3"
+    #                             },
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": total_agreement_amnt_detl,
+    #                                 "align": "end"
+    #                             }
+    #                         ]
+    #                     },
+    #                     {
+    #                         "type": "box",
+    #                         "layout": "baseline",
+    #                         "contents": [
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": "Transfer",
+    #                                 "color": "#C3C3C3"
+    #                             },
+    #                             {
+    #                                 "type": "text",
+    #                                 "text": total_transfer_amnt_detl,
+    #                                 "align": "end"
+    #                             }
+    #                         ]
+    #                     },
+    #                     {
+    #                         "type": "separator",
+    #                         "margin": "lg",
+    #                         "color": "#C3C3C3"
+    #                     }
+    #                 ]
+    #             },
+    #             "footer": {
+    #                 "type": "box",
+    #                 "layout": "horizontal",
+    #                 "contents": [
+    #                     {
+    #                         "type": "image",
+    #                         "url": "https://www.intellyticshub.com/assets/img/tableau.jpg",
+    #                         "align": "center",
+    #                         "size": "full",
+    #                         "aspectRatio": "1.51:1",
+    #                         "aspectMode": "cover"
+    #                     }
+    #                 ]
+    #             }
+    #         }
+    #     }
+
     type_msg = \
         {
             "type": "flex",
             "altText": "Flex Message",
-            "contents": {
-                "type": "bubble",
-                "direction": "ltr",
-                "header": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": text_header,
-                            "size": "lg",
-                            "align": "start",
-                            "weight": "bold",
-                            "color": "#C92028"
-                        },
-                        {
-                            "type": "text",
-                            "text": total_gross_sale_amnt_hedr,
-                            "size": "3xl",
-                            "weight": "bold",
-                            "color": "#000000"
-                        },
-                        {
-                            "type": "text",
-                            "text": "Total Gross Sale",
-                            "size": "lg",
-                            "weight": "bold",
-                            "color": "#000000"
-                        },
-                        {
-                            "type": "text",
-                            "text": timestamps,
-                            "size": "xs",
-                            "color": "#B2B2B2"
-                        },
-                        {
-                            "type": "text",
-                            "text": "All Project @APTHAI",
-                            "margin": "lg",
-                            "size": "lg",
-                            "color": "#000000"
-                        }
-                    ]
-                },
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                        {
-                            "type": "separator",
-                            "color": "#C3C3C3"
-                        },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
-                                {
-                                    "type": "text",
-                                    "text": "Gross Sales",
-                                    "color": "#C3C3C3"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": total_gross_sale_amnt_detl,
-                                    "align": "end"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
-                                {
-                                    "type": "text",
-                                    "text": "Cancel",
-                                    "color": "#C3C3C3"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": total_cancel_amnt_detl,
-                                    "align": "end"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
-                                {
-                                    "type": "text",
-                                    "text": "Agreement",
-                                    "color": "#C3C3C3"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": total_agreement_amnt_detl,
-                                    "align": "end"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "box",
-                            "layout": "baseline",
-                            "contents": [
-                                {
-                                    "type": "text",
-                                    "text": "Transfer",
-                                    "color": "#C3C3C3"
-                                },
-                                {
-                                    "type": "text",
-                                    "text": total_transfer_amnt_detl,
-                                    "align": "end"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "separator",
-                            "margin": "lg",
-                            "color": "#C3C3C3"
-                        }
-                    ]
-                },
-                "footer": {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "contents": [
-                        {
-                            # "type": "text",
-                            # "text": "View Details",
-                            # "size": "lg",
-                            # "align": "center",
-                            # "color": "#0084B6",
-                            # "action": {
-                            #     "type": "uri",
-                            #     "label": "View Details",
-                            #     "uri": "http://apintranet.com"
-                            # }
-                            "type": "image",
-                            "url": "https://www.intellyticshub.com/assets/img/tableau.jpg",
-                            "align": "center",
-                            "size": "full",
-                            "aspectRatio": "1.51:1",
-                            "aspectMode": "cover"
-                        }
-                    ]
+            "contents":
+                {
+                    "type": "bubble",
+                    "size": "giga",
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "QTD",
+                                        "weight": "bold"
+                                    }
+                                ],
+                                "offsetEnd": "-73%"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "filler"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Target",
+                                        "align": "end",
+                                        "offsetEnd": "-20px",
+                                        "weight": "bold"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Actual",
+                                        "align": "end",
+                                        "offsetEnd": "20px",
+                                        "weight": "bold"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Transfer (M)",
+                                        "wrap": True,
+                                        "color": "#C3C3C3",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "488.66",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "473.56",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Grs. Presale(M)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1,554.87",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presales (M)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1,078.45",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "981.53",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presales + Pre-Cancel (M)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "659.93",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Pre-Cancel (M)",
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "(321.6)",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "md"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Transfer (U.)",
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "72",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "66",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ],
+                                "margin": "xs"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Grs. Presale (U.)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "185",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presales (U.)",
+                                        "size": "sm",
+                                        "color": "#C3C3C3",
+                                        "wrap": True
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "148",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "114",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presales + Pre-Cancel (U)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#C3C3C3"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "75",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Pre-Cancel (U.)",
+                                        "wrap": True,
+                                        "color": "#C3C3C3",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "(39)",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "1px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Lead Indicator",
+                                        "weight": "bold",
+                                        "size": "xl",
+                                        "color": "#c92028",
+                                        "decoration": "underline"
+                                    }
+                                ],
+                                "position": "absolute",
+                                "offsetTop": "3%",
+                                "offsetStart": "5%"
+                            }
+                        ]
+                    }
                 }
-            }
+
         }
 
     data = {
