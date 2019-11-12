@@ -106,9 +106,12 @@ class ChatBotRegister(Resource):
             if user:
                 log = LogChatBotModel().find_by_token_beacon_today(userId)
 
-                if log:
-                    msg_text = "Hello World Beacon K.{} Revisit..!!".format(user.user_full_name)
-                else:
+                # Check Revisit..!!
+                # if log:
+                #     msg_text = "Hello World Beacon K.{} Revisit..!!".format(user.user_full_name)
+                # else:
+                #     msg_text = "Hello World Beacon K.{} New Walk..".format(user.user_full_name)
+                if not log:
                     msg_text = "Hello World Beacon K.{} New Walk..".format(user.user_full_name)
 
                 beacon_helper.replyMsg(reply_token, msg_text, CHANNEL_ACCESS_TOKEN)
