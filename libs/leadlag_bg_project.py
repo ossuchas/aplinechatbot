@@ -92,7 +92,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Transfer (M)",
+                                        "text": "Transfer (MB)",
                                         "wrap": True,
                                         "color": "#808080",
                                         "size": "sm"
@@ -126,146 +126,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Grs. Presale(M)",
-                                        "wrap": True,
-                                        "size": "sm",
-                                        "color": "#808080"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "-",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "-30px"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1,554.87",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "10px"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
-                                        "offsetEnd": "1px",
-                                        "offsetBottom": "2px",
-                                        "offsetTop": "3px"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "Net Presales (M)",
-                                        "wrap": True,
-                                        "size": "sm",
-                                        "color": "#808080"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1,078.45",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "-30px"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "981.53",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "10px"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
-                                        "offsetEnd": "1px",
-                                        "offsetBottom": "2px",
-                                        "offsetTop": "3px"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "Net Presales + Pre-Cancel (M)",
-                                        "wrap": True,
-                                        "size": "sm",
-                                        "color": "#808080"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "-",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "-30px"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "659.93",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "10px"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
-                                        "offsetEnd": "1px",
-                                        "offsetBottom": "2px",
-                                        "offsetTop": "3px"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "Pre-Cancel (M)",
-                                        "size": "sm",
-                                        "color": "#808080"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "-",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "-30px"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "(321.6)",
-                                        "size": "sm",
-                                        "align": "end",
-                                        "offsetEnd": "10px"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
-                                        "offsetEnd": "1px",
-                                        "offsetBottom": "2px",
-                                        "offsetTop": "3px"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "separator",
-                                "margin": "md"
-                            },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "Transfer (U.)",
+                                        "text": "Transfer (U)",
                                         "size": "sm",
                                         "color": "#808080"
                                     },
@@ -299,7 +160,41 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Grs. Presale (U.)",
+                                        "text": "Grs. Presale(MB)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#808080"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1,554.87",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Grs. Presale (U)",
                                         "wrap": True,
                                         "size": "sm",
                                         "color": "#808080"
@@ -333,7 +228,41 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Net Presales (U.)",
+                                        "text": "Net Presale (MB)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#808080"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "1,078.45",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "981.53",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presale (U)",
                                         "size": "sm",
                                         "color": "#808080",
                                         "wrap": True
@@ -367,7 +296,41 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Net Presales + Pre-Cancel (U)",
+                                        "text": "Net Presale + Pre Cancel (MB)",
+                                        "wrap": True,
+                                        "size": "sm",
+                                        "color": "#808080"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "659.93",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Net Presale + Pre Cancel (U)",
                                         "wrap": True,
                                         "size": "sm",
                                         "color": "#808080"
@@ -401,7 +364,40 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Pre-Cancel (U.)",
+                                        "text": "Pre Cancel (MB)",
+                                        "size": "sm",
+                                        "color": "#808080"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "-",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "-30px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "(321.6)",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "offsetEnd": "10px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "offsetEnd": "1px",
+                                        "offsetBottom": "2px",
+                                        "offsetTop": "3px"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Pre Cancel (U)",
                                         "wrap": True,
                                         "color": "#808080",
                                         "size": "sm"
