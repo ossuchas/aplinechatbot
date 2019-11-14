@@ -3,7 +3,7 @@ pipeline {
     registry = "ossuchas/aplinechatbot"
     registryCredential = 'docker_ossuchas'
     dockerImage = ''
-    image_tag_number = 'v1.2.10'
+    image_tag_number = 'v1.3.1'
   }
   agent any
   stages {
