@@ -52,6 +52,6 @@ MENU_03_01_CD1 = ['ยอดขายบ้านเดี่ยว']
 MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
 
 LL_MSG_All = "LL SDH All"
-LL_MSG_SUB = "LL SDH Sub1"
+LL_MSG_SUB = "LL SDH SubBG"
 LL_MSG_PROJ = "proj:"
 
