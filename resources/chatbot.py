@@ -1,6 +1,7 @@
 import traceback
 from flask_restful import Resource
 from flask import request
+import re
 
 from libs import chatbot_helper, log_linechatbot as logs, \
     sale_accum_month, beacon_helper, menu_01_sale as m1, \
@@ -82,8 +83,13 @@ class ChatBotRegister(Resource):
                 leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in LL_MSG_SUB:
                 leadlag_bg_sub.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif message in LL_MSG_PROJ:
-                leadlag_bg_project.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            # elif message in LL_MSG_PROJ:
+            elif re.match(LL_MSG_PROJ, message):
+                value = message.split(',')
+                project = value[0].split(':')
+                peroid = value[1].split(':')
+                # print(message, value, project[1].strip(), len(project[1].strip()), peroid[1].strip()[0])
+                leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_B_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:

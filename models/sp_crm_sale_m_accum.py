@@ -13,3 +13,10 @@ class SaleMonthAccumModel(db.Model):
            EXEC [dbo].[sp_crm_sale_m_accum] @param = {}
            """.format(param_month)
         return db.session.execute(sql_statement).fetchone()
+
+    def sp_crm_sale_ll_byproj(self, projectid, peroid):
+        sql_statement = """
+           EXEC dbo.sp_crm_sale_ll_byproj @projectid = {}, 
+                               @peroid = {}
+           """.format(projectid, peroid)
+        return db.session.execute(sql_statement).fetchone()

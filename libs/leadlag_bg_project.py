@@ -9,12 +9,17 @@ from models.sp_crm_sale_m_accum import SaleMonthAccumModel
 import datetime
 
 
-def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: str = None):
+def replyMsg(Reply_token: str =None, project: str = None, peroid: str = None, line_Acees_Token: str = None):
+    print(project, peroid)
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
+
+    sma_models = SaleMonthAccumModel()
+    return_value = sma_models.sp_crm_sale_ll_byproj(project, peroid)
+    print(return_value.ProjectName)
 
     timestamps = datetime.datetime.now().strftime("%Y.%m.%d %H:%M (GMT+0700)")
 
@@ -438,7 +443,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                     },
                                     {
                                         "type": "text",
-                                        "text": "The City ราชพฤกษ์ (10187)",
+                                        "text": return_value.ProjectName,
                                         "wrap": True,
                                         "color": "#808080",
                                         "size": "xs"
@@ -665,7 +670,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "2019.10.31 12:47 (GMT+0700)",
+                                "text": timestamps,
                                 "size": "xxs",
                                 "align": "end",
                                 "offsetEnd": "4%",
