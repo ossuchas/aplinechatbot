@@ -8,7 +8,9 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_sale_timeline as m1_SDH, \
     leadlag_bg_all, leadlag_bg_project, leadlag_bg_sub, \
     menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
-    menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q
+    menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
+    menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
+    menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -91,18 +93,16 @@ class ChatBotRegister(Resource):
             # Period Select ALL BG
             elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL ALLBG Period
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
-                # print("KAI", peroid)
-                if peroid == 'Q':
-                    print("Kai Quarter")
+                if peroid == 'Q':  # Quarter
                     menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif peroid == 'M':
-                    print("Kai Month")
-                elif peroid == 'W':
-                    print("Kai Week")
-                elif peroid == 'Y':
-                    print("Kai Yesterday")
-                elif peroid == 'A':
-                    print("Kai As of Current")
+                elif peroid == 'M':  # Month
+                    menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                elif peroid == 'W':  # Week
+                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                elif peroid == 'Y':  # Yesterday
+                    menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                elif peroid == 'A':  # As of Current
+                    menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
