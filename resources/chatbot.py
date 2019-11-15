@@ -8,7 +8,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_sale_timeline as m1_SDH, \
     leadlag_bg_all, leadlag_bg_project, leadlag_bg_sub, \
     menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
-    menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show
+    menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -71,7 +71,7 @@ class ChatBotRegister(Resource):
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
 
-            if message in MENU_01:
+            if message in MENU_01:  # LL ALL BG
                 # Get Peroid
                 menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_01_01_SDH:
@@ -83,14 +83,26 @@ class ChatBotRegister(Resource):
                 leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in LL_MSG_SUB:  # menu_02_01_ll_sdh_subbg
                 menu_02_01_ll_sdh_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif re.match(LL_MSG_PROJ, message):
+            elif re.match(LL_MSG_PROJ, message):  # proj:
                 value = message.split(',')
                 project = value[0].split(':')
                 peroid = value[1].split(':')
                 leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
             # Period Select ALL BG
-            elif re.match(LL_MSG_ALLBG_PERIOD, message):
-                menu_01_01_ll_allbg_period_show.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL ALLBG Period
+                peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
+                # print("KAI", peroid)
+                if peroid == 'Q':
+                    print("Kai Quarter")
+                    menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                elif peroid == 'M':
+                    print("Kai Month")
+                elif peroid == 'W':
+                    print("Kai Week")
+                elif peroid == 'Y':
+                    print("Kai Yesterday")
+                elif peroid == 'A':
+                    print("Kai As of Current")
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
