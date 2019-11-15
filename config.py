@@ -51,7 +51,10 @@ MENU_02_01_TH = ['ยอดขายบ้านเดี่ยว']
 MENU_03_01_CD1 = ['ยอดขายบ้านเดี่ยว']
 MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
 
+# Main Menu
 LL_MSG_All = "LL SDH All"
 LL_MSG_SUB = "LL SDH SubBG"
 LL_MSG_PROJ = "proj:"
 
+# Period Select
+LL_MSG_SUB_PEROID = "ยอด LL SDH Sub"

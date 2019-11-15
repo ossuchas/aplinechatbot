@@ -121,15 +121,11 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "layout": "vertical",
                                 "contents": [
                                     {
-                                        "type": "filler"
-                                    },
-                                    {
                                         "type": "text",
                                         "text": "APTHAI.com",
                                         "color": "#FFFFFF",
                                         "weight": "bold",
                                         "align": "end",
-                                        "size": "sm",
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
@@ -137,14 +133,32 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                             "altUri": {
                                                 "desktop": "https://www.apthai.com/th/home"
                                             }
-                                        }
+                                        },
+                                        "size": "xxs"
                                     }
                                 ],
-                                "backgroundColor": "#c92028"
+                                "backgroundColor": "#FFFFFF",
+                                "width": "2px",
+                                "height": "1px"
                             }
                         ],
-                        "backgroundColor": "#c92028",
-                        "paddingAll": "5px"
+                        "backgroundColor": "#FFFFFF",
+                        "paddingAll": "5px",
+                        "height": "1px"
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Copyright 2019 AP (Thailand) PCL.",
+                                "size": "xxs",
+                                "color": "#FFFFFF",
+                                "align": "center"
+                            }
+                        ],
+                        "backgroundColor": "#000000"
                     }
                 }
         }
