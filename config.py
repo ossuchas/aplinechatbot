@@ -39,7 +39,7 @@ REPLY_SALCE_ACCM_B_M_WORDING = ["ยอดเดือนที่แล้ว",
 REPLY_SALCE_ACCM_C_M_WORDING = ["ยอดเดือนนี้", "ยอดขายเดือนนี้", "สอบถามยอดขายเดือนนี้หน่อยครับ", "ส่งยอดเดือนนี้มาดูหน่อย",
                               "ขอยอดขายเดือนนี้", "ส่งยอดขายเดือนนี้หน่อย"]
 
-MENU_01 = ['ยอดขาย']
+MENU_01 = ['LL ALL BG']
 MENU_02 = ['ยอดขาย2']
 MENU_03 = ['ยอดขาย3']
 MENU_04 = ['ยอดขาย4']
@@ -57,4 +57,7 @@ LL_MSG_SUB = "LL SDH SubBG"
 LL_MSG_PROJ = "proj:"
 
 # Period Select
-LL_MSG_SUB_PEROID = "ยอด LL SDH Sub"
+LL_MSG_SUB_PERIOD = "ยอด LL SDH Sub"
+
+# Peroid Select All BG
+LL_MSG_ALLBG_PERIOD = "LL ALLBG Period"
