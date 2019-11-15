@@ -156,6 +156,22 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "size": "xxs",
                                 "color": "#FFFFFF",
                                 "align": "center"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/fS0B4wP/AP-Logo-2018.png"
+                                    }
+                                ],
+                                "position": "absolute",
+                                "width": "32px",
+                                "height": "32px",
+                                "offsetTop": "1px",
+                                "offsetBottom": "3px",
+                                "offsetStart": "7px"
                             }
                         ],
                         "backgroundColor": "#000000"

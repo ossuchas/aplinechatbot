@@ -37,7 +37,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL SDH Period Quarter"
+                                            "text": "LL ALLBG Period Quarter"
                                         }
                                     }
                                 ],
@@ -59,7 +59,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL SDH Period Month"
+                                            "text": "LL ALLBG Period Month"
                                         }
                                     }
                                 ],
@@ -82,7 +82,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL SDH Period Week"
+                                            "text": "LL ALLBG Period Week"
                                         }
                                     }
                                 ],
@@ -105,7 +105,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL SDH Period Yesterday"
+                                            "text": "LL ALLBG Period Yesterday"
                                         }
                                     }
                                 ],
@@ -128,7 +128,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL SDH Period As of Current"
+                                            "text": "LL ALLBG Period As of Current"
                                         }
                                     }
                                 ],
