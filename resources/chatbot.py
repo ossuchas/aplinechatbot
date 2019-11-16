@@ -10,7 +10,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
-    menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A
+    menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
+    menu_05_ap_phonebook
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -18,7 +19,9 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     MENU_01, MENU_02, MENU_03, MENU_04, MENU_05, MENU_06, \
     MENU_01_01_SDH, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
-    LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD
+    LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
+    LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2
+
 
 from models.chatbot_mst_user import MstUserModel
 from models.log_linechatbot import LogChatBotModel
@@ -106,6 +109,9 @@ class ChatBotRegister(Resource):
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            # AP PhoneBook Menu 5
+            elif (re.match(LL_MSG_APPHONEBOOK, message)) or (re.match(LL_MSG_APPHONEBOOK2, message)):
+                menu_05_ap_phonebook.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_B_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:

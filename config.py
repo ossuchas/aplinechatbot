@@ -61,3 +61,7 @@ LL_MSG_SUB_PERIOD = "ยอด LL SDH Sub"
 
 # Peroid Select All BG
 LL_MSG_ALLBG_PERIOD = "LL ALLBG Period"
+
+# AP Phone Book
+LL_MSG_APPHONEBOOK = "AP"
+LL_MSG_APPHONEBOOK2 = "ap"
