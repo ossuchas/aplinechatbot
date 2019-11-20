@@ -4,9 +4,9 @@ from flask import request
 import re
 
 from libs import chatbot_helper, log_linechatbot as logs, \
-    sale_accum_month, beacon_helper, menu_01_sale as m1, \
+    sale_accum_month, beacon_helper,  \
     menu_01_sale_timeline as m1_SDH, \
-    leadlag_bg_all, leadlag_bg_project, leadlag_bg_sub, \
+    leadlag_bg_all, leadlag_bg_project, \
     menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
@@ -16,7 +16,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
-    MENU_01, MENU_02, MENU_03, MENU_04, MENU_05, MENU_06, \
+    MENU_01_VIP, MENU_02, \
     MENU_01_01_SDH, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
@@ -76,9 +76,14 @@ class ChatBotRegister(Resource):
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
 
-            if message in MENU_01:  # LL ALL BG
-                # Get Peroid
-                menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            if message in MENU_01_VIP:  # LL ALL BG
+                vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+
+                if vip:
+                    menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                else:
+                    reply_msg = "You are not authorized to access this menu."
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_01_01_SDH:
                 m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_02:
@@ -118,7 +123,6 @@ class ChatBotRegister(Resource):
                 sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
-
                 # Reply Message Default Post API
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':

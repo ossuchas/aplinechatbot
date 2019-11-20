@@ -55,7 +55,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                                 "action": {
                                                     "type": "message",
                                                     "label": "action",
-                                                    "text": "ยอด LL SDH Sub 1.1"
+                                                    "text": "LL SDH Sub 1.1"
                                                 }
                                             },
                                             {
@@ -68,7 +68,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                                 "action": {
                                                     "type": "message",
                                                     "label": "action",
-                                                    "text": "ยอด LL SDH Sub 1.2"
+                                                    "text": "LL SDH Sub 1.2"
                                                 }
                                             },
                                             {
@@ -81,7 +81,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                                 "action": {
                                                     "type": "message",
                                                     "label": "action",
-                                                    "text": "ยอด LL SDH Sub 1.3"
+                                                    "text": "LL SDH Sub 1.3"
                                                 }
                                             }
                                         ],
