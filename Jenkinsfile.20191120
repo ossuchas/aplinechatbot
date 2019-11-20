@@ -1,9 +1,9 @@
 pipeline {
   environment {
-    registry = "apthailand/suchat_s"
+    registry = "ossuchas/aplinechatbot"
     registryCredential = 'docker_ossuchas'
     dockerImage = ''
-    image_tag_number = 'chatbot_api_v1.0.0'
+    image_tag_number = 'v1.3.8'
   }
   agent any
   stages {
