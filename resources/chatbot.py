@@ -11,7 +11,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
-    menu_05_ap_phonebook
+    menu_05_ap_phonebook, estimate_income_ac_Q
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -20,7 +20,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     MENU_01_01_SDH, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
-    LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2
+    LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
+    AC_ESTIMATE_INCOME
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -121,8 +122,11 @@ class ChatBotRegister(Resource):
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
+            elif message in AC_ESTIMATE_INCOME:
+                estimate_income_ac_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
+
                 # Reply Message Default Post API
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
