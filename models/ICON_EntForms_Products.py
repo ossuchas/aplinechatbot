@@ -7,6 +7,7 @@ class ICON_EntForms_ProductsModel(db.Model):
 
     ItemID = db.Column(db.String(50), primary_key=True)
     ProductID = db.Column(db.String(15))
+    xx = db.Column(db.Float)
 
     def sp_find_products(self):
         sql_statement = """

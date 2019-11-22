@@ -21,11 +21,12 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
-    AC_ESTIMATE_INCOME
+    AC_ACTUAL_INCOME
 
 
 from models.chatbot_mst_user import MstUserModel
 from models.log_linechatbot import LogChatBotModel
+from models.crm_line_actual_income import ActualIncomeModel
 from schemas.chatbot_mst_user import MstUserSchema
 
 
@@ -122,8 +123,9 @@ class ChatBotRegister(Resource):
                 sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_SALCE_ACCM_C_M_WORDING:
                 sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
-            elif message in AC_ESTIMATE_INCOME:
-                estimate_income_ac_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif message in AC_ACTUAL_INCOME:
+                actual_income = ActualIncomeModel().find_all()
+                estimate_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
 
