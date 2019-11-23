@@ -3,7 +3,9 @@ pipeline {
     registry = "apthailand/suchat_s"
     registryCredential = 'docker_ossuchas'
     dockerImage = ''
-    image_tag_number = 'chatbot_api_v1.0.4'
+    image_tag_number = 'chatbot_api_v1.0.5'
+    deployments = 'linechatbot'
+    projects = 'testrepo'
   }
   agent any
   stages {
@@ -28,11 +30,11 @@ pipeline {
         }
       }
     }
-    stage('Deploy 2 OKD') {
+    stage('Deploy to OKD') {
       steps{
           sh "oc login --insecure-skip-tls-verify https://devops01-master.apthai.com:8443 -usuchat_s -pP@ssw0rd"
-          sh "oc project testrepo"
-          sh "oc patch dc linechatbot --patch='{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\": \"linechatbot\", \"image\":\"docker.io/$registry:$image_tag_number\"}]}}}}'"
+          sh "oc project $projects"
+          sh "oc patch dc $deployments --patch='{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\": \"$deployments\", \"image\":\"docker.io/$registry:$image_tag_number\"}]}}}}'"
       }
     }
   }
