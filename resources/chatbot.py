@@ -11,7 +11,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
-    menu_05_ap_phonebook, estimate_income_ac_Q
+    menu_05_ap_phonebook, menu_estimate_income_ac_Q, menu_executive_report
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -21,7 +21,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
-    AC_ACTUAL_INCOME
+    AC_ACTUAL_INCOME, EXECUTIVE_REPORT
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -125,7 +125,10 @@ class ChatBotRegister(Resource):
                 sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
             elif message in AC_ACTUAL_INCOME:
                 actual_income = ActualIncomeModel().find_all()
-                estimate_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+                menu_estimate_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+            elif message in EXECUTIVE_REPORT:
+                actual_income = ActualIncomeModel().find_all()
+                menu_executive_report.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
 
