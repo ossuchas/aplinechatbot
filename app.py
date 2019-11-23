@@ -21,7 +21,7 @@ app.config.from_envvar("APPLICATION_SETTING")
 
 @app.route('/')
 def hello_world():
-    return 'AP Line Chat Bot Hello World! v1.0.4'
+    return 'AP Line Chat Bot Hello World! v2.0.0'
 
 
 api.add_resource(ChatBot, "/webhook")
