@@ -31,7 +31,6 @@ pipeline {
     stage('Deploy 2 OKD') {
       steps{
           sh "oc login https://devops01-master.apthai.com:8443 --token=TxEuG9CpgcfNcqdskLt1osM2hSUKPbCGRyypLxLx2pE"
-        }
       }
     }
   }
