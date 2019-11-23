@@ -31,6 +31,7 @@ pipeline {
     stage('Deploy 2 OKD') {
       steps{
           sh "oc login --insecure-skip-tls-verify https://devops01-master.apthai.com:8443 -usuchat_s -pP@ssw0rd"
+          sh "oc project testrepo"
       }
     }
   }
