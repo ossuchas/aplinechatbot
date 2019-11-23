@@ -12,8 +12,51 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
-    # print(actual_income.ap_bg1_q1)
     print(f"{actual_income.ap_bg1_q2:,.0f}")
+    # f"{actual_income.ap_bg1_q1:,.0f}"
+    # f"{actual_income.ap_bg1_q2:,.0f}"
+    # f"{actual_income.ap_bg1_q3:,.0f}"
+    # f"{actual_income.ap_bg1_q4:,.0f}"
+    # f"{actual_income.ap_bg1_total:,.0f}"
+    # f"{actual_income.ap_bg2_q1:,.0f}"
+    # f"{actual_income.ap_bg2_q2:,.0f}"
+    # f"{actual_income.ap_bg2_q3:,.0f}"
+    # f"{actual_income.ap_bg2_q4:,.0f}"
+    # f"{actual_income.ap_bg2_total:,.0f}"
+    # f"{actual_income.ap_bg3_q1:,.0f}"
+    # f"{actual_income.ap_bg3_q2:,.0f}"
+    # f"{actual_income.ap_bg3_q3:,.0f}"
+    # f"{actual_income.ap_bg3_q4:,.0f}"
+    # f"{actual_income.ap_bg3_total:,.0f}"
+    # f"{actual_income.ap_bg4_q1:,.0f}"
+    # f"{actual_income.ap_bg4_q2:,.0f}"
+    # f"{actual_income.ap_bg4_q3:,.0f}"
+    # f"{actual_income.ap_bg4_q4:,.0f}"
+    # f"{actual_income.ap_bg4_total:,.0f}"
+    # f"{actual_income.ap_total_q1:,.0f}"
+    # f"{actual_income.ap_total_q2:,.0f}"
+    # f"{actual_income.ap_total_q3:,.0f}"
+    # f"{actual_income.ap_total_q4:,.0f}"
+    # f"{actual_income.ap_total:,.0f}"
+    # f"{actual_income.jv_bg3_q1:,.0f}"
+    # f"{actual_income.jv_bg3_q2:,.0f}"
+    # f"{actual_income.jv_bg3_q3:,.0f}"
+    # f"{actual_income.jv_bg3_q4:,.0f}"
+    # f"{actual_income.jv_bg3_total:,.0f}"
+    # f"{actual_income.jv_bg4_q1:,.0f}"
+    # f"{actual_income.jv_bg4_q2:,.0f}"
+    # f"{actual_income.jv_bg4_q3:,.0f}"
+    # f"{actual_income.jv_bg4_q4:,.0f}"
+    # f"{actual_income.jv_bg4_total:,.0f}"
+    # f"{actual_income.jv_total_q1:,.0f}"
+    # f"{actual_income.jv_total_q2:,.0f}"
+    # f"{actual_income.jv_total_q3:,.0f}"
+    # f"{actual_income.jv_total_q4:,.0f}"
+    # f"{actual_income.jv_total:,.0f}"
+    # f"{actual_income.grant_total_q2:,.0f}"
+    # f"{actual_income.grant_total_q3:,.0f}"
+    # f"{actual_income.grant_total_q4:,.0f}"
+    # f"{actual_income.grant_total:,.0f}"
 
     type_msg = \
         {
@@ -77,7 +120,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "8,631,050,577",
+                                                "text": f"{actual_income.ap_bg1_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -96,7 +139,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "6,360,603,940",
+                                                "text": f"{actual_income.ap_bg2_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -115,7 +158,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "2,617,314,062",
+                                                "text": f"{actual_income.ap_bg3_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -133,7 +176,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,038,834,093",
+                                                "text": f"{actual_income.ap_bg4_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -156,7 +199,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "18,647,802,672",
+                                                "text": f"{actual_income.ap_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -193,7 +236,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "4,160,316,282",
+                                                "text": f"{actual_income.jv_bg3_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -212,7 +255,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "635,205,789",
+                                                "text": f"{actual_income.jv_bg4_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -235,7 +278,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "4,795,522,071",
+                                                "text": f"{actual_income.jv_total:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -259,7 +302,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "23,443,324,743",
+                                                "text": f"{actual_income.grant_total:,.0f}",
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold"
@@ -367,7 +410,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "454,672,000",
+                                                "text": f"{actual_income.ap_bg1_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -386,7 +429,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "368,908,000",
+                                                "text": f"{actual_income.ap_bg2_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -405,7 +448,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "163,185,453",
+                                                "text": f"{actual_income.ap_bg3_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -423,7 +466,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "66,104,526",
+                                                "text": f"{actual_income.ap_bg4_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -446,7 +489,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,052,869,979",
+                                                "text": f"{actual_income.ap_total_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -483,7 +526,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "62,298,445",
+                                                "text": f"{actual_income.jv_bg3_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -502,7 +545,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "635,205,789",
+                                                "text": f"{actual_income.jv_bg4_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -525,7 +568,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "697,504,234",
+                                                "text": f"{actual_income.jv_total_q4:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -549,7 +592,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,750,374,213",
+                                                "text": f"{actual_income.grant_total_q4:,.0f}",
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold"
@@ -657,7 +700,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "2,801,865,818",
+                                                "text": f"{actual_income.ap_bg1_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -676,7 +719,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,990,698,360",
+                                                "text": f"{actual_income.ap_bg2_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -695,7 +738,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "645,104,648",
+                                                "text": f"{actual_income.ap_bg3_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -713,7 +756,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "242,019,389",
+                                                "text": f"{actual_income.ap_bg4_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -736,7 +779,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "5,679,688,215",
+                                                "text": f"{actual_income.ap_total_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -773,7 +816,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "472,319,120",
+                                                "text": f"{actual_income.jv_bg3_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -792,7 +835,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "-",
+                                                "text": f"{actual_income.jv_bg4_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -815,7 +858,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "472,319,120",
+                                                "text": f"{actual_income.jv_total_q3:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -839,7 +882,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "6,152,007,335",
+                                                "text": f"{actual_income.grant_total_q3:,.0f}",
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold"
@@ -947,7 +990,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,835,104,000",
+                                                "text": f"{actual_income.ap_bg1_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -966,7 +1009,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,459,523,079",
+                                                "text": f"{actual_income.ap_bg2_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -985,7 +1028,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "757,820,342",
+                                                "text": f"{actual_income.ap_bg3_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1003,7 +1046,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "243,613,747",
+                                                "text": f"{actual_income.ap_bg4_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1026,7 +1069,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "4,296,061,168",
+                                                "text": f"{actual_income.ap_total_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -1063,7 +1106,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,379,067,987",
+                                                "text": f"{actual_income.jv_bg3_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1082,7 +1125,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "-",
+                                                "text": f"{actual_income.jv_bg4_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1105,7 +1148,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "1,379,067,987",
+                                                "text": f"{actual_income.jv_total_q2:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -1129,7 +1172,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "5,675,129,155",
+                                                "text": f"{actual_income.grant_total_q2:,.0f}",
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold"
@@ -1237,7 +1280,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "3,539,408,759",
+                                                "text": f"{actual_income.ap_bg1_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1256,7 +1299,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "2,541,474,501",
+                                                "text": f"{actual_income.ap_bg2_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1275,7 +1318,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "487,096,431",
+                                                "text": f"{actual_income.ap_bg3_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1293,7 +1336,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "454,672,000",
+                                                "text": f"{actual_income.ap_bg4_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1316,7 +1359,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "7,619,183,310",
+                                                "text": f"{actual_income.ap_total_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -1353,7 +1396,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "2,246,630,730",
+                                                "text": f"{actual_income.jv_bg3_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1372,7 +1415,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "-",
+                                                "text": f"{actual_income.jv_bg4_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm"
                                             }
@@ -1395,7 +1438,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "2,246,630,730",
+                                                "text": f"{actual_income.jv_total_q1:,.0f}",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
@@ -1419,7 +1462,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "9,865,814,040",
+                                                "text": f"{actual_income.grant_total_q1:,.0f}",
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold"
