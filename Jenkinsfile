@@ -32,7 +32,7 @@ pipeline {
       steps{
           sh "oc login --insecure-skip-tls-verify https://devops01-master.apthai.com:8443 -usuchat_s -pP@ssw0rd"
           sh "oc project testrepo"
-          sh "oc patch dc happyrefund --patch='{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\": \"happyrefund\", \"image\":\"docker.io/apthailand/suchat_s:happyrefund_front_v1.0.3\"}]}}}}'"
+          sh "oc patch dc linechatbot --patch='{\"spec\":{\"template\":{\"spec\":{\"containers\":[{\"name\": \"linechatbot\", \"image\":\"docker.io/apthailand/suchat_s:chatbot_api_v1.0.3\"}]}}}}'"
       }
     }
   }
