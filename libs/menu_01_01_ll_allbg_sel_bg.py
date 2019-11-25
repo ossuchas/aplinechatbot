@@ -21,13 +21,11 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                     "type": "bubble",
                     "hero": {
                         "type": "box",
-                        "layout": "vertical",
+                        "layout": "baseline",
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "Please select period",
-                                "color": "#FFFFFF",
-                                "offsetStart": "5%"
+                                "text": "."
                             }
                         ]
                     },
@@ -36,51 +34,26 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                         "layout": "vertical",
                         "contents": [
                             {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/4Tw4wgJ/calendar-q-v1-0.png",
-                                        "aspectRatio": "1:1",
-                                        "aspectMode": "fit",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL ALLBG Period Quarter"
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/R71C8Q6/calendar-m-v1-0.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL ALLBG Period Month"
-                                        }
-                                    }
-                                ]
+                                "type": "text",
+                                "text": "กรุณาเลือกข้อมูล BG ที่ท่านสนใจ",
+                                "size": "sm",
+                                "color": "#FFFFFF",
+                                "align": "start",
+                                "offsetStart": "10px"
                             },
                             {
                                 "type": "box",
-                                "layout": "horizontal",
+                                "layout": "vertical",
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/Pg8X4RG/calendar-w-v1-0.png",
+                                        "url": "https://i.ibb.co/D4QTPdL/bg-banner-bg1-v2.png",
+                                        "aspectRatio": "24:7",
+                                        "size": "full",
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Week"
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/8m6TFfb/calendar-y-v1-0.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL ALLBG Period Yesterday"
+                                            "text": "LL ALL BG 1"
                                         }
                                     }
                                 ]
@@ -91,14 +64,47 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/HPWThPG/calendar-y2d-v2-0.png",
+                                        "url": "https://i.ibb.co/BBC9G0d/bg-banner-bg2-v2.png",
                                         "size": "full",
-                                        "aspectMode": "fit",
                                         "aspectRatio": "24:7",
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Year to Current"
+                                            "text": "LL ALL BG 2"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/zmLDxB6/bg-banner-bg3-cd1-v2.png",
+                                        "size": "full",
+                                        "aspectRatio": "24:7",
+                                        "action": {
+                                            "type": "message",
+                                            "label": "action",
+                                            "text": "LL ALL BG 3"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/263zbCJ/bg-banner-bg4-cd2-v2.png",
+                                        "size": "full",
+                                        "aspectRatio": "24:7",
+                                        "action": {
+                                            "type": "message",
+                                            "label": "action",
+                                            "text": "LL ALL BG 4"
                                         }
                                     }
                                 ]
@@ -135,6 +141,9 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                     "styles": {
                         "hero": {
                             "backgroundColor": "#000000"
+                        },
+                        "body": {
+                            "backgroundColor": "#c92028"
                         },
                         "footer": {
                             "backgroundColor": "#000000"

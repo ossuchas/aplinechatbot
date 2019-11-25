@@ -11,12 +11,13 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
-    menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report
+    menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report, \
+    menu_01_01_ll_allbg_sel_bg
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
-    MENU_01_VIP, MENU_02, \
+    MENU_01_VIP, MENU_01_VIP_BG, \
     MENU_01_01_SDH, \
     LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
@@ -78,18 +79,21 @@ class ChatBotRegister(Resource):
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
 
-            if message in MENU_01_VIP:  # LL ALL BG
+            if message == MENU_01_VIP:  # LL ALL BG
                 vip = MstUserModel().check_VIP_auth_by_token_id(userId)
 
                 if vip:
-                    menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 else:
                     reply_msg = "You are not authorized to access this menu."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+            elif re.match(MENU_01_VIP_BG, message):  # Select BG
+                # LL[0] ALL[1] BG[2] <1-4>[3]
+                bg = message.split(' ')[3]
+                menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_01_01_SDH:
                 m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif message in MENU_02:
-                sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             # Lead Lag
             elif message in LL_MSG_All:
                 leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
