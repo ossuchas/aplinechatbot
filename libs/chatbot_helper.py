@@ -85,7 +85,10 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                         "text": "Target",
                                         "size": "sm",
                                         "align": "end",
-                                        "weight": "bold"
+                                        "weight": "bold",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "59%"
                                     },
                                     {
                                         "type": "text",
@@ -112,13 +115,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "โอน (MB)",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetStart": "65%",
+                                        "offsetBottom": "1px"
                                     },
                                     {
                                         "type": "text",
@@ -142,13 +149,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "โอน (Unit)",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -171,13 +182,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "ห้องผ่าน QC",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -201,13 +216,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "ลูกค้าเข้าตรวจ",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -229,13 +248,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "ลูกค้ารับห้อง",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -258,13 +281,19 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "โอนสด + Bankอนุมัติ",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "wrap": True,
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "flex": 2,
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -285,14 +314,19 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "GrossPresale(MB)",
-                                        "size": "xs"
+                                        "text": "Grs. Presale(MB)",
+                                        "size": "xs",
+                                        "wrap": True,
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -314,14 +348,18 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Net Presales (MB)",
-                                        "size": "xs"
+                                        "text": "Net Presale (MB)",
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -342,15 +380,21 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Net Presales (MB) - รอยกเลิก",
+                                        "text": "Net Presale (MB) - รอยกเลิก",
                                         "size": "xs",
-                                        "wrap": True
+                                        "wrap": True,
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "flex": 1,
+                                        "margin": "xxl",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -373,13 +417,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "รอยกเลิก (MB)",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -400,14 +448,19 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "GrossPresale (Units)",
-                                        "size": "xs"
+                                        "text": "Grs. Presale (Units)",
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "flex": 2,
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -429,14 +482,19 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Net Presales (Units)",
-                                        "size": "xs"
+                                        "text": "Net Presale (Units)",
+                                        "size": "xs",
+                                        "wrap": True,
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -459,13 +517,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                         "type": "text",
                                         "text": "Net Presales (Unit) - รอยกเลิก",
                                         "size": "xs",
-                                        "wrap": True
+                                        "wrap": True,
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -488,13 +550,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "รอยกเลิก (Units)",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -516,13 +582,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "Walk",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -545,13 +615,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "2nd Walk++",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",
@@ -573,13 +647,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     {
                                         "type": "text",
                                         "text": "Conversion",
-                                        "size": "xs"
+                                        "size": "xs",
+                                        "flex": 0
                                     },
                                     {
                                         "type": "text",
                                         "text": "813",
                                         "size": "xs",
-                                        "align": "end"
+                                        "align": "end",
+                                        "position": "absolute",
+                                        "offsetBottom": "1px",
+                                        "offsetStart": "65%"
                                     },
                                     {
                                         "type": "text",

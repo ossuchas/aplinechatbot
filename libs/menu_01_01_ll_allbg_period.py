@@ -47,7 +47,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Quarter"
+                                            "text": "LL Period BY BG Quarter"
                                         }
                                     },
                                     {
@@ -56,7 +56,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Month"
+                                            "text": "LL Period BY BG Month"
                                         }
                                     }
                                 ]
@@ -71,7 +71,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Week"
+                                            "text": "LL Period BY BG Week"
                                         }
                                     },
                                     {
@@ -80,7 +80,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Yesterday"
+                                            "text": "LL Period BY BG Yesterday"
                                         }
                                     }
                                 ]
@@ -91,14 +91,14 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/HPWThPG/calendar-y2d-v2-0.png",
+                                        "url": "https://i.ibb.co/6B7wwDn/calendar-y2d-v3-0.png",
                                         "size": "full",
                                         "aspectMode": "fit",
                                         "aspectRatio": "24:7",
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL ALLBG Period Year to Current"
+                                            "text": "LL Period BY BG Year to Current"
                                         }
                                     }
                                 ]

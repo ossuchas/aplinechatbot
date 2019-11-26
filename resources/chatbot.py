@@ -89,7 +89,7 @@ class ChatBotRegister(Resource):
                     reply_msg = "You are not authorized to access this menu."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             elif re.match(MENU_01_VIP_BG, message):  # Select BG
-                # LL[0] ALL[1] BG[2] <1-4>[3]
+                # LL[0] BY[1] BG[2] <1-4>[3]
                 bg = message.split(' ')[3]
                 menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_01_01_SDH:
@@ -105,7 +105,7 @@ class ChatBotRegister(Resource):
                 peroid = value[1].split(':')
                 leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
             # Period Select ALL BG
-            elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL ALLBG Period
+            elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
                 if peroid == 'Q':  # Quarter
                     menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
