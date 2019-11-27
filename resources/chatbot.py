@@ -109,15 +109,13 @@ class ChatBotRegister(Resource):
                 # peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
                 bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
-                print(peroid, bg)
-                ll_model = LeadLagModel().find_by_bg_period(bg, peroid[0])
-                print(ll_model)
                 if peroid[0] == 'Q':  # Quarter
                     menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
                 elif peroid[0] == 'M':  # Month
                     menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
                 elif peroid[0] == 'W':  # Week
-                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    ll_model = LeadLagModel().find_by_bg_period(bg, peroid[0])
+                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
                 elif peroid[0] == 'Y':  # Yesterday
                     menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
                 elif peroid[0] == 'A':  # As of Current
