@@ -5,7 +5,7 @@ import json
 from config import LINE_API
 
 
-def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: str = None):
+def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',

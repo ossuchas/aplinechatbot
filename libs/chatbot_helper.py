@@ -32,7 +32,7 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                 {
                     "type": "bubble",
                     "size": "giga",
-                    "hero": {
+                    "header": {
                         "type": "box",
                         "layout": "baseline",
                         "contents": [
@@ -40,19 +40,25 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                 "type": "text",
                                 "text": "Lead Lag",
                                 "color": "#FFFFFF",
-                                "size": "md",
-                                "align": "start",
-                                "weight": "bold",
-                                "offsetStart": "5%"
+                                "size": "lg",
+                                "weight": "bold"
                             },
                             {
                                 "type": "text",
                                 "text": "BG1 - SDH",
                                 "align": "end",
                                 "color": "#FFFFFF",
-                                "size": "sm",
-                                "weight": "bold",
-                                "offsetEnd": "5%"
+                                "weight": "bold"
+                            },
+                            {
+                                "type": "text",
+                                "text": "Week 47 (18/11/19 - 24/11/19)",
+                                "position": "absolute",
+                                "color": "#FFFFFF",
+                                "size": "xs",
+                                "style": "italic",
+                                "offsetEnd": "17px",
+                                "offsetBottom": "2px"
                             }
                         ]
                     },
@@ -60,13 +66,6 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                         "type": "box",
                         "layout": "vertical",
                         "contents": [
-                            {
-                                "type": "text",
-                                "text": "Week 45 (04/11/19 - 10/11/19)",
-                                "size": "xs",
-                                "align": "end",
-                                "style": "italic"
-                            },
                             {
                                 "type": "separator"
                             },
@@ -120,16 +119,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "257",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
-                                        "offsetStart": "65%",
-                                        "offsetBottom": "1px"
+                                        "offsetBottom": "1px",
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "157",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -154,16 +153,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "40",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "24",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -187,16 +186,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "29",
                                         "size": "xs",
-                                        "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "align": "end",
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "19",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -221,16 +220,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "6",
                                         "size": "xs",
-                                        "align": "end",
                                         "position": "absolute",
+                                        "align": "end",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "28",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -253,16 +252,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "30",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "36",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -287,17 +286,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 2,
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "17",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -321,16 +320,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "279",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -354,16 +353,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "195",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "73",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -387,18 +386,18 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 1,
                                         "margin": "xxl",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "206",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -422,16 +421,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "133",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -454,17 +453,17 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 2,
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "31",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -489,16 +488,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "26",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "13",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -522,16 +521,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "32",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -555,16 +554,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "-",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "19",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -587,12 +586,12 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "215",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
@@ -620,16 +619,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "59",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "52",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -652,16 +651,16 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     },
                                     {
                                         "type": "text",
-                                        "text": "813",
+                                        "text": "11",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
-                                        "offsetStart": "65%"
+                                        "offsetEnd": "31%"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": "18",
                                         "size": "xs",
                                         "align": "end"
                                     },
@@ -672,6 +671,9 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                                     }
                                 ],
                                 "backgroundColor": "#FAF5FF"
+                            },
+                            {
+                                "type": "separator"
                             }
                         ]
                     },
@@ -703,6 +705,9 @@ def replyMsg(reply_token, text_msg, line_aceess_token):
                         ]
                     },
                     "styles": {
+                        "header": {
+                            "backgroundColor": "#000000"
+                        },
                         "hero": {
                             "backgroundColor": "#000000"
                         },

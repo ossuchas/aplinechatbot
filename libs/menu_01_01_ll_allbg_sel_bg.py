@@ -53,7 +53,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL BY BG 1"
+                                            "text": "LL BY BG SDH"
                                         }
                                     }
                                 ]
@@ -70,7 +70,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL BY BG 2"
+                                            "text": "LL BY BG TH"
                                         }
                                     }
                                 ]
@@ -87,7 +87,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL BY BG 3"
+                                            "text": "LL BY BG CD1"
                                         }
                                     }
                                 ]
@@ -104,7 +104,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL BY BG 4"
+                                            "text": "LL BY BG CD2"
                                         }
                                     }
                                 ]

@@ -5,7 +5,7 @@ import json
 from config import LINE_API
 
 
-def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: str = None):
+def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -47,7 +47,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Quarter"
+                                            "text": "LL Period BY BG Quarter [{}]".format(bg)
                                         }
                                     },
                                     {
@@ -56,7 +56,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Month"
+                                            "text": "LL Period BY BG Month [{}]".format(bg)
                                         }
                                     }
                                 ]
@@ -71,7 +71,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Week"
+                                            "text": "LL Period BY BG Week [{}]".format(bg)
                                         }
                                     },
                                     {
@@ -80,7 +80,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Yesterday"
+                                            "text": "LL Period BY BG Yesterday [{}]".format(bg)
                                         }
                                     }
                                 ]
@@ -98,7 +98,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Year to Current"
+                                            "text": "LL Period BY BG Year to Current [{}]".format(bg)
                                         }
                                     }
                                 ]

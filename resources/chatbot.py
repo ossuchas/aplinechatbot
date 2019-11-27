@@ -28,7 +28,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
 from models.chatbot_mst_user import MstUserModel
 from models.log_linechatbot import LogChatBotModel
 from models.crm_line_actual_income import ActualIncomeModel
-from schemas.chatbot_mst_user import MstUserSchema
+from models.crm_line_ll_data import LeadLagModel
 
 
 class ChatBot(Resource):
@@ -91,7 +91,7 @@ class ChatBotRegister(Resource):
             elif re.match(MENU_01_VIP_BG, message):  # Select BG
                 # LL[0] BY[1] BG[2] <1-4>[3]
                 bg = message.split(' ')[3]
-                menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                menu_01_01_ll_allbg_period.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
             elif message in MENU_01_01_SDH:
                 m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             # Lead Lag
@@ -106,17 +106,22 @@ class ChatBotRegister(Resource):
                 leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
             # Period Select ALL BG
             elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
-                peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
-                if peroid == 'Q':  # Quarter
-                    menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif peroid == 'M':  # Month
-                    menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif peroid == 'W':  # Week
-                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif peroid == 'Y':  # Yesterday
-                    menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif peroid == 'A':  # As of Current
-                    menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                # peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
+                peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
+                bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
+                print(peroid, bg)
+                ll_model = LeadLagModel().find_by_bg_period(bg, peroid[0])
+                print(ll_model)
+                if peroid[0] == 'Q':  # Quarter
+                    menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                elif peroid[0] == 'M':  # Month
+                    menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                elif peroid[0] == 'W':  # Week
+                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                elif peroid[0] == 'Y':  # Yesterday
+                    menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                elif peroid[0] == 'A':  # As of Current
+                    menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)

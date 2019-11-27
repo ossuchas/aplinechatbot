@@ -64,6 +64,10 @@ class LeadLagModel(db.Model):
     icon_conversion = db.Column(db.String(255))
 
     @classmethod
+    def find_by_bg_period(cls, _bg: str, _period: str) -> "LeadLagModel":
+        return cls.query.filter_by(bg=_bg, period=_period).first()
+
+    @classmethod
     def find_by_week(cls) -> "LeadLagModel":
         return cls.query.filter_by(period='W').first()
 
