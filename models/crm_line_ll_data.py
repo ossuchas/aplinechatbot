@@ -7,6 +7,7 @@ class LeadLagModel(db.Model):
     __tablename__ = "crm_line_ll_data"
 
     ll_id = db.Column(db.Integer, primary_key=True)
+    by_type = db.Column(db.String(10))
     bg = db.Column(db.String(255))
     years = db.Column(db.Float)
     quarter = db.Column(db.Float)
@@ -69,8 +70,8 @@ class LeadLagModel(db.Model):
     icon_conversion = db.Column(db.String(255))
 
     @classmethod
-    def find_by_bg_period(cls, _bg: str, _period: str) -> "LeadLagModel":
-        return cls.query.filter_by(bg=_bg, period=_period, years=datetime.today().year).first()
+    def find_by_bg_period(cls, _type:str, _bg: str, _period: str) -> "LeadLagModel":
+        return cls.query.filter_by(by_type=_type, bg=_bg, period=_period, years=datetime.today().year).first()
 
     @classmethod
     def find_by_week(cls) -> "LeadLagModel":

@@ -131,7 +131,7 @@ class ChatBotRegister(Resource):
                 elif peroid[0] == 'A':  # As of Current
                     period = 'YTD'
 
-                ll_model = LeadLagModel().find_by_bg_period(bg, period)
+                ll_model = LeadLagModel().find_by_bg_period('BG', bg, period)
                 menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
