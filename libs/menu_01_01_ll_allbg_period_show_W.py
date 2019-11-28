@@ -12,7 +12,6 @@ def replyMsg(Reply_token: str =None, bg: str = None, ll: LeadLagModel = None, li
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
-    print(f"{ll.tg_acceptunit:,.0f}")
 
     type_msg = \
         {
@@ -42,7 +41,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, ll: LeadLagModel = None, li
                             },
                             {
                                 "type": "text",
-                                "text": "Week 47 (18/11/19 - 24/11/19)",
+                                "text": ll.text_msg,
                                 "position": "absolute",
                                 "color": "#FFFFFF",
                                 "size": "xs",

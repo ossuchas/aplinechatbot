@@ -98,7 +98,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Year to Current [{}]".format(bg)
+                                            "text": "LL Period BY BG As of Current [{}]".format(bg)
                                         }
                                     }
                                 ]

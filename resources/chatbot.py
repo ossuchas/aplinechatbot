@@ -109,17 +109,30 @@ class ChatBotRegister(Resource):
                 # peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
                 bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
+                # if peroid[0] == 'Q':  # Quarter
+                #     menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                # elif peroid[0] == 'M':  # Month
+                #     menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                # elif peroid[0] == 'W':  # Week
+                #     ll_model = LeadLagModel().find_by_bg_period(bg, 'W')
+                #     menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
+                # elif peroid[0] == 'Y':  # Yesterday
+                #     menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                # elif peroid[0] == 'A':  # As of Current
+                #     menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
                 if peroid[0] == 'Q':  # Quarter
-                    menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    period = 'QTD'
                 elif peroid[0] == 'M':  # Month
-                    menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    period = 'M'
                 elif peroid[0] == 'W':  # Week
-                    ll_model = LeadLagModel().find_by_bg_period(bg, peroid[0])
-                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
+                    period = 'W'
                 elif peroid[0] == 'Y':  # Yesterday
-                    menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    period = 'Y'
                 elif peroid[0] == 'A':  # As of Current
-                    menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    period = 'YTD'
+
+                ll_model = LeadLagModel().find_by_bg_period(bg, period)
+                menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
