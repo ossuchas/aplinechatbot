@@ -1,5 +1,6 @@
 from db import db
 from typing import List
+from datetime import datetime
 
 
 class LeadLagModel(db.Model):
@@ -69,7 +70,7 @@ class LeadLagModel(db.Model):
 
     @classmethod
     def find_by_bg_period(cls, _bg: str, _period: str) -> "LeadLagModel":
-        return cls.query.filter_by(bg=_bg, period=_period).first()
+        return cls.query.filter_by(bg=_bg, period=_period, years=datetime.today().year).first()
 
     @classmethod
     def find_by_week(cls) -> "LeadLagModel":
