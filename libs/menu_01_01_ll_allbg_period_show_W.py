@@ -34,7 +34,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, ll: LeadLagModel = None, li
                             },
                             {
                                 "type": "text",
-                                "text": "BG1 - SDH",
+                                "text": ll.text_msg_header,
                                 "align": "end",
                                 "color": "#FFFFFF",
                                 "weight": "bold"

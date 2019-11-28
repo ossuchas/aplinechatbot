@@ -12,6 +12,7 @@ class LeadLagModel(db.Model):
     week = db.Column(db.String(255))
     begin_week = db.Column(db.Integer)
     end_week = db.Column(db.Integer)
+    text_msg_header = db.Column(db.String(255))
     text_msg = db.Column(db.String(1000))
     period = db.Column(db.String(255))
     tg_transferamount = db.Column(db.Float)
