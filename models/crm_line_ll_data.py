@@ -10,6 +10,7 @@ class LeadLagModel(db.Model):
     by_type = db.Column(db.String(10))
     bg = db.Column(db.String(255))
     years = db.Column(db.Float)
+    current_flag = db.Column(db.String(2))
     quarter = db.Column(db.Float)
     week = db.Column(db.String(255))
     begin_week = db.Column(db.Integer)
