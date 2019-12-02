@@ -37,50 +37,18 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                         "contents": [
                             {
                                 "type": "box",
-                                "layout": "horizontal",
+                                "layout": "vertical",
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/4Tw4wgJ/calendar-q-v1-0.png",
-                                        "aspectRatio": "1:1",
+                                        "url": "https://i.ibb.co/1M4dwWq/calendar-y2d-v1-0.png",
+                                        "size": "full",
                                         "aspectMode": "fit",
+                                        "aspectRatio": "24:7",
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG Quarter [{}]".format(bg)
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/R71C8Q6/calendar-m-v1-0.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL Period BY BG Month [{}]".format(bg)
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "box",
-                                "layout": "horizontal",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/Pg8X4RG/calendar-w-v1-0.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL Period BY BG Week [{}]".format(bg)
-                                        }
-                                    },
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/8m6TFfb/calendar-y-v1-0.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL Period BY BG Yesterday [{}]".format(bg)
+                                            "text": "LL Period BY BG As of Current [{}]".format(bg)
                                         }
                                     }
                                 ]
@@ -91,14 +59,32 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/6B7wwDn/calendar-y2d-v3-0.png",
+                                        "url": "https://i.ibb.co/qjmY6dX/calendar-q2d-v1-0.png",
                                         "size": "full",
                                         "aspectMode": "fit",
                                         "aspectRatio": "24:7",
                                         "action": {
                                             "type": "message",
                                             "label": "action",
-                                            "text": "LL Period BY BG As of Current [{}]".format(bg)
+                                            "text": "LL Period BY BG Quarter [{}]".format(bg)
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/JHr4d31/calendar-w2d-v1-0.png",
+                                        "size": "full",
+                                        "aspectMode": "fit",
+                                        "aspectRatio": "24:7",
+                                        "action": {
+                                            "type": "message",
+                                            "label": "action",
+                                            "text": "LL Period BY BG Week [{}]".format(bg)
                                         }
                                     }
                                 ]
