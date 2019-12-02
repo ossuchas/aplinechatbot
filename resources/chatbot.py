@@ -12,7 +12,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
     menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report, \
-    menu_01_01_ll_allbg_sel_bg
+    menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -131,8 +131,17 @@ class ChatBotRegister(Resource):
                 elif peroid[0] == 'A':  # As of Current
                     period = 'YTD'
 
-                ll_model = LeadLagModel().find_by_bg_period('BG', bg, period)
-                menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
+                if period[0] != 'W':
+                    ll_model = LeadLagModel().find_by_bg_period('BG', bg, period, 'Y')
+                    menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
+                else:
+                    ll_model_current = LeadLagModel().find_by_bg_period('BG', bg, period, 'Y')
+                    ll_model_last_week = LeadLagModel().find_by_bg_period('BG', bg, period, 'N')
+                    menu_01_01_ll_allbg_period_show_L_C.replyMsg(reply_token, bg,
+                                                                 ll_model_current,
+                                                                 ll_model_last_week,
+                                                                 CHANNEL_ACCESS_TOKEN)
+
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
@@ -153,6 +162,8 @@ class ChatBotRegister(Resource):
                 reply_msg = DEFAULT_REPLY_WORDING
 
                 # Reply Message Default Post API
+                # ll_model = LeadLagModel().find_by_bg_period('BG', 'SDH', 'W', 'Y')
+                # menu_01_01_ll_allbg_period_show_L_C.replyMsg(reply_token, 'SDH', ll_model, CHANNEL_ACCESS_TOKEN)
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             beacon_hwid = payload['events'][0]['beacon']['hwid']
