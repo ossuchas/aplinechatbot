@@ -80,6 +80,17 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
                                         "offsetTop": "2px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Year to date",
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xs",
+                                        "gravity": "bottom",
+                                        "style": "italic",
+                                        "offsetEnd": "5%",
+                                        "offsetTop": "10%"
                                     }
                                 ],
                                 "height": "25px"
@@ -100,7 +111,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Year (MB)",
+                                                "text": "Vol. (MB)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -370,6 +381,17 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
                                         "offsetTop": "2px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Quarter#4",
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xs",
+                                        "gravity": "bottom",
+                                        "style": "italic",
+                                        "offsetEnd": "5%",
+                                        "offsetTop": "10%"
                                     }
                                 ],
                                 "height": "25px"
@@ -390,7 +412,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Quarter#4 (MB)",
+                                                "text": "Vol. (MB)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -660,6 +682,17 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
                                         "offsetTop": "2px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Quarter#3",
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xs",
+                                        "gravity": "bottom",
+                                        "style": "italic",
+                                        "offsetEnd": "5%",
+                                        "offsetTop": "10%"
                                     }
                                 ],
                                 "height": "25px"
@@ -680,7 +713,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Quarter#3 (MB)",
+                                                "text": "Vol. (MB)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -950,6 +983,17 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
                                         "offsetTop": "2px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Quarter#2",
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xs",
+                                        "gravity": "bottom",
+                                        "style": "italic",
+                                        "offsetEnd": "5%",
+                                        "offsetTop": "10%"
                                     }
                                 ],
                                 "height": "25px"
@@ -970,7 +1014,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Quarter#2 (MB)",
+                                                "text": "Vol. (MB)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -1240,6 +1284,17 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
                                         "offsetTop": "2px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Quarter#1",
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xs",
+                                        "gravity": "bottom",
+                                        "style": "italic",
+                                        "offsetEnd": "5%",
+                                        "offsetTop": "10%"
                                     }
                                 ],
                                 "height": "25px"
@@ -1260,7 +1315,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Quarter#1 (MB)",
+                                                "text": "Vol. (MB)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
