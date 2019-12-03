@@ -12,14 +12,15 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
     menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report, \
-    menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C
+    menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C, \
+    menu_02_01_ll_allbg_sel_subbg
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
     MENU_01_VIP, MENU_01_VIP_BG, \
     MENU_01_01_SDH, \
-    LL_MSG_All, LL_MSG_PROJ, LL_MSG_SUB, \
+    LL_MSG_All, LL_MSG_PROJ, MENU_02_VIP, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT
@@ -81,7 +82,6 @@ class ChatBotRegister(Resource):
 
             if message == MENU_01_VIP:  # LL ALL BG
                 vip = MstUserModel().check_VIP_auth_by_token_id(userId)
-
                 if vip:
                     # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                     menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
@@ -97,8 +97,9 @@ class ChatBotRegister(Resource):
             # Lead Lag
             elif message in LL_MSG_All:
                 leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif message in LL_MSG_SUB:  # menu_02_01_ll_sdh_subbg
-                menu_02_01_ll_sdh_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif message in MENU_02_VIP:  # menu_02_01_ll_sdh_subbg
+                # menu_02_01_ll_sdh_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             elif re.match(LL_MSG_PROJ, message):  # proj:
                 value = message.split(',')
                 project = value[0].split(':')
@@ -109,17 +110,6 @@ class ChatBotRegister(Resource):
                 # peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
                 bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
-                # if peroid[0] == 'Q':  # Quarter
-                #     menu_01_01_ll_allbg_period_show_Q.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
-                # elif peroid[0] == 'M':  # Month
-                #     menu_01_01_ll_allbg_period_show_M.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
-                # elif peroid[0] == 'W':  # Week
-                #     ll_model = LeadLagModel().find_by_bg_period(bg, 'W')
-                #     menu_01_01_ll_allbg_period_show_W.replyMsg(reply_token, bg, ll_model, CHANNEL_ACCESS_TOKEN)
-                # elif peroid[0] == 'Y':  # Yesterday
-                #     menu_01_01_ll_allbg_period_show_Y.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
-                # elif peroid[0] == 'A':  # As of Current
-                #     menu_01_01_ll_allbg_period_show_A.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
                 if peroid[0] == 'Q':  # Quarter
                     period = 'QTD'
                 elif peroid[0] == 'M':  # Month
@@ -145,13 +135,13 @@ class ChatBotRegister(Resource):
             # Period Select by Sub BG
             elif re.match(LL_MSG_SUB_PERIOD, message):
                 menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            # AP PhoneBook Menu 5
-            elif (re.match(LL_MSG_APPHONEBOOK, message)) or (re.match(LL_MSG_APPHONEBOOK2, message)):
-                menu_05_ap_phonebook.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif message in REPLY_SALCE_ACCM_B_M_WORDING:
-                sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
-            elif message in REPLY_SALCE_ACCM_C_M_WORDING:
-                sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
+            # # AP PhoneBook Menu 5
+            # elif (re.match(LL_MSG_APPHONEBOOK, message)) or (re.match(LL_MSG_APPHONEBOOK2, message)):
+            #     menu_05_ap_phonebook.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            # elif message in REPLY_SALCE_ACCM_B_M_WORDING:
+            #     sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
+            # elif message in REPLY_SALCE_ACCM_C_M_WORDING:
+            #     sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
             elif message in AC_ACTUAL_INCOME:
                 actual_income = ActualIncomeModel().find_all()
                 menu_actual_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
@@ -160,10 +150,7 @@ class ChatBotRegister(Resource):
                 menu_executive_report.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
-
                 # Reply Message Default Post API
-                # ll_model = LeadLagModel().find_by_bg_period('BG', 'SDH', 'W', 'Y')
-                # menu_01_01_ll_allbg_period_show_L_C.replyMsg(reply_token, 'SDH', ll_model, CHANNEL_ACCESS_TOKEN)
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             beacon_hwid = payload['events'][0]['beacon']['hwid']

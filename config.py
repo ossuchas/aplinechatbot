@@ -41,6 +41,8 @@ REPLY_SALCE_ACCM_C_M_WORDING = ["ยอดเดือนนี้", "ยอด�
 
 MENU_01_VIP = "LL BY BG"
 MENU_01_VIP_BG = "LL BY BG"
+MENU_02_VIP = "LL BY SubBG"
+MENU_02_VIP_BG = "LL BY SubBG"
 # MENU_02 = ['ยอดขาย2']
 # MENU_03 = ['ยอดขาย3']
 # MENU_04 = ['ยอดขาย4']
@@ -54,7 +56,6 @@ MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
 
 # Main Menu
 LL_MSG_All = "LL SDH All"
-LL_MSG_SUB = "LL SDH SubBG"
 LL_MSG_PROJ = "proj:"
 
 # Select Sub BG SDH

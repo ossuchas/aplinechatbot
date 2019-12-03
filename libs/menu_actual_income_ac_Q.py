@@ -12,7 +12,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
-    print(f"{actual_income.ap_bg1_q2:,.0f}")
+    # print(f"{actual_income.ap_bg1_q2:,.0f}")
     # f"{actual_income.ap_bg1_q1:,.0f}"
     # f"{actual_income.ap_bg1_q2:,.0f}"
     # f"{actual_income.ap_bg1_q3:,.0f}"
