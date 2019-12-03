@@ -4,7 +4,7 @@ from flask import request
 import re
 
 from libs import chatbot_helper, log_linechatbot as logs, \
-    sale_accum_month, beacon_helper,  \
+    sale_accum_month, beacon_helper, \
     menu_01_sale_timeline as m1_SDH, \
     leadlag_bg_all, leadlag_bg_project, \
     menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
@@ -13,17 +13,19 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
     menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report, \
     menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C, \
-    menu_02_01_ll_allbg_sel_subbg
+    menu_02_01_ll_allbg_sel_subbg, menu_02_01_ll_allbg_subbg_period, \
+    menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
     MENU_01_VIP, MENU_01_VIP_BG, \
-    MENU_01_01_SDH, \
     LL_MSG_All, LL_MSG_PROJ, MENU_02_VIP, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
-    AC_ACTUAL_INCOME, EXECUTIVE_REPORT
+    AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
+    MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD
+# MENU_01_01_SDH,
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -92,14 +94,44 @@ class ChatBotRegister(Resource):
                 # LL[0] BY[1] BG[2] <1-4>[3]
                 bg = message.split(' ')[3]
                 menu_01_01_ll_allbg_period.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
-            elif message in MENU_01_01_SDH:
-                m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            # elif message in MENU_01_01_SDH:
+            #     m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
             # Lead Lag
             elif message in LL_MSG_All:
                 leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-            elif message in MENU_02_VIP:  # menu_02_01_ll_sdh_subbg
-                # menu_02_01_ll_sdh_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif message in MENU_02_VIP:  # menu_02_01_ll_allbg_subbg
                 menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+            elif re.match(MENU_02_VIP_BG, message):  # Select Sub BG
+                # LL[0] BY[1] SubBG[2] <1-4>[1.0][3]
+                value = message.split(' ')[3]
+                bg = value.split('[')[0]
+                subbg = value.split('[')[1][:-1]
+                menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+            elif re.match(LL_MSG_ALLSUBBG_PERIOD, message):  # LL BY BG Period
+                p_period = message.replace(LL_MSG_ALLSUBBG_PERIOD, "").strip()
+                val = re.match(r"[^[]*\[([^]]*)\]", p_period).groups()[0]
+                bg = val.split('-')[0].strip()
+                subbg = val.split('-')[1].strip()
+                period = None
+                if p_period[0] == 'Q':  # Quarter
+                    period = 'QTD'
+                elif p_period[0] == 'W':  # Week
+                    period = 'W'
+                elif p_period[0] == 'A':  # As of Current
+                    period = 'YTD'
+
+                if p_period[0] != 'W':
+                    ll_model = LeadLagModel().find_by_bg_period('BG', bg, period, 'Y')
+                    menu_02_01_ll_allbg_subbg_period_show.replyMsg(reply_token, bg, subbg, ll_model,
+                                                                   CHANNEL_ACCESS_TOKEN)
+                else:
+                    ll_model_current = LeadLagModel().find_by_bg_period('BG', bg, period, 'Y')
+                    ll_model_last_week = LeadLagModel().find_by_bg_period('BG', bg, period, 'N')
+                    menu_02_01_ll_allbg_subbg_period_show_L_C.replyMsg(reply_token, bg, subbg,
+                                                                       ll_model_current,
+                                                                       ll_model_last_week,
+                                                                       CHANNEL_ACCESS_TOKEN)
+
             elif re.match(LL_MSG_PROJ, message):  # proj:
                 value = message.split(',')
                 project = value[0].split(':')
@@ -107,17 +139,16 @@ class ChatBotRegister(Resource):
                 leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
             # Period Select ALL BG
             elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
-                # peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()[0]
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
                 bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
                 if peroid[0] == 'Q':  # Quarter
                     period = 'QTD'
-                elif peroid[0] == 'M':  # Month
-                    period = 'M'
+                # elif peroid[0] == 'M':  # Month
+                #     period = 'M'
                 elif peroid[0] == 'W':  # Week
                     period = 'W'
-                elif peroid[0] == 'Y':  # Yesterday
-                    period = 'Y'
+                # elif peroid[0] == 'Y':  # Yesterday
+                #     period = 'Y'
                 elif peroid[0] == 'A':  # As of Current
                     period = 'YTD'
 
@@ -191,4 +222,3 @@ class ChatBotRegister(Resource):
                             beacon_hwid, beacon_dm, beacon_type)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
-

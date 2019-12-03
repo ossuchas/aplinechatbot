@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_sel_subbg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show_L_C.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_actual_income_ac_Q.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_actual_income_ac_Q.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

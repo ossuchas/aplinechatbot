@@ -49,10 +49,10 @@ MENU_02_VIP_BG = "LL BY SubBG"
 # MENU_05 = ['menu_ยอดขาย5']
 # MENU_06 = ['menu_ยอดขาย6']
 
-MENU_01_01_SDH = ['ยอดขายบ้านเดี่ยว']
-MENU_02_01_TH = ['ยอดขายบ้านเดี่ยว']
-MENU_03_01_CD1 = ['ยอดขายบ้านเดี่ยว']
-MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
+# MENU_01_01_SDH = ['ยอดขายบ้านเดี่ยว']
+# MENU_02_01_TH = ['ยอดขายบ้านเดี่ยว']
+# MENU_03_01_CD1 = ['ยอดขายบ้านเดี่ยว']
+# MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
 
 # Main Menu
 LL_MSG_All = "LL SDH All"
@@ -63,6 +63,9 @@ LL_MSG_SUB_PERIOD = "LL SDH Sub"
 
 # Peroid Select All BG
 LL_MSG_ALLBG_PERIOD = "LL Period BY BG"
+
+# Peroid Select All Sub BG
+LL_MSG_ALLSUBBG_PERIOD = "LL Period BY SubBG"
 
 # AP Phone Book
 LL_MSG_APPHONEBOOK = "AP"
