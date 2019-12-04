@@ -6,8 +6,7 @@ from config import LINE_API
 from models.crm_line_ll_data import LeadLagModel
 
 
-def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
-             ll: LeadLagModel = None, line_Acees_Token: str = None):
+def replyMsg(Reply_token: str = None, ll: LeadLagModel = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
@@ -35,14 +34,14 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                             },
                             {
                                 "type": "text",
-                                "text": "BG1 - SDH",
+                                "text": ll.text_msg_header,
                                 "align": "end",
                                 "color": "#FFFFFF",
                                 "weight": "bold"
                             },
                             {
                                 "type": "text",
-                                "text": "Week 47 (18/11/19 - 24/11/19)",
+                                "text": ll.text_msg,
                                 "position": "absolute",
                                 "color": "#FFFFFF",
                                 "size": "xs",
@@ -61,7 +60,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                             },
                             {
                                 "type": "text",
-                                "text": "10077 : The Centro วัชรพล",
+                                "text": ll.projectid + ' : ' + ll.project_name,
                                 "size": "sm",
                                 "margin": "none"
                             },
@@ -115,7 +114,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "257",
+                                        "text": f"{ll.tg_transferamount:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -124,13 +123,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "157",
+                                        "text": f"{ll.at_transferamount:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/y0hQkxb/yellow-32x32.png",
+                                        "url": ll.icon_transferamount,
                                         "margin": "lg",
                                         "offsetTop": "2px"
                                     }
@@ -149,7 +148,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "40",
+                                        "text": f"{ll.tg_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -158,13 +157,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "24",
+                                        "text": f"{ll.at_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/b2zz5hJ/green-32x32.png",
+                                        "url": ll.icon_transferunit,
                                         "margin": "lg",
                                         "offsetTop": "2px"
                                     }
@@ -182,7 +181,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "29",
+                                        "text": f"{ll.tg_qcpass:,.0f}",
                                         "size": "xs",
                                         "position": "absolute",
                                         "offsetBottom": "1px",
@@ -191,13 +190,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "19",
+                                        "text": f"{ll.at_qcpass:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://i.ibb.co/ykFsNjm/red-32x32.png",
+                                        "url": ll.icon_qcpass,
                                         "margin": "lg",
                                         "offsetTop": "2px"
                                     }
@@ -216,7 +215,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "6",
+                                        "text": f"{ll.tg_checkunit:,.0f}",
                                         "size": "xs",
                                         "position": "absolute",
                                         "align": "end",
@@ -225,13 +224,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "28",
+                                        "text": f"{ll.at_checkunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_checkunit,
                                         "margin": "lg"
                                     }
                                 ]
@@ -248,7 +247,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "30",
+                                        "text": f"{ll.tg_acceptunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -257,13 +256,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "36",
+                                        "text": f"{ll.at_acceptunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_acceptunit,
                                         "margin": "lg"
                                     }
                                 ],
@@ -282,7 +281,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_bankapprove:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 2,
@@ -292,13 +291,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "17",
+                                        "text": f"{ll.at_bankapprove:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_bankapprove,
                                         "margin": "lg"
                                     }
                                 ]
@@ -316,7 +315,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_grosspresalesamount:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -325,13 +324,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "279",
+                                        "text": f"{ll.at_grosspresalesamount:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_grosspresalesamount,
                                         "margin": "lg"
                                     }
                                 ],
@@ -349,7 +348,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "195",
+                                        "text": f"{ll.tg_netpresalesamount:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -358,13 +357,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "73",
+                                        "text": f"{ll.at_netpresalesamount:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_netpresalesamount,
                                         "margin": "lg"
                                     }
                                 ]
@@ -382,7 +381,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_netpresales_precancelamount:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 1,
@@ -393,13 +392,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "206",
+                                        "text": f"{ll.at_netpresales_precancelamount:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_netpresales_precancelamount,
                                         "margin": "lg"
                                     }
                                 ],
@@ -417,7 +416,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_precancelamount:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -426,13 +425,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "133",
+                                        "text": f"{ll.at_precancelamount:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_precancelamount,
                                         "margin": "lg"
                                     }
                                 ]
@@ -449,7 +448,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "flex": 2,
@@ -459,13 +458,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "31",
+                                        "text": f"{ll.at_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_grosspresalesunit,
                                         "margin": "lg"
                                     }
                                 ],
@@ -484,7 +483,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "26",
+                                        "text": f"{ll.tg_netpresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -493,13 +492,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "13",
+                                        "text": f"{ll.at_netpresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_netpresalesunit,
                                         "margin": "lg"
                                     }
                                 ]
@@ -517,7 +516,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_netpresales_precancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -526,13 +525,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "32",
+                                        "text": f"{ll.at_netpresales_precancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_netpresales_precancelunit,
                                         "margin": "lg"
                                     }
                                 ],
@@ -550,7 +549,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "-",
+                                        "text": f"{ll.tg_precancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -559,13 +558,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "19",
+                                        "text": f"{ll.at_precancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_precancelunit,
                                         "margin": "lg"
                                     }
                                 ]
@@ -582,7 +581,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "215",
+                                        "text": f"{ll.tg_walk:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -591,13 +590,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "183",
+                                        "text": f"{ll.at_walk:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_walk,
                                         "margin": "lg"
                                     }
                                 ],
@@ -615,7 +614,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "59",
+                                        "text": f"{ll.tg_walk2:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -624,13 +623,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "52",
+                                        "text": f"{ll.at_walk2:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_walk2,
                                         "margin": "lg"
                                     }
                                 ]
@@ -647,7 +646,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "11",
+                                        "text": f"{ll.tg_conversion:,.0f}",
                                         "size": "xs",
                                         "align": "end",
                                         "position": "absolute",
@@ -656,13 +655,13 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None,
                                     },
                                     {
                                         "type": "text",
-                                        "text": "18",
+                                        "text": f"{ll.at_conversion:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                        "url": ll.icon_conversion,
                                         "margin": "lg"
                                     }
                                 ],

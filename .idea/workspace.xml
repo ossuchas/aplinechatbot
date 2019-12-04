@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show_L_C.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/crm_line_ll_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/crm_line_ll_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>

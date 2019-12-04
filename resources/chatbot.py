@@ -15,7 +15,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C, \
     menu_02_01_ll_allbg_sel_subbg, menu_02_01_ll_allbg_subbg_period, \
     menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C, \
-    menu_03_01_ll_allbg_byproject_period_show
+    menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -132,15 +132,29 @@ class ChatBotRegister(Resource):
                                                                        ll_model_current,
                                                                        ll_model_last_week,
                                                                        CHANNEL_ACCESS_TOKEN)
-
             elif re.match(LL_MSG_PROJ, message):  # proj:
                 value = message.split(',')
-                project = value[0].split(':')
-                peroid = value[1].split(':')
-                # leadlag_bg_project.replyMsg(reply_token, project[1].strip(), peroid[1].strip()[0], CHANNEL_ACCESS_TOKEN)
-                ll_model = LeadLagModel().find_by_subbg_period('SUBBG', 'SDH', '1.1', 'YTD', 'Y')
-                menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, 'SDH', '1.1', ll_model,
-                                                               CHANNEL_ACCESS_TOKEN)
+                project = value[0].split(':')[1].strip()
+                p_period = value[1].split(':')[1].strip()
+
+                period = None
+                if p_period[0] == 'Q':  # Quarter
+                    period = 'QTD'
+                elif p_period[0] == 'W':  # Week
+                    period = 'W'
+                elif p_period[0] == 'Y':  # Year to Date
+                    period = 'YTD'
+
+                if p_period[0] != 'W':
+                    # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
+                    ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                    menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model, CHANNEL_ACCESS_TOKEN)
+                else:
+                    ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                    ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period, 'N')
+                    menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token, ll_model_current,
+                                                                           ll_model_last_week,
+                                                                           CHANNEL_ACCESS_TOKEN)
             # Period Select ALL BG
             elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
                 peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()

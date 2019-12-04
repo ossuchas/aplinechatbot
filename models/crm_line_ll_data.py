@@ -10,6 +10,8 @@ class LeadLagModel(db.Model):
     by_type = db.Column(db.String(10))
     bg = db.Column(db.String(255))
     subbg = db.Column(db.String(5))
+    projectid = db.Column(db.String(15))
+    project_name = db.Column(db.String(255))
     years = db.Column(db.Float)
     current_flag = db.Column(db.String(2))
     quarter = db.Column(db.Float)
@@ -77,7 +79,13 @@ class LeadLagModel(db.Model):
 
     @classmethod
     def find_by_subbg_period(cls, _type: str, _bg: str, _subbg: str, _period: str, _flag: str) -> "LeadLagModel":
-        return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=datetime.today().year, current_flag=_flag).first()
+        return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=datetime.today().year,
+                                   current_flag=_flag).first()
+
+    @classmethod
+    def find_by_project_period(cls, _type: str, _projectid: str, _period: str, _flag: str) -> "LeadLagModel":
+        return cls.query.filter_by(by_type=_type, projectid=_projectid, period=_period, years=datetime.today().year,
+                                   current_flag=_flag).first()
 
     @classmethod
     def find_by_week(cls) -> "LeadLagModel":
