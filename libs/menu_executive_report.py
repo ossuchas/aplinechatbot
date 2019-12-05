@@ -3,17 +3,19 @@
 import requests
 import json
 from config import LINE_API
-from models.crm_line_actual_income import ActualIncomeModel
+from models.crm_line_exct_report import ExecutiveReportModel
 
 
-def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, line_Acees_Token: str = None):
+def replyMsg(Reply_token: str =None, ex: ExecutiveReportModel = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
-    # print(actual_income.ap_bg1_q1)
-    print(f"{actual_income.ap_bg1_q2:,.0f}")
+    # print(ex.text_msg_detail)
+    # print(ex.text_msg_header)
+    # print(f"{ex.bg1_cancelunit:,.0f}")
+    # print(f"{ex.bg1_cancelamount:,.2f}")
 
     type_msg = \
         {
@@ -23,29 +25,43 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                 {
                     "type": "bubble",
                     "size": "giga",
-                    "hero": {
+                    "header": {
                         "type": "box",
-                        "layout": "baseline",
+                        "layout": "horizontal",
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "Executive Summary",
-                                "size": "xs",
-                                "offsetTop": "5px",
-                                "offsetStart": "5%",
+                                "text": "Executive Report",
+                                "size": "lg",
                                 "color": "#FFFFFF"
                             },
                             {
-                                "type": "text",
-                                "text": "Week45 : 04/11/19 - 10/11/19",
-                                "align": "end",
-                                "size": "xxs",
-                                "offsetEnd": "5%",
-                                "offsetTop": "5px",
-                                "color": "#FFFFFF"
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": ex.text_msg_header,
+                                        "color": "#FFFFFF",
+                                        "align": "end",
+                                        "gravity": "bottom",
+                                        "size": "sm",
+                                        "flex": 1
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": ex.text_msg_detail,
+                                        "align": "end",
+                                        "color": "#FFFFFF",
+                                        "size": "xxs",
+                                        "flex": 0,
+                                        "style": "italic"
+                                    }
+                                ],
+                                "flex": 0,
+                                "height": "32px"
                             }
-                        ],
-                        "height": "30px"
+                        ]
                     },
                     "body": {
                         "type": "box",
@@ -60,9 +76,11 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "text": ":: Booking ::",
                                         "size": "md",
                                         "weight": "bold",
-                                        "align": "start"
+                                        "align": "center",
+                                        "color": "#FFFFFF"
                                     }
-                                ]
+                                ],
+                                "backgroundColor": "#c92028"
                             },
                             {
                                 "type": "box",
@@ -84,24 +102,13 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     },
                                     {
                                         "type": "text",
-                                        "text": "Vol.",
+                                        "text": "Vol. (MB)",
                                         "size": "xs",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "% W44",
-                                        "align": "end",
-                                        "size": "xs",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#EBE4AB"
+                                "backgroundColor": "#E8E16F"
                             },
                             {
                                 "type": "separator"
@@ -114,29 +121,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "SDH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "27",
+                                        "text": f"{ex.bg1_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "198.42M",
+                                        "text": f"{ex.bg1_grosspresalesamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -148,29 +146,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "TH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "128",
+                                        "text": f"{ex.bg2_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "454.69M",
+                                        "text": f"{ex.bg2_grosspresalesamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.83",
-                                        "size": "xxs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -182,29 +171,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD1",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "31",
+                                        "text": f"{ex.bg3_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "95.59M",
+                                        "text": f"{ex.bg3_grosspresalesamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -216,29 +196,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD2",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "41",
+                                        "text": f"{ex.bg4_grosspresalesunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "90.71M",
+                                        "text": f"{ex.bg4_grosspresalesamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.38",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -252,53 +223,29 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     {
                                         "type": "text",
                                         "text": "Total",
-                                        "size": "xs",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "226",
-                                        "size": "xs",
+                                        "text": f"{ex.total_grosspresalesunit:,.0f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "839.41M",
-                                        "size": "xs",
+                                        "text": f"{ex.total_grosspresalesamount:,.2f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.80",
-                                        "size": "xs",
-                                        "align": "end",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#F6FFFF"
+                                "backgroundColor": "#7AFF97"
                             },
                             {
                                 "type": "separator",
-                                "margin": "none"
-                            },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": ":: Net Booking ::",
-                                        "size": "md",
-                                        "weight": "bold"
-                                    }
-                                ],
                                 "margin": "xs"
                             },
                             {
@@ -307,6 +254,22 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
+                                        "text": ":: Cancel ::",
+                                        "size": "md",
+                                        "weight": "bold",
+                                        "align": "center",
+                                        "color": "#FFFFFF"
+                                    }
+                                ],
+                                "margin": "md",
+                                "backgroundColor": "#c92028"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
                                         "text": "BG",
                                         "align": "start",
                                         "weight": "bold",
@@ -321,24 +284,13 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     },
                                     {
                                         "type": "text",
-                                        "text": "Vol.",
+                                        "text": "Vol. (MB)",
                                         "size": "xs",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "% W44",
-                                        "align": "end",
-                                        "size": "xs",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#EBE4AB"
+                                "backgroundColor": "#E8E16F"
                             },
                             {
                                 "type": "separator"
@@ -351,29 +303,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "SDH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "27",
+                                        "text": f"{ex.bg1_cancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "198.42M",
+                                        "text": f"{ex.bg1_cancelamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -385,29 +328,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "TH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "128",
+                                        "text": f"{ex.bg2_cancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "454.69M",
+                                        "text": f"{ex.bg2_cancelamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.83",
-                                        "size": "xxs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -419,29 +353,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD1",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "31",
+                                        "text": f"{ex.bg3_cancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "95.59M",
+                                        "text": f"{ex.bg3_cancelamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -453,29 +378,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD2",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "41",
+                                        "text": f"{ex.bg4_cancelunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "90.71M",
+                                        "text": f"{ex.bg4_cancelamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.38",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -486,37 +402,212 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     {
                                         "type": "text",
                                         "text": "Total",
-                                        "size": "xs",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "226",
-                                        "size": "xs",
+                                        "text": f"{ex.total_cancelunit:,.0f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "839.41M",
-                                        "size": "xs",
+                                        "text": f"{ex.total_cancelamount:,.2f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.80",
-                                        "size": "xs",
-                                        "align": "end",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#F6FFFF"
+                                "backgroundColor": "#7AFF97"
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "xs"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": ":: Net Price ::",
+                                        "size": "md",
+                                        "weight": "bold",
+                                        "align": "center",
+                                        "color": "#FFFFFF"
+                                    }
+                                ],
+                                "margin": "md",
+                                "backgroundColor": "#c92028"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "BG",
+                                        "align": "start",
+                                        "weight": "bold",
+                                        "size": "sm"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Unit",
+                                        "size": "xs",
+                                        "align": "end",
+                                        "weight": "bold"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": "Vol. (MB)",
+                                        "size": "xs",
+                                        "align": "end",
+                                        "weight": "bold"
+                                    }
+                                ],
+                                "backgroundColor": "#E8E16F"
+                            },
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "SDH",
+                                        "size": "xs",
+                                        "align": "start",
+                                        "offsetStart": "50px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg1_netpresalesunit:,.0f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg1_netpresalesamount:,.2f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "TH",
+                                        "size": "xs",
+                                        "align": "start",
+                                        "offsetStart": "50px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg2_netpresalesunit:,.0f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg2_netpresalesamount:,.2f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "CD1",
+                                        "size": "xs",
+                                        "align": "start",
+                                        "offsetStart": "50px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg3_netpresalesunit:,.0f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg3_netpresalesamount:,.2f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "CD2",
+                                        "size": "xs",
+                                        "align": "start",
+                                        "offsetStart": "50px"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg4_netpresalesunit:,.0f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.bg4_netpresalesamount:,.2f}",
+                                        "size": "xs",
+                                        "align": "end"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "text",
+                                        "text": "Total",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "weight": "bold"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.total_netpresalesunit:,.0f}",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "weight": "bold"
+                                    },
+                                    {
+                                        "type": "text",
+                                        "text": f"{ex.total_netpresalesamount:,.2f}",
+                                        "size": "sm",
+                                        "align": "end",
+                                        "weight": "bold"
+                                    }
+                                ],
+                                "backgroundColor": "#7AFF97"
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "xs"
                             },
                             {
                                 "type": "box",
@@ -526,10 +617,13 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": ":: Transfer ::",
                                         "size": "md",
-                                        "weight": "bold"
+                                        "weight": "bold",
+                                        "align": "center",
+                                        "color": "#FFFFFF"
                                     }
                                 ],
-                                "margin": "xs"
+                                "margin": "md",
+                                "backgroundColor": "#c92028"
                             },
                             {
                                 "type": "box",
@@ -551,24 +645,13 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     },
                                     {
                                         "type": "text",
-                                        "text": "Vol.",
+                                        "text": "Vol. (MB)",
                                         "size": "xs",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "% W44",
-                                        "align": "end",
-                                        "size": "xs",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#EBE4AB"
+                                "backgroundColor": "#E8E16F"
                             },
                             {
                                 "type": "separator"
@@ -581,29 +664,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "SDH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "27",
+                                        "text": f"{ex.bg1_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "198.42M",
+                                        "text": f"{ex.bg1_transferamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -615,29 +689,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "TH",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "128",
+                                        "text": f"{ex.bg2_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "454.69M",
+                                        "text": f"{ex.bg2_transferamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.83",
-                                        "size": "xxs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -649,29 +714,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD1",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "31",
+                                        "text": f"{ex.bg3_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "95.59M",
+                                        "text": f"{ex.bg3_transferamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.83",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -683,29 +739,20 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "type": "text",
                                         "text": "CD2",
                                         "size": "xs",
-                                        "align": "start"
+                                        "align": "start",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "41",
+                                        "text": f"{ex.bg4_transferunit:,.0f}",
                                         "size": "xs",
                                         "align": "end"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "90.71M",
+                                        "text": f"{ex.bg4_transferamount:,.2f}",
                                         "size": "xs",
                                         "align": "end"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "1.38",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ]
                             },
@@ -719,37 +766,30 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                     {
                                         "type": "text",
                                         "text": "Total",
-                                        "size": "xs",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "226",
-                                        "size": "xs",
+                                        "text": f"{ex.total_transferunit:,.0f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
                                     },
                                     {
                                         "type": "text",
-                                        "text": "839.41M",
-                                        "size": "xs",
+                                        "text": f"{ex.total_transferamount:,.2f}",
+                                        "size": "sm",
                                         "align": "end",
                                         "weight": "bold"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": "2.80",
-                                        "size": "xs",
-                                        "align": "end",
-                                        "weight": "bold"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
                                     }
                                 ],
-                                "backgroundColor": "#F6FFFF"
+                                "backgroundColor": "#7AFF97"
+                            },
+                            {
+                                "type": "separator",
+                                "margin": "xs"
                             }
                         ]
                     },
@@ -781,6 +821,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                         ]
                     },
                     "styles": {
+                        "header": {
+                            "backgroundColor": "#000000"
+                        },
                         "hero": {
                             "backgroundColor": "#000000"
                         },

@@ -33,6 +33,7 @@ from models.chatbot_mst_user import MstUserModel
 from models.log_linechatbot import LogChatBotModel
 from models.crm_line_actual_income import ActualIncomeModel
 from models.crm_line_ll_data import LeadLagModel
+from models.crm_line_exct_report import ExecutiveReportModel
 
 
 class ChatBot(Resource):
@@ -195,8 +196,8 @@ class ChatBotRegister(Resource):
                 actual_income = ActualIncomeModel().find_all()
                 menu_actual_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
             elif message in EXECUTIVE_REPORT:
-                actual_income = ActualIncomeModel().find_all()
-                menu_executive_report.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+                executive_model = ExecutiveReportModel().find_by_id()
+                menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
             elif message in REPLY_WORDING:
                 reply_msg = DEFAULT_REPLY_WORDING
                 # Reply Message Default Post API
