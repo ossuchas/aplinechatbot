@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/crm_line_exct_report.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/crm_line_exct_report.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/vw_crm_line_actual_income.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/vw_crm_line_actual_income.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_executive_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_executive_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_actual_income_ac_Q.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_y2d.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/schemas" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -43,6 +47,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\schemas" />
+      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\models" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\libs" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\APLineChatBot" />
     </key>
@@ -223,15 +229,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/crm_line_ll_data.py</url>
-          <line>86</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="sql_statement" />

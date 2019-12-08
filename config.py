@@ -67,8 +67,12 @@ LL_MSG_ALLBG_PERIOD = "LL Period BY BG"
 # Peroid Select All Sub BG
 LL_MSG_ALLSUBBG_PERIOD = "LL Period BY SubBG"
 
+# Peroid Select Actual incomde
+AC_ACTUAL_INCOME = "Actual Income"
+LL_MSG_AC_Y2D = "Actual Income Period Y2D"
+LL_MSG_AC_DAILY = "Actual Income Daily"
+
 # AP Phone Book
 LL_MSG_APPHONEBOOK = "AP"
 LL_MSG_APPHONEBOOK2 = "ap"
-AC_ACTUAL_INCOME = "Actual Income"
 EXECUTIVE_REPORT = "Executive Report"

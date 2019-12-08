@@ -11,11 +11,12 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
     menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
     menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
-    menu_05_ap_phonebook, menu_actual_income_ac_Q, menu_executive_report, \
+    menu_05_ap_phonebook, menu_04_01_actual_income_show_y2d, menu_executive_report, \
     menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C, \
     menu_02_01_ll_allbg_sel_subbg, menu_02_01_ll_allbg_subbg_period, \
     menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C, \
-    menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C
+    menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C, \
+    menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -25,8 +26,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
-    MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD
-# MENU_01_01_SDH,
+    MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
+    LL_MSG_AC_DAILY
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -34,6 +35,7 @@ from models.log_linechatbot import LogChatBotModel
 from models.crm_line_actual_income import ActualIncomeModel
 from models.crm_line_ll_data import LeadLagModel
 from models.crm_line_exct_report import ExecutiveReportModel
+from models.vw_crm_line_actual_income import ActualIncomeByProjModel
 
 
 class ChatBot(Resource):
@@ -75,6 +77,8 @@ class ChatBotRegister(Resource):
 
         if events_type == 'message':
             msg_type = payload['events'][0]['message']['type']
+        elif events_type == 'postback':
+            msg_type = 'postback'
         else:
             msg_type = 'beacon'
 
@@ -192,9 +196,13 @@ class ChatBotRegister(Resource):
             #     sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
             # elif message in REPLY_SALCE_ACCM_C_M_WORDING:
             #     sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
-            elif message in AC_ACTUAL_INCOME:
+            elif message in AC_ACTUAL_INCOME:  # Actual income select period
                 actual_income = ActualIncomeModel().find_all()
-                menu_actual_income_ac_Q.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+                # menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+                menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+            elif re.match(LL_MSG_AC_Y2D, message):  # Actual income select Year to Date
+                actual_income = ActualIncomeModel().find_all()
+                menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
             elif message in EXECUTIVE_REPORT:
                 executive_model = ExecutiveReportModel().find_by_id()
                 menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
@@ -202,6 +210,17 @@ class ChatBotRegister(Resource):
                 reply_msg = DEFAULT_REPLY_WORDING
                 # Reply Message Default Post API
                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+        elif msg_type == 'postback':
+            param_data = payload['events'][0]['postback']['data']
+            param_date = payload['events'][0]['postback']['params']['date']
+            date_val = param_date.replace("-", "").strip()
+            # print(param_data, date_val)
+            if re.match(LL_MSG_AC_DAILY, param_data):  # Actual income select Daily by Project
+                values = ActualIncomeByProjModel().find_by_date(date_val)
+                menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
+                                                             values,
+                                                             param_date,
+                                                             CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             beacon_hwid = payload['events'][0]['beacon']['hwid']
             beacon_dm = payload['events'][0]['beacon']['dm']
