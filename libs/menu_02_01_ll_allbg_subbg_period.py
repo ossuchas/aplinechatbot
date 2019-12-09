@@ -59,7 +59,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None, line_Ace
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/qjmY6dX/calendar-q2d-v1-0.png",
+                                        "url": "https://i.ibb.co/HqSJg5W/calendar-q2d-v2-0.png",
                                         "size": "full",
                                         "aspectMode": "fit",
                                         "aspectRatio": "24:7",
