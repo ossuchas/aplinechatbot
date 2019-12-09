@@ -54,9 +54,15 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
 
     total_u = 0
     total_p = 0.00
+    i_count_rec = 0
     for val in values:
         total_u = total_u + val.TotalUnit
         total_p = total_p + val.NetPriceExclFD
+        if i_count_rec % 2 == 0:
+            bg_color_row = "#FFFFFF"
+        else:
+            bg_color_row = "#EBEDEF"
+
         new_contents.append(
             {
                 "type": "box",
@@ -80,9 +86,13 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
                         "size": "xs",
                         "align": "end"
                     }
-                ]
+                ],
+                "backgroundColor": bg_color_row
             }
         )
+        i_count_rec += 1
+
+    print(i_count_rec)
 
     new_contents.append(
         {

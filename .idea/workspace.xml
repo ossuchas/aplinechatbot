@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/vw_crm_line_actual_income.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/vw_crm_line_actual_income.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_actual_income_ac_Q.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_y2d.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
