@@ -8,6 +8,7 @@ from db import db
 from ma import ma
 
 from resources.chatbot import ChatBot, ChatBotRegister
+from resources.vw_chatbot_mst_project import MstProject
 
 app = Flask(__name__)
 
@@ -26,6 +27,7 @@ def hello_world():
 
 api.add_resource(ChatBot, "/webhook")
 api.add_resource(ChatBotRegister, "/register")
+api.add_resource(MstProject, "/getallproj")
 
 if __name__ == '__main__':
     db.init_app(app)
