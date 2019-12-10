@@ -76,3 +76,7 @@ LL_MSG_AC_DAILY = "Actual Income Daily"
 LL_MSG_APPHONEBOOK = "AP"
 LL_MSG_APPHONEBOOK2 = "ap"
 EXECUTIVE_REPORT = "Executive Report"
+
+
+# Register
+REGISTER_MSG = "register=>emp: "
