@@ -13,7 +13,8 @@ def savechatlog2db(replyToken: str = None,
                    packageId: str = None,
                    beacon_hwid: str = None,
                    beacon_dm: str = None,
-                   beacon_type: str = None) -> int:
+                   beacon_type: str = None,
+                   register_flag: str = None) -> int:
 
     models = LogChatBotModel()
 
@@ -30,6 +31,7 @@ def savechatlog2db(replyToken: str = None,
     models.beacon_dm = beacon_dm
     models.beacon_type = beacon_type
     models.beacon_entrydate = datetime.now()
+    models.register_flag = register_flag
 
     models.save_to_db()
 

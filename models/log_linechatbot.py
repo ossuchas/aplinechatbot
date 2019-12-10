@@ -23,6 +23,8 @@ class LogChatBotModel(db.Model):
     beacon_type = db.Column(db.String(50))
     beacon_entrydate = db.Column(db.DateTime)
 
+    register_flag = db.Column(db.String(2), default='N')
+
     # createby = db.Column(db.String(50), default='autobot')
     # createdate = db.Column(db.DateTime, default=datetime.now())
     # modifyby = db.Column(db.String(50), default='autobot')

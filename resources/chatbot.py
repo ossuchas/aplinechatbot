@@ -69,6 +69,9 @@ class ChatBotRegister(Resource):
         beacon_dm = None
         beacon_type = None
 
+        # Register Flag
+        register_flag = 'N'
+
         try:
             groupId = payload['events'][0]['source']['groupId']
             userId = payload['events'][0]['source']['userId']
@@ -92,7 +95,7 @@ class ChatBotRegister(Resource):
             user = MstUserModel().check_auth_by_token_id(userId)
 
             if user:
-                print("found")
+                # print("found")
                 if message == MENU_01_VIP:  # LL ALL BG
                     vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     if vip:
@@ -216,8 +219,10 @@ class ChatBotRegister(Resource):
                     # Reply Message Default Post API
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             else:
-                print("not found")
+                # print("not found")
                 if re.match(REGISTER_MSG, message):
+                    register_flag = 'Y'
+
                     reply_msg = "We have received your registration. Please wait for confirmation within 10 minutes."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                     # chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
@@ -273,6 +278,7 @@ class ChatBotRegister(Resource):
                             userId, source_type,
                             timestamps, msg_type,
                             msg_text, stickerId, packageId,
-                            beacon_hwid, beacon_dm, beacon_type)
+                            beacon_hwid, beacon_dm, beacon_type,
+                            register_flag)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
