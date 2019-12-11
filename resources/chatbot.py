@@ -73,6 +73,8 @@ class ChatBotRegister(Resource):
 
         # Register Flag
         register_flag = 'N'
+        register_empid = None
+        register_email = None
 
         try:
             groupId = payload['events'][0]['source']['groupId']
@@ -240,6 +242,12 @@ class ChatBotRegister(Resource):
                 # print("not found")
                 if re.match(REGISTER_MSG, message):
                     register_flag = 'Y'
+                    txt_temp = msg_text
+                    text = txt_temp.replace('register=>emp:', '').strip().replace('email:', '').strip()
+                    value = text.split(',')
+                    register_empid = value[0].strip().upper()
+                    register_email = value[1].strip().lower()
+                    # print(register_empid, register_email)
 
                     reply_msg = "We have received your registration. Please wait for confirmation within 10 minutes."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
@@ -298,6 +306,6 @@ class ChatBotRegister(Resource):
                             timestamps, msg_type,
                             msg_text, stickerId, packageId,
                             beacon_hwid, beacon_dm, beacon_type,
-                            register_flag)
+                            register_flag, register_empid, register_email)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
