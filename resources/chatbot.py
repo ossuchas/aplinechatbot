@@ -230,7 +230,8 @@ class ChatBotRegister(Resource):
                 else:
                     # reply_msg = "You are not authorized to access this menu. please register from link line://app/1653377835-peowRY0O"
                     # chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-                    chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    if not groupId:
+                        chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'postback':
             param_data = payload['events'][0]['postback']['data']
             param_date = payload['events'][0]['postback']['params']['date']
