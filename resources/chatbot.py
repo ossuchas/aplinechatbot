@@ -3,6 +3,8 @@ from flask_restful import Resource
 from flask import request
 import re
 
+from datetime import datetime, timedelta
+
 from libs import chatbot_helper, log_linechatbot as logs, \
     sale_accum_month, beacon_helper, \
     menu_01_sale_timeline as m1_SDH, \
@@ -211,6 +213,18 @@ class ChatBotRegister(Resource):
                 elif re.match(LL_MSG_AC_Y2D, message):  # Actual income select Year to Date
                     actual_income = ActualIncomeModel().find_all()
                     menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
+                elif re.match(LL_MSG_AC_DAILY, message):  # Actual income select Daily by Project
+                    yesterday = datetime.now() - timedelta(days=1)
+
+                    values = ActualIncomeByProjModel().find_by_date(datetime.now().strftime('%Y%m%d'))
+                    last_values = ActualIncomeByProjModel().find_by_date(yesterday.strftime('%Y%m%d'))
+
+                    menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
+                                                                 values,
+                                                                 last_values,
+                                                                 datetime.now().strftime('%d/%m/%Y'),
+                                                                 yesterday.strftime('%d/%m/%Y'),
+                                                                 CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
                     executive_model = ExecutiveReportModel().find_by_id()
                     menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)

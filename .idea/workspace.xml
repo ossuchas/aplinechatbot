@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period_20191211.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily_20191211.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/schemas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -39,9 +44,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\libs" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\schemas" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\models" />
-      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\libs" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\APLineChatBot" />
     </key>
   </component>

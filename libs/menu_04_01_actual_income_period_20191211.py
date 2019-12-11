@@ -64,9 +64,10 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                         "aspectMode": "fit",
                                         "aspectRatio": "24:7",
                                         "action": {
-                                            "type": "message",
+                                            "type": "datetimepicker",
                                             "label": "action",
-                                            "text": "Actual Income Daily"
+                                            "data": "Actual Income Daily",
+                                            "mode": "date"
                                         }
                                     }
                                 ]
