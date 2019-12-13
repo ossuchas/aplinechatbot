@@ -23,7 +23,7 @@ class ActualIncomeByProjModel(db.Model):
 
     @classmethod
     def find_by_date(cls, _date: str) -> List["ActualIncomeByProjModel"]:
-        return cls.query.filter_by(TransferDateApprove=_date).all()
+        return cls.query.filter_by(TransferDateApprove=_date).order_by(cls.PType.asc()).all()
 
     def save_to_db(self) -> None:
         db.session.add(self)
