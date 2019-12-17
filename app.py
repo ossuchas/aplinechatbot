@@ -9,6 +9,7 @@ from ma import ma
 
 from resources.chatbot import ChatBot, ChatBotRegister
 from resources.vw_chatbot_mst_project import MstProject
+from resources.userauthen import UserLogin
 
 app = Flask(__name__)
 
@@ -28,6 +29,7 @@ def hello_world():
 api.add_resource(ChatBot, "/webhook")
 api.add_resource(ChatBotRegister, "/register")
 api.add_resource(MstProject, "/getallproj")
+api.add_resource(UserLogin, "/checkauthorized")
 
 if __name__ == '__main__':
     db.init_app(app)

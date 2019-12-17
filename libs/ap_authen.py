@@ -1,8 +1,6 @@
 import os
-from typing import List
 from requests import Response, post
 import json
-from libs.strings import errmsg
 
 
 class APAuthenException(Exception):
@@ -28,11 +26,11 @@ class APAuthen:
         response = post(url, data=json.dumps(payload), headers=headers)
 
         if response.status_code != 200:
-            raise APAuthenException(errmsg("authen_failed_status_code"))
+            raise APAuthenException("Authentication Error Occurred.")
 
         obj = json.loads(response.content)
 
         if not obj["loginResult"]:
-            raise APAuthenException(errmsg("authen_failed"))
+            raise APAuthenException("Authentication failed: please verify your login and password")
 
         return response
