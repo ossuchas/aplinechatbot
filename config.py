@@ -80,3 +80,6 @@ EXECUTIVE_REPORT = "Executive Report"
 
 # Register
 REGISTER_MSG = "register=>emp: "
+
+# Demo App
+DEMO_APP = "Demo App"

@@ -19,7 +19,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C, \
     menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C, \
     menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily, \
-    chatbot_register
+    chatbot_register, menu_demo_app
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -30,7 +30,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
-    LL_MSG_AC_DAILY, REGISTER_MSG
+    LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -234,6 +234,8 @@ class ChatBotRegister(Resource):
                 elif message in EXECUTIVE_REPORT:
                     executive_model = ExecutiveReportModel().find_by_id()
                     menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
+                elif message in DEMO_APP:  # Demo App
+                    menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
                     reply_msg = DEFAULT_REPLY_WORDING
                     # Reply Message Default Post API
