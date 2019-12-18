@@ -245,7 +245,7 @@ class ChatBotRegister(Resource):
                 if re.match(REGISTER_MSG, message):
                     register_flag = 'Y'
                     txt_temp = msg_text
-                    text = txt_temp.replace('register=>emp:', '').strip().replace('email:', '').strip()
+                    text = txt_temp.replace('register=>emp:', '').strip().replace('password:', '').strip()
                     value = text.split(',')
                     register_empid = value[0].strip().upper()
                     register_email = value[1].strip().lower()
