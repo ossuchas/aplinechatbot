@@ -30,7 +30,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
-    LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP
+    LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -247,7 +247,7 @@ class ChatBotRegister(Resource):
                     txt_temp = msg_text
                     text = txt_temp.replace('register=>emp:', '').strip().replace('password:', '').strip()
                     value = text.split(',')
-                    register_empid = value[0].strip().upper()
+                    register_empid = value[0].strip().lower()
                     register_email = value[1].strip().lower()
                     # print(register_empid, register_email)
 
@@ -259,7 +259,8 @@ class ChatBotRegister(Resource):
                     # reply_msg = "You are not authorized to access this menu. please register from link line://app/1653377835-peowRY0O"
                     # chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                     if not groupId:
-                        chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                        if not re.match(REGISTER_REJECT_MSG, message):
+                            chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'postback':
             param_data = payload['events'][0]['postback']['data']
             param_date = payload['events'][0]['postback']['params']['date']

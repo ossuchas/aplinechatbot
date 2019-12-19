@@ -80,6 +80,7 @@ EXECUTIVE_REPORT = "Executive Report"
 
 # Register
 REGISTER_MSG = "register=>emp: "
+REGISTER_REJECT_MSG = "can not sign up, you are unauthorized!!"
 
 # Demo App
 DEMO_APP = "Demo App"
