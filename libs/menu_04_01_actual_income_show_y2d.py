@@ -88,9 +88,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "size": "xs",
                                         "gravity": "bottom",
-                                        "style": "italic",
-                                        "offsetEnd": "5%",
-                                        "offsetTop": "10%"
+                                        # "style": "italic",
+                                        "offsetEnd": "15px",
+                                        "offsetTop": "2px"
                                     }
                                 ],
                                 "height": "25px"
@@ -389,9 +389,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "size": "xs",
                                         "gravity": "bottom",
-                                        "style": "italic",
-                                        "offsetEnd": "5%",
-                                        "offsetTop": "10%"
+                                        # "style": "italic",
+                                        "offsetEnd": "15px",
+                                        "offsetTop": "2px"
                                     }
                                 ],
                                 "height": "25px"
@@ -690,9 +690,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "size": "xs",
                                         "gravity": "bottom",
-                                        "style": "italic",
-                                        "offsetEnd": "5%",
-                                        "offsetTop": "10%"
+                                        # "style": "italic",
+                                        "offsetEnd": "15px",
+                                        "offsetTop": "2px"
                                     }
                                 ],
                                 "height": "25px"
@@ -991,9 +991,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "size": "xs",
                                         "gravity": "bottom",
-                                        "style": "italic",
-                                        "offsetEnd": "5%",
-                                        "offsetTop": "10%"
+                                        # "style": "italic",
+                                        "offsetEnd": "15px",
+                                        "offsetTop": "2px"
                                     }
                                 ],
                                 "height": "25px"
@@ -1292,9 +1292,9 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "color": "#FFFFFF",
                                         "size": "xs",
                                         "gravity": "bottom",
-                                        "style": "italic",
-                                        "offsetEnd": "5%",
-                                        "offsetTop": "10%"
+                                        # "style": "italic",
+                                        "offsetEnd": "15px",
+                                        "offsetTop": "2px"
                                     }
                                 ],
                                 "height": "25px"
