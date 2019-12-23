@@ -198,16 +198,16 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
                      [{"type": "text", "text": "Transfer Date At {}".format(date_val_b_last), "align": "end",
                        "weight": "bold",
                        "offsetEnd": "20px", "size": "sm", "color": "#939393"}]},
-                 "body": {"type": "box", "layout": "vertical", "contents": before_last_new_contents},
-                 "footer": {"type": "box", "layout": "vertical", "contents":
-                     [{"type": "text", "text": "Copyright 2019 AP PCL.", "size": "xs", "align": "center",
-                       "color": "#ffffff"},
-                      {"type": "box", "layout": "vertical", "contents":
-                          [{"type": "image", "url": "https://i.ibb.co/fS0B4wP/AP-Logo-2018.png"}],
-                       "position": "absolute",
-                       "width": "32px", "height": "32px", "offsetBottom": "2px"}]},
-                 "styles": {"header": {"backgroundColor": "#000000"},
-                            "footer": {"backgroundColor": "#000000"}}
+                 # "body": {"type": "box", "layout": "vertical", "contents": before_last_new_contents},
+                 # "footer": {"type": "box", "layout": "vertical", "contents":
+                 #     [{"type": "text", "text": "Copyright 2019 AP PCL.", "size": "xs", "align": "center",
+                 #       "color": "#ffffff"},
+                 #      {"type": "box", "layout": "vertical", "contents":
+                 #          [{"type": "image", "url": "https://i.ibb.co/fS0B4wP/AP-Logo-2018.png"}],
+                 #       "position": "absolute",
+                 #       "width": "32px", "height": "32px", "offsetBottom": "2px"}]},
+                 # "styles": {"header": {"backgroundColor": "#000000"},
+                 #            "footer": {"backgroundColor": "#000000"}}
                  }
             ]
         }

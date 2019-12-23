@@ -217,19 +217,27 @@ class ChatBotRegister(Resource):
                     menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_AC_DAILY, message):  # Actual income select Daily by Project
                     yesterday = datetime.now() - timedelta(days=1)
+                    print(type(yesterday))
                     before_yesterday = datetime.now() - timedelta(days=2)
 
                     values = ActualIncomeByProjModel().find_by_date(datetime.now().strftime('%Y%m%d'))
-                    last_values = ActualIncomeByProjModel().find_by_date(yesterday.strftime('%Y%m%d'))
-                    before_last_values = ActualIncomeByProjModel().find_by_date(before_yesterday.strftime('%Y%m%d'))
+
+                    p_yesterday = ActualIncomeByProjModel().get_previousday("1")[0]
+                    print(p_yesterday)
+                    last_values = ActualIncomeByProjModel().find_by_date(p_yesterday.strftime('%Y%m%d'))
+                    # last_values = ActualIncomeByProjModel().find_by_date(yesterday.strftime('%Y%m%d'))
+                    # before_last_values = ActualIncomeByProjModel().find_by_date(before_yesterday.strftime('%Y%m%d'))
+                    p_before_yesterday = ActualIncomeByProjModel().get_previousday("2")[0]
+                    print(p_before_yesterday)
+                    before_last_values = ActualIncomeByProjModel().find_by_date(p_before_yesterday.strftime("%Y%m%d"))
 
                     menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
                                                                  values,
                                                                  last_values,
                                                                  before_last_values,
                                                                  datetime.now().strftime('%d/%m/%Y'),
-                                                                 yesterday.strftime('%d/%m/%Y'),
-                                                                 before_yesterday.strftime('%d/%m/%Y'),
+                                                                 p_yesterday.strftime('%d/%m/%Y'),
+                                                                 p_before_yesterday.strftime('%d/%m/%Y'),
                                                                  CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
                     executive_model = ExecutiveReportModel().find_by_id()

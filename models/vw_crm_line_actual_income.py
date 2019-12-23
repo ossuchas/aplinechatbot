@@ -1,5 +1,6 @@
 from db import db
 from typing import List
+from datetime import datetime
 
 
 class ActualIncomeByProjModel(db.Model):
@@ -24,6 +25,13 @@ class ActualIncomeByProjModel(db.Model):
     @classmethod
     def find_by_date(cls, _date: str) -> List["ActualIncomeByProjModel"]:
         return cls.query.filter_by(TransferDateApprove=_date).order_by(cls.PType.asc()).all()
+
+    @classmethod
+    def get_previousday(cls, _date: str) -> datetime:
+        sql_statement = """
+           SELECT [dbo].[CRM_fn_GetDateAddPrevious](CAST(GETDATE() AS DATE), {})
+           """.format(_date)
+        return db.session.execute(sql_statement).fetchone()
 
     def save_to_db(self) -> None:
         db.session.add(self)

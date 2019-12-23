@@ -206,7 +206,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -214,7 +214,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -285,7 +285,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -293,7 +293,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -507,7 +507,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -515,7 +515,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -586,7 +586,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -594,7 +594,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -808,7 +808,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -816,7 +816,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -887,7 +887,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -895,7 +895,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -1109,7 +1109,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -1117,7 +1117,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -1188,7 +1188,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -1196,7 +1196,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -1410,7 +1410,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -1418,7 +1418,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
@@ -1489,7 +1489,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "size": "sm",
                                                 "align": "end",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             },
                                             {
                                                 "type": "text",
@@ -1497,7 +1497,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold",
-                                                "style": "italic"
+                                                # "style": "italic"
                                             }
                                         ],
                                         "backgroundColor": "#E8E16F"
