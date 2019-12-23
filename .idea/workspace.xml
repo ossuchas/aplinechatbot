@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_daily.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_y2d.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_show_y2d.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/vw_crm_line_actual_income.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/vw_crm_line_actual_income.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +223,7 @@
       <workItem from="1576808688699" duration="3081000" />
       <workItem from="1577052064378" duration="1067000" />
       <workItem from="1577073482562" duration="605000" />
-      <workItem from="1577086352027" duration="7460000" />
+      <workItem from="1577086352027" duration="8347000" />
     </task>
     <servers />
   </component>
