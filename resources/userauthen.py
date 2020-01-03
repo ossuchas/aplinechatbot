@@ -11,7 +11,7 @@ class UserLogin(Resource):
     def post(cls):
         user_json = request.get_json()
         try:
-            response = APAuthen.ap_authen(user_json["username"], user_json["password"], "CRM")
+            response = APAuthen.ap_authen(user_json["username"], user_json["password"], "APINTRANET")
             return {"message": "Successful Authentication"}, 200
             # return json.loads(response.content), 200
         except APAuthenException as e:
