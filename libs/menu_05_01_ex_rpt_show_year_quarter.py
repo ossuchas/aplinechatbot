@@ -80,7 +80,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                         "color": "#FFFFFF"
                                     }
                                 ],
-                                "backgroundColor": "#c92028"
+                                "backgroundColor": "#23ACE8"
                             },
                             {
                                 "type": "box",
@@ -91,7 +91,8 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                         "text": "BG",
                                         "align": "start",
                                         "weight": "bold",
-                                        "size": "sm"
+                                        "size": "sm",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
@@ -262,7 +263,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     }
                                 ],
                                 "margin": "md",
-                                "backgroundColor": "#c92028"
+                                "backgroundColor": "#23ACE8"
                             },
                             {
                                 "type": "box",
@@ -273,7 +274,8 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                         "text": "BG",
                                         "align": "start",
                                         "weight": "bold",
-                                        "size": "sm"
+                                        "size": "sm",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
@@ -441,7 +443,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     }
                                 ],
                                 "margin": "md",
-                                "backgroundColor": "#c92028"
+                                "backgroundColor": "#23ACE8"
                             },
                             {
                                 "type": "box",
@@ -452,7 +454,8 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                         "text": "BG",
                                         "align": "start",
                                         "weight": "bold",
-                                        "size": "sm"
+                                        "size": "sm",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
@@ -623,7 +626,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     }
                                 ],
                                 "margin": "md",
-                                "backgroundColor": "#c92028"
+                                "backgroundColor": "#23ACE8"
                             },
                             {
                                 "type": "box",
@@ -634,7 +637,8 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                         "text": "BG",
                                         "align": "start",
                                         "weight": "bold",
-                                        "size": "sm"
+                                        "size": "sm",
+                                        "offsetStart": "50px"
                                     },
                                     {
                                         "type": "text",
