@@ -19,7 +19,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C, \
     menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C, \
     menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily, \
-    chatbot_register, menu_demo_app
+    chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
+    menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -30,7 +31,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
-    LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG
+    LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
+    EXECUTIVE_PREFIX
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -240,8 +242,28 @@ class ChatBotRegister(Resource):
                                                                  p_before_yesterday.strftime('%d/%m/%Y'),
                                                                  CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
-                    executive_model = ExecutiveReportModel().find_by_id()
-                    menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
+                    # Kai
+                    # executive_model = ExecutiveReportModel().find_by_id()
+                    # menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
+                    menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                elif re.match(EXECUTIVE_PREFIX, message):  # Executive by period
+                    period = message.replace(EXECUTIVE_PREFIX, "").strip()
+                    p_period = None
+                    if period[0] != 'W':
+                        if period[0] == 'A':
+                            p_period = 'YTD'
+                        else:
+                            p_period = 'QTD'
+
+                        # print(f"kai {p_period}")
+                        ex_model = ExecutiveReportModel().find_by_period(p_period)
+                        menu_05_01_ex_rpt_show_year_quarter.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
+                    else:
+                        curr_ex_model = ExecutiveReportModel().find_current_week()
+                        last_ex_model = ExecutiveReportModel().find_last_week()
+                        menu_05_01_ex_rpt_show_week.replyMsg(reply_token, curr_ex_model, last_ex_model,
+                                                             CHANNEL_ACCESS_TOKEN)
+
                 elif message in DEMO_APP:  # Demo App
                     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:

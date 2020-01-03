@@ -7,6 +7,7 @@ class ExecutiveReportModel(db.Model):
     __tablename__ = "crm_line_exct_report"
 
     trans_id = db.Column(db.Integer, primary_key=True)
+    period = db.Column(db.String(10))
     text_msg_header = db.Column(db.String(255))
     text_msg_detail = db.Column(db.String(255))
     bg1_grosspresalesunit = db.Column(db.Float)
@@ -53,6 +54,26 @@ class ExecutiveReportModel(db.Model):
     @classmethod
     def find_by_id(cls) -> "ExecutiveReportModel":
         return cls.query.filter_by(trans_id=1).first()
+
+    @classmethod
+    def find_by_period(cls, _period) -> "ExecutiveReportModel":
+        return cls.query.filter_by(period=_period).first()
+
+    @classmethod
+    def find_current_week(cls) -> "ExecutiveReportModel":
+        return cls.query.filter_by(trans_id=1, period='CW').first()
+
+    @classmethod
+    def find_last_week(cls) -> "ExecutiveReportModel":
+        return cls.query.filter_by(trans_id=2, period='LW').first()
+
+    @classmethod
+    def find_Quarter2Date(cls) -> "ExecutiveReportModel":
+        return cls.query.filter_by(trans_id=3, period='QTD').first()
+
+    @classmethod
+    def find_Year2Date(cls) -> "ExecutiveReportModel":
+        return cls.query.filter_by(trans_id=4, period='YTD').first()
 
     def save_to_db(self) -> None:
         db.session.add(self)

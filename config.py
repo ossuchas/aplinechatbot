@@ -75,7 +75,12 @@ LL_MSG_AC_DAILY = "Actual Income Daily"
 # AP Phone Book
 LL_MSG_APPHONEBOOK = "AP"
 LL_MSG_APPHONEBOOK2 = "ap"
+
+# Executive Report
 EXECUTIVE_REPORT = "Executive Report"
+EXECUTIVE_PREFIX = "EX Period"
+EXECUTIVE_YTD = "EX Period As of Current"
+EXECUTIVE_QTD = "EX Period Quarter"
 
 
 # Register
