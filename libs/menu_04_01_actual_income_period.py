@@ -103,7 +103,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                                 "contents": [
                                                     {
                                                         "type": "text",
-                                                        "text": "Booking Income",
+                                                        "text": "Booking",
                                                         "size": "xl",
                                                         "color": "#FFFFFF",
                                                         "weight": "bold",
@@ -119,7 +119,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                                         "action": {
                                                             "type": "message",
                                                             "label": "action",
-                                                            "text": "Booking Income Period Y2D"
+                                                            "text": "Booking Period Y2D"
                                                         }
                                                     }
                                                 ]

@@ -76,7 +76,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Booking Income",
+                                        "text": "Booking",
                                         "align": "start",
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
@@ -377,7 +377,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Booking Income",
+                                        "text": "Booking",
                                         "align": "start",
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
@@ -678,7 +678,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Booking Income",
+                                        "text": "Booking",
                                         "align": "start",
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
@@ -979,7 +979,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Booking Income",
+                                        "text": "Booking",
                                         "align": "start",
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
@@ -1280,7 +1280,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": "Booking Income",
+                                        "text": "Booking",
                                         "align": "start",
                                         "color": "#FFFFFF",
                                         "offsetStart": "5%",
