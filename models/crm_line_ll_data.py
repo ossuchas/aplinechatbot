@@ -75,22 +75,22 @@ class LeadLagModel(db.Model):
 
     @classmethod
     def find_by_bg_period(cls, _type: str, _bg: str, _period: str, _flag: str) -> "LeadLagModel":
-        # return cls.query.filter_by(by_type=_type, bg=_bg, period=_period, years=datetime.today().year, current_flag=_flag).first()
-        return cls.query.filter_by(by_type=_type, bg=_bg, period=_period, years=2019, current_flag=_flag).first()
+        return cls.query.filter_by(by_type=_type, bg=_bg, period=_period, years=datetime.today().year, current_flag=_flag).first()
+        # return cls.query.filter_by(by_type=_type, bg=_bg, period=_period, years=2019, current_flag=_flag).first()
 
     @classmethod
     def find_by_subbg_period(cls, _type: str, _bg: str, _subbg: str, _period: str, _flag: str) -> "LeadLagModel":
-        # return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=datetime.today().year,
-        #                            current_flag=_flag).first()
-        return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=2019,
+        return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=datetime.today().year,
                                    current_flag=_flag).first()
-
+        # return cls.query.filter_by(by_type=_type, bg=_bg, subbg=_subbg, period=_period, years=2019,
+        #                            current_flag=_flag).first()
+        #
     @classmethod
     def find_by_project_period(cls, _type: str, _projectid: str, _period: str, _flag: str) -> "LeadLagModel":
-        # return cls.query.filter_by(by_type=_type, projectid=_projectid, period=_period, years=datetime.today().year,
-        #                            current_flag=_flag).first()
-        return cls.query.filter_by(by_type=_type, projectid=_projectid, period=_period, years=2019,
+        return cls.query.filter_by(by_type=_type, projectid=_projectid, period=_period, years=datetime.today().year,
                                    current_flag=_flag).first()
+        # return cls.query.filter_by(by_type=_type, projectid=_projectid, period=_period, years=2019,
+        #                            current_flag=_flag).first()
 
     @classmethod
     def find_by_week(cls) -> "LeadLagModel":
