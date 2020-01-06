@@ -27,7 +27,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
             "type": "box",
             "layout": "horizontal",
             "contents": [
-                { "type": "text", "text": "Executive Report", "size": "lg", "color": "#FFFFFF" },
+                { "type": "text", "text": "Ex.", "size": "lg", "color": "#FFFFFF" },
                 {
                     "type": "box",
                     "layout": "vertical",
@@ -361,7 +361,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
             "type": "box",
             "layout": "horizontal",
             "contents": [
-                {"type": "text", "text": "(L) Executive Report", "size": "lg", "color": "#FFFFFF"},
+                {"type": "text", "text": "Ex.", "size": "lg", "color": "#FFFFFF"},
                 {
                     "type": "box",
                     "layout": "vertical",
