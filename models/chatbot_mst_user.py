@@ -11,6 +11,7 @@ class MstUserModel(db.Model):
     user_name = db.Column(db.String(255))
     user_full_name = db.Column(db.String(255))
     user_type = db.Column(db.String(10))
+    user_sub_no = db.Column(db.String(10))
     user_emp_id = db.Column(db.String(50))
     user_status = db.Column(db.String(2))
     createby = db.Column(db.String(20))
