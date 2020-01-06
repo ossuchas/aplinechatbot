@@ -180,6 +180,7 @@ class ChatBotRegister(Resource):
                 elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
                     peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
                     bg = re.match(r"[^[]*\[([^]]*)\]", peroid).groups()[0]
+                    period = None
                     if peroid[0] == 'Q':  # Quarter
                         period = 'QTD'
                     # elif peroid[0] == 'M':  # Month
@@ -201,21 +202,19 @@ class ChatBotRegister(Resource):
                                                                      ll_model_current,
                                                                      ll_model_last_week,
                                                                      CHANNEL_ACCESS_TOKEN)
-
                 # Period Select by Sub BG
                 elif re.match(LL_MSG_SUB_PERIOD, message):
                     menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                # # AP PhoneBook Menu 5
-                # elif (re.match(LL_MSG_APPHONEBOOK, message)) or (re.match(LL_MSG_APPHONEBOOK2, message)):
-                #     menu_05_ap_phonebook.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                # elif message in REPLY_SALCE_ACCM_B_M_WORDING:
-                #     sale_accum_month.replyMsg(reply_token, reply_msg, "-1", CHANNEL_ACCESS_TOKEN)
-                # elif message in REPLY_SALCE_ACCM_C_M_WORDING:
-                #     sale_accum_month.replyMsg(reply_token, reply_msg, "0", CHANNEL_ACCESS_TOKEN)
                 elif message in AC_ACTUAL_INCOME:  # Actual income select period
-                    actual_income = ActualIncomeModel().find_all()
+                    # actual_income = ActualIncomeModel().find_all()
                     # menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
-                    menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+
+                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    if vip:
+                        menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                    else:
+                        reply_msg = "You are not authorized to access this menu."
+                        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_AC_Y2D, message):  # Actual income select Year to Date
                     actual_income = ActualIncomeModel().find_all()
                     menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
@@ -244,10 +243,12 @@ class ChatBotRegister(Resource):
                                                                  p_before_yesterday.strftime('%d/%m/%Y'),
                                                                  CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
-                    # Kai
-                    # executive_model = ExecutiveReportModel().find_by_id()
-                    # menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
-                    menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    if vip:
+                        menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                    else:
+                        reply_msg = "You are not authorized to access this menu."
+                        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in BOOKING_INCOME:
                     # print(message)
                     grs_model = GrossIncomeModel().find_all()
