@@ -20,7 +20,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_03_01_ll_allbg_byproject_period_show, menu_03_01_ll_allbg_byproject_period_show_L_C, \
     menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily, \
     chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
-    menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week
+    menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
+    menu_04_01_acgrs_income_show_y2d
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -32,7 +33,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
-    EXECUTIVE_PREFIX
+    EXECUTIVE_PREFIX, BOOKING_INCOME
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -41,6 +42,7 @@ from models.crm_line_actual_income import ActualIncomeModel
 from models.crm_line_ll_data import LeadLagModel
 from models.crm_line_exct_report import ExecutiveReportModel
 from models.vw_crm_line_actual_income import ActualIncomeByProjModel
+from models.crm_line_gross_income import GrossIncomeModel
 
 
 class ChatBot(Resource):
@@ -219,18 +221,18 @@ class ChatBotRegister(Resource):
                     menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_AC_DAILY, message):  # Actual income select Daily by Project
                     yesterday = datetime.now() - timedelta(days=1)
-                    print(type(yesterday))
+                    # print(type(yesterday))
                     before_yesterday = datetime.now() - timedelta(days=2)
 
                     values = ActualIncomeByProjModel().find_by_date(datetime.now().strftime('%Y%m%d'))
 
                     p_yesterday = ActualIncomeByProjModel().get_previousday("1")[0]
-                    print(p_yesterday)
+                    # print(p_yesterday)
                     last_values = ActualIncomeByProjModel().find_by_date(p_yesterday.strftime('%Y%m%d'))
                     # last_values = ActualIncomeByProjModel().find_by_date(yesterday.strftime('%Y%m%d'))
                     # before_last_values = ActualIncomeByProjModel().find_by_date(before_yesterday.strftime('%Y%m%d'))
                     p_before_yesterday = ActualIncomeByProjModel().get_previousday("2")[0]
-                    print(p_before_yesterday)
+                    # print(p_before_yesterday)
                     before_last_values = ActualIncomeByProjModel().find_by_date(p_before_yesterday.strftime("%Y%m%d"))
 
                     menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
@@ -246,6 +248,10 @@ class ChatBotRegister(Resource):
                     # executive_model = ExecutiveReportModel().find_by_id()
                     # menu_executive_report.replyMsg(reply_token, executive_model, CHANNEL_ACCESS_TOKEN)
                     menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                elif message in BOOKING_INCOME:
+                    # print(message)
+                    grs_model = GrossIncomeModel().find_all()
+                    menu_04_01_acgrs_income_show_y2d.replyMsg(reply_token, grs_model, CHANNEL_ACCESS_TOKEN)
                 elif re.match(EXECUTIVE_PREFIX, message):  # Executive by period
                     period = message.replace(EXECUTIVE_PREFIX, "").strip()
                     p_period = None

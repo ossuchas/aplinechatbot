@@ -72,6 +72,9 @@ AC_ACTUAL_INCOME = "Actual Income"
 LL_MSG_AC_Y2D = "Actual Income Period Y2D"
 LL_MSG_AC_DAILY = "Actual Income Daily"
 
+# Peroid Select Gross incomde
+BOOKING_INCOME = "Booking Income Period Y2D"
+
 # AP Phone Book
 LL_MSG_APPHONEBOOK = "AP"
 LL_MSG_APPHONEBOOK2 = "ap"

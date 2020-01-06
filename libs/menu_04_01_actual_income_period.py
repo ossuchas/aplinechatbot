@@ -19,6 +19,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
             "contents":
                 {
                     "type": "bubble",
+                    # "size": "giga",
                     "hero": {
                         "type": "box",
                         "layout": "vertical",
@@ -40,16 +41,51 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                 "layout": "vertical",
                                 "contents": [
                                     {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/1M4dwWq/calendar-y2d-v1-0.png",
-                                        "size": "full",
-                                        "aspectMode": "fit",
-                                        "aspectRatio": "24:7",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "Actual Income Period Y2D"
-                                        }
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "box",
+                                                "layout": "vertical",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Actual Income",
+                                                        "weight": "bold",
+                                                        "style": "normal",
+                                                        "size": "xl",
+                                                        "align": "center",
+                                                        "gravity": "center",
+                                                        "color": "#FFFFFF"
+                                                    },
+                                                    {
+                                                        "type": "image",
+                                                        "url": "https://i.ibb.co/1M4dwWq/calendar-y2d-v1-0.png",
+                                                        "size": "full",
+                                                        "aspectRatio": "24:7",
+                                                        "aspectMode": "fit",
+                                                        "action": {
+                                                            "type": "message",
+                                                            "label": "action",
+                                                            "text": "Actual Income Period Y2D"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "image",
+                                                        "url": "https://i.ibb.co/71TKZLp/calendar-daily-v1-0.png",
+                                                        "size": "full",
+                                                        "aspectRatio": "24:7",
+                                                        "aspectMode": "fit",
+                                                        "action": {
+                                                            "type": "message",
+                                                            "label": "action",
+                                                            "text": "Actual Income Daily"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "backgroundColor": "#6F807C"
                                     }
                                 ]
                             },
@@ -58,18 +94,41 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                 "layout": "vertical",
                                 "contents": [
                                     {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/71TKZLp/calendar-daily-v1-0.png",
-                                        "size": "full",
-                                        "aspectMode": "fit",
-                                        "aspectRatio": "24:7",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "Actual Income Daily"
-                                        }
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "box",
+                                                "layout": "vertical",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Booking Income",
+                                                        "size": "xl",
+                                                        "color": "#FFFFFF",
+                                                        "weight": "bold",
+                                                        "align": "center",
+                                                        "gravity": "center"
+                                                    },
+                                                    {
+                                                        "type": "image",
+                                                        "url": "https://i.ibb.co/1M4dwWq/calendar-y2d-v1-0.png",
+                                                        "size": "full",
+                                                        "aspectMode": "fit",
+                                                        "aspectRatio": "24:7",
+                                                        "action": {
+                                                            "type": "message",
+                                                            "label": "action",
+                                                            "text": "Booking Income Period Y2D"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "backgroundColor": "#498073"
                                     }
-                                ]
+                                ],
+                                "margin": "md"
                             }
                         ]
                     },

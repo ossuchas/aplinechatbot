@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_acgrs_income_show_y2d.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period_20200106.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/crm_line_gross_income.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_04_01_actual_income_period.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +53,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -58,10 +65,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\models" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\libs" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\resources" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\schemas" />
-      <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\aplinechatbot\models" />
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\APLineChatBot" />
     </key>
   </component>
@@ -262,6 +269,7 @@
       <workItem from="1578124854304" duration="171000" />
       <workItem from="1578259684224" duration="1472000" />
       <workItem from="1578271258274" duration="1203000" />
+      <workItem from="1578281219222" duration="2273000" />
     </task>
     <servers />
   </component>
@@ -281,6 +289,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="275" y="0" width="816" height="728" key="#Intentions" timestamp="1578087192166">
       <screen x="0" y="0" width="1366" height="728" />
@@ -294,22 +305,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576457529894" />
-    <state width="1323" height="108" key="GridCell.Tab.0.bottom" timestamp="1578095643920">
+    <state width="1323" height="108" key="GridCell.Tab.0.bottom" timestamp="1578285394722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="108" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578095643920" />
-    <state width="1323" height="108" key="GridCell.Tab.0.center" timestamp="1578095643920">
+    <state width="1323" height="108" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578285394722" />
+    <state width="1323" height="108" key="GridCell.Tab.0.center" timestamp="1578285394722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="108" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578095643920" />
-    <state width="1323" height="108" key="GridCell.Tab.0.left" timestamp="1578095643920">
+    <state width="1323" height="108" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578285394722" />
+    <state width="1323" height="108" key="GridCell.Tab.0.left" timestamp="1578285394721">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="108" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578095643920" />
-    <state width="1323" height="108" key="GridCell.Tab.0.right" timestamp="1578095643920">
+    <state width="1323" height="108" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578285394721" />
+    <state width="1323" height="108" key="GridCell.Tab.0.right" timestamp="1578285394722">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="108" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578095643920" />
+    <state width="1323" height="108" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578285394722" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1576362230857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -322,10 +333,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1578087549051" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1576813222148">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578285074253">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576813222148" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578285074253" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -344,7 +355,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1578086786992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1578285394702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
