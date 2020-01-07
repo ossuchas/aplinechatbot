@@ -128,7 +128,19 @@ class ChatBotRegister(Resource):
                     value = message.split(' ')[3]
                     bg = value.split('[')[0]
                     subbg = value.split('[')[1][:-1]
-                    menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                    # menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                    prefix_bg = value.split('[')[1][:-3].strip()
+
+                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    if vip:
+                        menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                    else:
+                        userModel = MstUserModel().find_by_token_id(_user_token_id=userId)
+                        if userModel.user_sub_no[0].strip() == prefix_bg:  # Check authorized by bg
+                            menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                        else:
+                            reply_msg = "You are not authorized to access this menu."
+                            chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_ALLSUBBG_PERIOD, message):  # LL BY BG Period
                     p_period = message.replace(LL_MSG_ALLSUBBG_PERIOD, "").strip()
                     val = re.match(r"[^[]*\[([^]]*)\]", p_period).groups()[0]
@@ -249,7 +261,7 @@ class ChatBotRegister(Resource):
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-                elif message in BOOKING_INCOME:
+                elif re.match(BOOKING_INCOME, message):
                     # print(message)
                     grs_model = GrossIncomeModel().find_all()
                     menu_04_01_acgrs_income_show_y2d.replyMsg(reply_token, grs_model, CHANNEL_ACCESS_TOKEN)
