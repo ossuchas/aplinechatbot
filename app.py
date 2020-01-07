@@ -10,6 +10,7 @@ from ma import ma
 from resources.chatbot import ChatBot, ChatBotRegister
 from resources.vw_chatbot_mst_project import MstProject
 from resources.userauthen import UserLogin
+from resources.vw_crm_line_userroleproj import UserRoleProject
 
 app = Flask(__name__)
 
@@ -30,6 +31,7 @@ api.add_resource(ChatBot, "/webhook")
 api.add_resource(ChatBotRegister, "/register")
 api.add_resource(MstProject, "/getallproj")
 api.add_resource(UserLogin, "/checkauthorized")
+api.add_resource(UserRoleProject, "/getroleproj/<string:userid>")
 
 if __name__ == '__main__':
     db.init_app(app)
