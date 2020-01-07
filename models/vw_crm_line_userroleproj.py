@@ -9,6 +9,9 @@ class UserRoleProjModel(db.Model):
     rec_id = db.Column(db.String(200), primary_key=True)
     projectcode = db.Column(db.String(50))
     project_name = db.Column(db.String(255))
+    display_project = db.Column(db.String(255))
+    bg = db.Column(db.String(5))
+    subbg = db.Column(db.String(50))
     user_empcode = db.Column(db.String(50))
     user_token_Id = db.Column(db.String(255))
 
