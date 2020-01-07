@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/chatbot_mst_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/chatbot_mst_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,6 +267,9 @@
       <workItem from="1578271258274" duration="1203000" />
       <workItem from="1578281219222" duration="3862000" />
       <workItem from="1578314603844" duration="1856000" />
+      <workItem from="1578347604334" duration="1139000" />
+      <workItem from="1578348961594" duration="659000" />
+      <workItem from="1578355731929" duration="1678000" />
     </task>
     <servers />
   </component>
@@ -296,6 +301,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1576368756459" />
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578348910820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1578348910820" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576457529894">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

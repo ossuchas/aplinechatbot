@@ -288,7 +288,9 @@ class ChatBotRegister(Resource):
                     register_email = value[1].strip().lower()
                     # print(register_empid, register_email)
 
-                    reply_msg = "We have received your registration. Please wait for confirmation within 2 minute."
+                    # reply_msg = "We have received your registration. Please wait for confirmation within 2 minute."
+                    reply_msg = "We have received your registration. Within 2 minutes, \
+                                you will be able to use CRM chatbot."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                     # chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                     # print("Register Msg")
