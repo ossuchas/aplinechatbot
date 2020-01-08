@@ -21,7 +21,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily, \
     chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
     menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
-    menu_04_01_acgrs_income_show_y2d
+    menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
@@ -33,7 +33,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
-    EXECUTIVE_PREFIX, BOOKING_INCOME
+    EXECUTIVE_PREFIX, BOOKING_INCOME, \
+    RICH_MENU_MAIN, RICH_MENU_SECOND
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -312,17 +313,33 @@ class ChatBotRegister(Resource):
                     if not groupId:
                         if not re.match(REGISTER_REJECT_MSG, message):
                             chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+        elif msg_type == 'image':  # Image Upload to Line Bot
+            image_id = payload['events'][0]['message']['id']
+            contentProvider = payload['events'][0]['message']['contentProvider']['type']
+            print(f"{image_id} , {contentProvider}")
         elif msg_type == 'postback':
             param_data = payload['events'][0]['postback']['data']
-            param_date = payload['events'][0]['postback']['params']['date']
-            date_val = param_date.replace("-", "").strip()
-            # print(param_data, date_val)
-            if re.match(LL_MSG_AC_DAILY, param_data):  # Actual income select Daily by Project
-                values = ActualIncomeByProjModel().find_by_date(date_val)
-                menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
-                                                             values,
-                                                             param_date,
-                                                             CHANNEL_ACCESS_TOKEN)
+            richmenuId = None
+            if param_data == 'next':
+                richmenuId = RICH_MENU_SECOND
+            elif param_data == 'back':
+                richmenuId = RICH_MENU_MAIN
+            else:
+                pass
+
+            chatbot_rich_menu.replyMsg(userId=userId,
+                                       richMenuId=richmenuId,
+                                       line_aceess_token=CHANNEL_ACCESS_TOKEN)
+            # param_data = payload['events'][0]['postback']['data']
+            # param_date = payload['events'][0]['postback']['params']['date']
+            # date_val = param_date.replace("-", "").strip()
+            # # print(param_data, date_val)
+            # if re.match(LL_MSG_AC_DAILY, param_data):  # Actual income select Daily by Project
+            #     values = ActualIncomeByProjModel().find_by_date(date_val)
+            #     menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
+            #                                                  values,
+            #                                                  param_date,
+            #                                                  CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             beacon_hwid = payload['events'][0]['beacon']['hwid']
             beacon_dm = payload['events'][0]['beacon']['dm']

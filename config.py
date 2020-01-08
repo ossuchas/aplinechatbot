@@ -27,8 +27,10 @@ JWT_BLACKLIST_TOKEN_CHECKS = ["access", "refresh"]
 # IT@APTHAI BOT
 # CHANNEL_ACCESS_TOKEN="yzEGLNrzFPgkRW113hBPayMP+4Z6nmGa3gDQNAxNxYQR7jqj9Vo6w3YwfOLnpzPr48+GB9j4rgTlcWKyRPMgY0f+e0FuX5tizSVzLrd/o3gkaniObBMudbWZXrHL3CD9IZ2SQXUE7GeDp76UVNpG+gdB04t89/1O/w1cDnyilFU="
 CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
+LINE_API_RICHMENU=os.environ.get("LINE_API_RICHMENU")
 # LINE_API="https://api.line.me/v2/bot/message/reply"
 LINE_API = os.environ.get("LINE_API")
+LINE_API_PUSH = os.environ.get("LINE_API_PUSH")
 
 DEFAULT_REPLY_WORDING = "เจ้านายกำลังฝึกผมให้เข้าใจในเรื่องอื่นๆอยู่นะครับ ขอโทษทีตอนนี้ยังไม่พร้อมตอบเรื่องที่ถามมานะครับ"
 REPLY_WORDING = ["99999", "00000", "เสี่ยจัสติน", "เสี่ย"]
@@ -92,3 +94,7 @@ REGISTER_REJECT_MSG = "can not sign up, you are unauthorized!!"
 
 # Demo App
 DEMO_APP = "Demo App"
+
+# Rich Menu
+RICH_MENU_MAIN = "richmenu-d8d6ac0c6ec6c8144a0779fae0765209"
+RICH_MENU_SECOND = "richmenu-698b7cddd9fcc578305bb3ed4c7ec984"
