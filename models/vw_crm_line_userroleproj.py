@@ -17,9 +17,9 @@ class UserRoleProjModel(db.Model):
 
     @classmethod
     def find_by_emp(cls, _emp_code: str) -> List["UserRoleProjModel"]:
-        return cls.query.filter_by(user_empcode=_emp_code).order_by(cls.projectcode.asc()).all()
+        return cls.query.filter_by(user_empcode=_emp_code).order_by(cls.project_name.asc()).all()
 
     @classmethod
     def find_by_userid(cls, _userid: str) -> List["UserRoleProjModel"]:
-        return cls.query.filter_by(user_token_Id=_userid).order_by(cls.projectcode.asc()).all()
+        return cls.query.filter_by(user_token_Id=_userid).order_by(cls.project_name.asc()).all()
 
