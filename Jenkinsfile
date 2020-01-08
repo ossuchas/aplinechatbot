@@ -3,7 +3,7 @@ pipeline {
     registry = "apthailand/suchat_s"
     registryCredential = 'docker_ossuchas'
     dockerImage = ''
-    image_tag_number = 'chatbot_api_v7.0.4'
+    image_tag_number = 'chatbot_api_v7.0.5'
     deployments = 'linechatbot'
     projects = 'testrepo'
   }
