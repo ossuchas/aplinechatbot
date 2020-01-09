@@ -112,7 +112,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Vol. (MB)",
+                                                "text": "Vol. (B)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -413,7 +413,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Vol. (MB)",
+                                                "text": "Vol. (B)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -714,7 +714,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Vol. (MB)",
+                                                "text": "Vol. (B)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -1015,7 +1015,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Vol. (MB)",
+                                                "text": "Vol. (B)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
@@ -1316,7 +1316,7 @@ def replyMsg(Reply_token: str = None, actual_income: GrossIncomeModel = None, li
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "Vol. (MB)",
+                                                "text": "Vol. (B)",
                                                 "align": "end",
                                                 "size": "sm",
                                                 "weight": "bold"
