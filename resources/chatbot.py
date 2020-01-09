@@ -106,14 +106,16 @@ class ChatBotRegister(Resource):
             if user:
                 # print("found")
                 if message == MENU_01_VIP:  # LL ALL BG
-                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
-                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
-                    if vip:
-                        # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                        menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                    else:
-                        reply_msg = "You are not authorized to access this menu."
-                        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                    menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    # Modified by Suchat S. 2020-01-09 for all access this menu
+                    # # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    # vip = MstUserModel().check_clevel_auth_by_token_id(userId)
+                    # if vip:
+                    #     # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    #     menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    # else:
+                    #     reply_msg = "You are not authorized to access this menu."
+                    #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif re.match(MENU_01_VIP_BG, message):  # Select BG
                     # LL[0] BY[1] BG[2] <1-4>[3]
                     bg = message.split(' ')[3]
