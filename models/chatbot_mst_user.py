@@ -36,6 +36,16 @@ class MstUserModel(db.Model):
     def check_VIP_auth_by_token_id(cls, _user_token_id: int) -> "MstUserModel":
         return cls.query.filter_by(user_token_Id=_user_token_id, user_status='A', user_type='VIP').first()
 
+    @classmethod
+    def check_VIP2_auth_by_token_id(cls, _user_token_id: int) -> "MstUserModel":
+        return cls.query.filter_by(user_token_Id=_user_token_id, user_status='A', user_type='VIP2').first()
+
+    @classmethod
+    def check_clevel_auth_by_token_id(cls, _user_token_id: int) -> "MstUserModel":
+        return cls.query.filter(cls.user_token_Id == _user_token_id,
+                                cls.user_status == 'A',
+                                cls.user_type.like('VIP%')).first()
+
     def save_to_db(self) -> None:
         db.session.add(self)
         db.session.commit()

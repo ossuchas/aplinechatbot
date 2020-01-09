@@ -106,7 +106,8 @@ class ChatBotRegister(Resource):
             if user:
                 # print("found")
                 if message == MENU_01_VIP:  # LL ALL BG
-                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
                         # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                         menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
@@ -222,7 +223,8 @@ class ChatBotRegister(Resource):
                     # actual_income = ActualIncomeModel().find_all()
                     # menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
 
-                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
                         menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
                     else:
@@ -256,7 +258,8 @@ class ChatBotRegister(Resource):
                                                                  p_before_yesterday.strftime('%d/%m/%Y'),
                                                                  CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
-                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
+                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
                         menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
                     else:
