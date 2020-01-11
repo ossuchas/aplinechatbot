@@ -23,3 +23,16 @@ class UserRoleProjModel(db.Model):
     def find_by_userid(cls, _userid: str) -> List["UserRoleProjModel"]:
         return cls.query.filter_by(user_token_Id=_userid).order_by(cls.project_name.asc()).all()
 
+    @classmethod
+    def check_auth_by_project(cls, _userid: str, _projid: str) -> "UserRoleProjModel":
+        return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid).first()
+
+    @classmethod
+    def check_auth_subbg(cls, _userid: str, _projid: str, _bg: str) -> "UserRoleProjModel":
+        return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid, bg=_bg).first()
+
+    @classmethod
+    def check_auth_lcm(cls, _userid: str, _projid: str, _subbg: str) -> "UserRoleProjModel":
+        # print(_subbg, _userid, _projid)
+        return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid, subbg=_subbg).first()
+

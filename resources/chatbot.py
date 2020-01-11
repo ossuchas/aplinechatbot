@@ -39,6 +39,7 @@ from models.crm_line_ll_data import LeadLagModel
 from models.crm_line_exct_report import ExecutiveReportModel
 from models.vw_crm_line_actual_income import ActualIncomeByProjModel
 from models.crm_line_gross_income import GrossIncomeModel
+from models.vw_crm_line_userroleproj import UserRoleProjModel
 
 
 class ChatBot(Resource):
@@ -127,9 +128,7 @@ class ChatBotRegister(Resource):
                     value = message.split(' ')[3]
                     bg = value.split('[')[0]
                     subbg = value.split('[')[1][:-1]
-                    # menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
                     prefix_bg = value.split('[')[1][:-3].strip()
-                    print(f"{value}, {bg}, {subbg}, {prefix_bg}")
 
                     vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     if vip:
@@ -177,6 +176,7 @@ class ChatBotRegister(Resource):
                     value = message.split(',')
                     project = value[0].split(':')[1].strip()
                     p_period = value[1].split(':')[1].strip()
+                    # print(f"{value}, {project}, {p_period}")
 
                     period = None
                     if p_period[0] == 'Q':  # Quarter
@@ -186,16 +186,68 @@ class ChatBotRegister(Resource):
                     elif p_period[0] == 'Y':  # Year to Date
                         period = 'YTD'
 
-                    if p_period[0] != 'W':
-                        # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
-                        ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
-                        menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model, CHANNEL_ACCESS_TOKEN)
-                    else:
-                        ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
-                        ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period, 'N')
-                        menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token, ll_model_current,
-                                                                               ll_model_last_week,
+                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
+                    if vip:
+                        if p_period[0] != 'W':
+                            # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
+                            ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                            menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
                                                                                CHANNEL_ACCESS_TOKEN)
+                        else:
+                            ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                            ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period, 'N')
+                            menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token, ll_model_current,
+                                                                                   ll_model_last_week,
+                                                                                   CHANNEL_ACCESS_TOKEN)
+                    else:  # for SubBG and LCM
+                        userModel = MstUserModel().find_by_token_id(userId)
+
+                        if userModel.user_type == 'SUBBG':
+                            bg = userModel.user_sub_no[0].strip()
+                            role = UserRoleProjModel().check_auth_subbg(userId, project, bg)
+                            if role:
+                                if p_period[0] != 'W':
+                                    # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
+                                    ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                                    menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
+                                                                                       CHANNEL_ACCESS_TOKEN)
+                                else:
+                                    ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                             'Y')
+                                    ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                               'N')
+                                    menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token,
+                                                                                           ll_model_current,
+                                                                                           ll_model_last_week,
+                                                                                           CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'LCM':
+                            subbg = userModel.user_sub_no.strip()
+                            role = UserRoleProjModel().check_auth_lcm(userId, project, subbg)
+                            # print(role)
+                            if role:
+                                if p_period[0] != 'W':
+                                    # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
+                                    ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                                    menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
+                                                                                       CHANNEL_ACCESS_TOKEN)
+                                else:
+                                    ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                             'Y')
+                                    ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                               'N')
+                                    menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token,
+                                                                                           ll_model_current,
+                                                                                           ll_model_last_week,
+                                                                                           CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        else:
+                            reply_msg = "You are not authorized to access this menu."
+                            chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 # Period Select ALL BG
                 elif re.match(LL_MSG_ALLBG_PERIOD, message):  # LL BY BG Period
                     peroid = message.replace(LL_MSG_ALLBG_PERIOD, "").strip()
