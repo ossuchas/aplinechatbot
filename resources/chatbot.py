@@ -6,14 +6,11 @@ import re
 from datetime import datetime, timedelta
 
 from libs import chatbot_helper, log_linechatbot as logs, \
-    sale_accum_month, beacon_helper, \
-    menu_01_sale_timeline as m1_SDH, \
-    leadlag_bg_all, leadlag_bg_project, \
-    menu_02_01_ll_sdh_subbg, menu_02_01_ll_sdh_period, \
-    menu_01_01_ll_allbg_period, menu_01_01_ll_allbg_period_show_Q, \
-    menu_01_01_ll_allbg_period_show_M, menu_01_01_ll_allbg_period_show_W, \
-    menu_01_01_ll_allbg_period_show_Y, menu_01_01_ll_allbg_period_show_A, \
-    menu_05_ap_phonebook, menu_04_01_actual_income_show_y2d, menu_executive_report, \
+    beacon_helper, \
+    leadlag_bg_all, menu_02_01_ll_sdh_period, \
+    menu_01_01_ll_allbg_period, \
+    menu_01_01_ll_allbg_period_show_W, \
+    menu_04_01_actual_income_show_y2d, \
     menu_01_01_ll_allbg_sel_bg, menu_01_01_ll_allbg_period_show_L_C, \
     menu_02_01_ll_allbg_sel_subbg, menu_02_01_ll_allbg_subbg_period, \
     menu_02_01_ll_allbg_subbg_period_show, menu_02_01_ll_allbg_subbg_period_show_L_C, \
@@ -24,12 +21,10 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
-    REPLY_SALCE_ACCM_B_M_WORDING, REPLY_SALCE_ACCM_C_M_WORDING, \
     DEFAULT_REPLY_WORDING, \
     MENU_01_VIP, MENU_01_VIP_BG, \
     LL_MSG_All, LL_MSG_PROJ, MENU_02_VIP, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
-    LL_MSG_APPHONEBOOK, LL_MSG_APPHONEBOOK2, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
@@ -134,17 +129,26 @@ class ChatBotRegister(Resource):
                     subbg = value.split('[')[1][:-1]
                     # menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
                     prefix_bg = value.split('[')[1][:-3].strip()
+                    print(f"{value}, {bg}, {subbg}, {prefix_bg}")
 
                     vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     if vip:
                         menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
                     else:
                         userModel = MstUserModel().find_by_token_id(_user_token_id=userId)
-                        if userModel.user_sub_no[0].strip() == prefix_bg:  # Check authorized by bg
-                            menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
-                        else:
-                            reply_msg = "You are not authorized to access this menu."
-                            chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+
+                        if userModel.user_type == 'SUBBG':
+                            if userModel.user_sub_no[0].strip() == prefix_bg:  # Check authorized by bg
+                                menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'LCM':
+                            if userModel.user_sub_no.strip() == subbg:
+                                menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_ALLSUBBG_PERIOD, message):  # LL BY BG Period
                     p_period = message.replace(LL_MSG_ALLSUBBG_PERIOD, "").strip()
                     val = re.match(r"[^[]*\[([^]]*)\]", p_period).groups()[0]
