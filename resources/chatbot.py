@@ -192,7 +192,7 @@ class ChatBotRegister(Resource):
                     elif p_period[0] == 'Y':  # Year to Date
                         period = 'YTD'
 
-                    vip = MstUserModel().check_clevel_auth_by_token_id(userId)
+                    vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     if vip:
                         if p_period[0] != 'W':
                             # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
