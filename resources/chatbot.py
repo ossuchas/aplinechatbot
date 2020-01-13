@@ -122,7 +122,13 @@ class ChatBotRegister(Resource):
                 elif message in LL_MSG_All:
                     leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in MENU_02_VIP:  # menu_02_01_ll_allbg_subbg
-                    menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    vip2 = MstUserModel().check_VIP2_auth_by_token_id(userId)
+
+                    if vip2:
+                        reply_msg = "You are not authorized to access this menu."
+                        chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                    else:
+                        menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif re.match(MENU_02_VIP_BG, message):  # Select Sub BG
                     # LL[0] BY[1] SubBG[2] <1-4>[1.0][3]
                     value = message.split(' ')[3]
