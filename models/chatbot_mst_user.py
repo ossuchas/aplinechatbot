@@ -26,7 +26,11 @@ class MstUserModel(db.Model):
         return cls.query.filter_by(user_id=_user_id).first()
 
     @classmethod
-    def find_by_token_id(cls, _user_token_id: int) -> "MstUserModel":
+    def find_by_empcode(cls, _user_empcode: str) -> "MstUserModel":
+        return cls.query.filter_by(user_empcode=_user_empcode).first()
+
+    @classmethod
+    def find_by_token_id(cls, _user_token_id: str) -> "MstUserModel":
         return cls.query.filter_by(user_token_Id=_user_token_id).first()
 
     @classmethod
@@ -46,6 +50,11 @@ class MstUserModel(db.Model):
         return cls.query.filter(cls.user_token_Id == _user_token_id,
                                 cls.user_status == 'A',
                                 cls.user_type.like('VIP%')).first()
+
+    @classmethod
+    def find_user_listrole(cls) -> List["MstUserModel"]:
+        return cls.query.filter(cls.user_status == 'A',
+                                cls.user_position.notin_(('C Level', 'MD', 'CEO', 'FI', 'Head Off'))).all()
 
     def save_to_db(self) -> None:
         db.session.add(self)

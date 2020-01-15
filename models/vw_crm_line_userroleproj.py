@@ -34,5 +34,6 @@ class UserRoleProjModel(db.Model):
     @classmethod
     def check_auth_lcm(cls, _userid: str, _projid: str, _subbg: str) -> "UserRoleProjModel":
         # print(_subbg, _userid, _projid)
-        return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid, subbg=_subbg).first()
+        # return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid, subbg=_subbg).first()
+        return cls.query.filter_by(user_token_Id=_userid, projectcode=_projid).first()
 

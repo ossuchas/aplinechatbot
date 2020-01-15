@@ -12,6 +12,7 @@ from resources.vw_chatbot_mst_project import MstProject
 from resources.userauthen import UserLogin
 from resources.vw_crm_line_userroleproj import UserRoleProject
 from resources.vw_crm_line_userroleproj2 import UserRoleProject2
+from resources.chatbot_mst_user import ChatBotMstUserRole, ChatBotMstUserList
 
 app = Flask(__name__)
 
@@ -34,6 +35,8 @@ api.add_resource(MstProject, "/getallproj")
 api.add_resource(UserLogin, "/checkauthorized")
 api.add_resource(UserRoleProject, "/getroleproj/<string:userid>")
 api.add_resource(UserRoleProject2, "/getroleproj2/<string:userid>")
+api.add_resource(ChatBotMstUserList, "/listuserrole")
+api.add_resource(ChatBotMstUserRole, "/userrole/<string:_user_empcode>")
 
 if __name__ == '__main__':
     db.init_app(app)
