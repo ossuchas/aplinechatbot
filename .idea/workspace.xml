@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/chatbot_mst_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/chatbot_mst_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chatbot_mst_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot_mst_user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +289,10 @@
       <workItem from="1578949717142" duration="2754000" />
       <workItem from="1578961113643" duration="1220000" />
       <workItem from="1579038479735" duration="643000" />
-      <workItem from="1579045507264" duration="5209000" />
+      <workItem from="1579045507264" duration="7353000" />
+      <workItem from="1579136477202" duration="61000" />
+      <workItem from="1579136567759" duration="1383000" />
+      <workItem from="1579163682665" duration="18000" />
     </task>
     <servers />
   </component>
@@ -324,30 +324,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1576368756459" />
-    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578348910820">
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579136498358">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1578348910820" />
+    <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1579136498358" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576457529894">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576457529894" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1579060941708">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1579154369274">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579060941708" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1579060941708">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579154369274" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1579154369273">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579060941708" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1579060941707">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579154369273" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1579154369273">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579060941707" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1579060941708">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579154369273" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1579154369273">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579060941708" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579154369273" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1576362230857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -382,7 +382,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1579049016745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1579138524801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

@@ -49,7 +49,7 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
 
         new_contents.append({
             "type": "box", "layout": "baseline", "contents":
-                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProjectName, val.ProductID), "size": "xs", "wrap": True},
+                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProductID, val.ProjectName), "size": "xs", "wrap": True},
                  {"type": "text", "text": "{}".format(val.TotalUnit), "size": "xs", "align": "end"},
                  {"type": "text", "text": f"{val.NetPriceExclFD:,.0f}", "size": "xs", "align": "end"}],
             "backgroundColor": bg_color_row
@@ -87,7 +87,7 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
 
         last_new_contents.append({
             "type": "box", "layout": "baseline", "contents":
-                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProjectName, val.ProductID), "size": "xs", "wrap": True},
+                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProductID, val.ProjectName), "size": "xs", "wrap": True},
                  {"type": "text", "text": "{}".format(val.TotalUnit), "size": "xs", "align": "end"},
                  {"type": "text", "text": f"{val.NetPriceExclFD:,.0f}", "size": "xs", "align": "end"}],
             "backgroundColor": bg_color_row
@@ -125,7 +125,7 @@ def replyMsg(reply_token: str = None, text_msg: str = None,
 
         before_last_new_contents.append({
             "type": "box", "layout": "baseline", "contents":
-                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProjectName, val.ProductID), "size": "xs", "wrap": True},
+                [{"type": "text", "text": "[BG{}]{}:{}".format(val.PType, val.ProductID, val.ProjectName), "size": "xs", "wrap": True},
                  {"type": "text", "text": "{}".format(val.TotalUnit), "size": "xs", "align": "end"},
                  {"type": "text", "text": f"{val.NetPriceExclFD:,.0f}", "size": "xs", "align": "end"}],
             "backgroundColor": bg_color_row
