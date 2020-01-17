@@ -124,7 +124,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "contents": [
                                             {
                                                 "type": "text",
-                                                "text": "BG1 - SHD",
+                                                "text": "BG1 - SDH",
                                                 "align": "start",
                                                 "offsetStart": "5%",
                                                 "size": "sm"
@@ -425,7 +425,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "contents": [
                                             {
                                                 "type": "text",
-                                                "text": "BG1 - SHD",
+                                                "text": "BG1 - SDH",
                                                 "align": "start",
                                                 "offsetStart": "5%",
                                                 "size": "sm"
@@ -726,7 +726,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "contents": [
                                             {
                                                 "type": "text",
-                                                "text": "BG1 - SHD",
+                                                "text": "BG1 - SDH",
                                                 "align": "start",
                                                 "offsetStart": "5%",
                                                 "size": "sm"
@@ -1027,7 +1027,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "contents": [
                                             {
                                                 "type": "text",
-                                                "text": "BG1 - SHD",
+                                                "text": "BG1 - SDH",
                                                 "align": "start",
                                                 "offsetStart": "5%",
                                                 "size": "sm"
@@ -1328,7 +1328,7 @@ def replyMsg(Reply_token: str =None, actual_income: ActualIncomeModel = None, li
                                         "contents": [
                                             {
                                                 "type": "text",
-                                                "text": "BG1 - SHD",
+                                                "text": "BG1 - SDH",
                                                 "align": "start",
                                                 "offsetStart": "5%",
                                                 "size": "sm"
