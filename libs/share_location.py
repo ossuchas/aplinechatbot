@@ -23,7 +23,7 @@ def quickreplymsg(reply_token: str = None, text_msg: str = None,
     quick_reply = \
         {
             "type": "text",
-            "text": "กรุณา Share ตำแหน่งที่คุณอยู่เพื่อตรวจสอบค่า PM 2.5 ในตำแหน่งนั้น",
+            "text": "กรุณาระบุตำแหน่งที่คุณต้องการตรวจสอบค่า PM 2.5 โดยการกด share location ด้านล่างข้อความนี้",
             "quickReply": {
                 "items": [
                     {
