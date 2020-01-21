@@ -102,3 +102,5 @@ RICH_MENU_SECOND = "richmenu-698b7cddd9fcc578305bb3ed4c7ec984"
 
 # Check PM
 CHECK_PM = "ตรวจสอบค่า PM 2.5"
+API_AIRVISUAL_KEY="997fd440-6a2e-48a9-9336-7cb0eaef4a99"
+API_AIRVISUAL_URI = "https://api.airvisual.com/v2"
