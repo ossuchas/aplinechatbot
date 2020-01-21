@@ -98,3 +98,7 @@ DEMO_APP = "Demo App"
 # Rich Menu
 RICH_MENU_MAIN = "richmenu-d8d6ac0c6ec6c8144a0779fae0765209"
 RICH_MENU_SECOND = "richmenu-698b7cddd9fcc578305bb3ed4c7ec984"
+
+
+# Check PM
+CHECK_PM = "ตรวจสอบค่า PM 2.5"

@@ -20,6 +20,6 @@ def getpm(lat: str = None, long: str = None):
     pm_val = data['data']['current']['pollution']['aqius']
     temperature = data['data']['current']['weather']['tp']
     icon_weather = data['data']['current']['weather']['ic']
-    print(response.text.encode('utf8'))
+    # print(response.text.encode('utf8'))
     # print(city, state, country, val)
     return city, state, country, pm_val, temperature, icon_weather

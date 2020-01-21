@@ -2,7 +2,7 @@
 
 import requests
 import json
-from config import LINE_API_REPLY
+from config import LINE_API
 
 
 def replyMsg(Reply_token: str = None, head_title: str = None, pm_val: str = None, line_Acees_Token: str = None):
@@ -161,5 +161,5 @@ def replyMsg(Reply_token: str = None, head_title: str = None, pm_val: str = None
     }
 
     session = requests.Session()
-    response = session.post(LINE_API_REPLY, data=json.dumps(data), headers=headers)
+    response = session.post(LINE_API, data=json.dumps(data), headers=headers)
     return 201

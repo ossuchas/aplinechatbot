@@ -18,7 +18,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_04_01_actual_income_period, menu_04_01_actual_income_show_daily, \
     chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
     menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
-    menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu
+    menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu, share_location, \
+    menu_06_01_pm_value, check_pm_airvisual
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -29,7 +30,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
     EXECUTIVE_PREFIX, BOOKING_INCOME, \
-    RICH_MENU_MAIN, RICH_MENU_SECOND
+    RICH_MENU_MAIN, RICH_MENU_SECOND, \
+    CHECK_PM
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -351,8 +353,11 @@ class ChatBotRegister(Resource):
                         menu_05_01_ex_rpt_show_week.replyMsg(reply_token, curr_ex_model, last_ex_model,
                                                              CHANNEL_ACCESS_TOKEN)
 
-                elif message in DEMO_APP:  # Demo App
-                    menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                # elif message in DEMO_APP:  # Demo App
+                #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                elif message in CHECK_PM:  # CHECK PM 2.5
+                    # menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
                     reply_msg = DEFAULT_REPLY_WORDING
                     # Reply Message Default Post API
@@ -384,6 +389,17 @@ class ChatBotRegister(Resource):
             image_id = payload['events'][0]['message']['id']
             contentProvider = payload['events'][0]['message']['contentProvider']['type']
             print(f"{image_id} , {contentProvider}")
+        elif msg_type == 'location':
+            location_id = payload['events'][0]['message']['id']
+            address = payload['events'][0]['message']['address']
+            latitude = payload['events'][0]['message']['latitude']
+            longitude = payload['events'][0]['message']['longitude']
+            # print(f"{location_id}, {latitude}, {longitude}")
+
+            # GET PM2.5 Value from API xx
+            city, state, country, pm_val, temperature, icon_weather = check_pm_airvisual.getpm(latitude, longitude)
+            header = "{0}, {1}, {2}".format(city, state, country)
+            menu_06_01_pm_value.replyMsg(reply_token, header, pm_val, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'postback':
             param_data = payload['events'][0]['postback']['data']
             richmenuId = None
