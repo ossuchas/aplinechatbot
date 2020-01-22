@@ -355,8 +355,8 @@ class ChatBotRegister(Resource):
 
                 # elif message in DEMO_APP:  # Demo App
                 #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                elif message in CHECK_PM:  # CHECK PM 2.5
-                    # menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                # elif message in CHECK_PM:  # CHECK PM 2.5
+                elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
                     reply_msg = DEFAULT_REPLY_WORDING
