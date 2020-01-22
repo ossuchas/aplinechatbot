@@ -19,6 +19,7 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
             "contents":
                 {
                     "type": "bubble",
+                    "size": "giga",
                     "hero": {
                         "type": "box",
                         "layout": "vertical",
@@ -73,6 +74,10 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                             "label": "action",
                                             "text": "LL BY SubBG SDH[1.3]"
                                         }
+                                    },
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/LgYyk46/subbg-v2-0-4-3.png"
                                     }
                                 ]
                             },
@@ -113,6 +118,15 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                             "type": "message",
                                             "label": "action",
                                             "text": "LL BY SubBG TH[2.3]"
+                                        }
+                                    },
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/GQpVP3y/subbg-v2-0-2-4.png",
+                                        "action": {
+                                            "type": "message",
+                                            "label": "action",
+                                            "text": "LL BY SubBG TH[2.4]"
                                         }
                                     }
                                 ],
@@ -156,6 +170,10 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                             "label": "action",
                                             "text": "LL BY SubBG CD1[3.3]"
                                         }
+                                    },
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/LgYyk46/subbg-v2-0-4-3.png"
                                     }
                                 ],
                                 "margin": "sm"
@@ -189,6 +207,10 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                             "label": "action",
                                             "text": "LL BY SubBG CD2[4.2]"
                                         }
+                                    },
+                                    {
+                                        "type": "image",
+                                        "url": "https://i.ibb.co/LgYyk46/subbg-v2-0-4-3.png"
                                     },
                                     {
                                         "type": "image",
