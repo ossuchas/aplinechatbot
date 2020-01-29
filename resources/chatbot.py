@@ -150,6 +150,12 @@ class ChatBotRegister(Resource):
                             else:
                                 reply_msg = "You are not authorized to access this menu."
                                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'MKT':  # Modified by Suchat S. 2020-01-29 for add MKT Role
+                            if userModel.user_sub_no[0].strip() == prefix_bg:  # Check authorized by bg
+                                menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                         elif userModel.user_type == 'LCM':
                             if userModel.user_sub_no.strip() == subbg:
                                 menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
@@ -216,6 +222,26 @@ class ChatBotRegister(Resource):
                             if role:
                                 if p_period[0] != 'W':
                                     # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
+                                    ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                                    menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
+                                                                                       CHANNEL_ACCESS_TOKEN)
+                                else:
+                                    ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                             'Y')
+                                    ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                               'N')
+                                    menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token,
+                                                                                           ll_model_current,
+                                                                                           ll_model_last_week,
+                                                                                           CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'MKT':  # Modified by Suchat S. 2020-01-29 add MKT Role
+                            bg = userModel.user_sub_no[0].strip()
+                            role = UserRoleProjModel().check_auth_subbg(userId, project, bg)
+                            if role:
+                                if p_period[0] != 'W':
                                     ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
                                     menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
                                                                                        CHANNEL_ACCESS_TOKEN)
