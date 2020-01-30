@@ -151,7 +151,7 @@ class ChatBotRegister(Resource):
                                 reply_msg = "You are not authorized to access this menu."
                                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                         elif userModel.user_type == 'MKT':  # Modified by Suchat S. 2020-01-29 for add MKT Role
-                            if userModel.user_sub_no[0].strip() == prefix_bg:  # Check authorized by bg
+                            if userModel.user_sub_no.strip() == subbg:  # Check authorized by bg
                                 menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
                             else:
                                 reply_msg = "You are not authorized to access this menu."
@@ -238,8 +238,8 @@ class ChatBotRegister(Resource):
                                 reply_msg = "You are not authorized to access this menu."
                                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                         elif userModel.user_type == 'MKT':  # Modified by Suchat S. 2020-01-29 add MKT Role
-                            bg = userModel.user_sub_no[0].strip()
-                            role = UserRoleProjModel().check_auth_subbg(userId, project, bg)
+                            subbg = userModel.user_sub_no.strip()
+                            role = UserRoleProjModel().check_auth_lcm(userId, project, subbg)
                             if role:
                                 if p_period[0] != 'W':
                                     ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
