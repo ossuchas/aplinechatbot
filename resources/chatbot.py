@@ -19,7 +19,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
     menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
     menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu, share_location, \
-    menu_06_01_pm_value, check_pm_airvisual
+    menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -31,7 +31,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
     EXECUTIVE_PREFIX, BOOKING_INCOME, \
     RICH_MENU_MAIN, RICH_MENU_SECOND, \
-    CHECK_PM
+    CHECK_PM, VIRUS
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -42,6 +42,7 @@ from models.crm_line_exct_report import ExecutiveReportModel
 from models.vw_crm_line_actual_income import ActualIncomeByProjModel
 from models.crm_line_gross_income import GrossIncomeModel
 from models.vw_crm_line_userroleproj import UserRoleProjModel
+from models.tmp_virus_corona import VirusCoronaModel
 
 
 class ChatBot(Resource):
@@ -384,6 +385,11 @@ class ChatBotRegister(Resource):
                 # elif message in CHECK_PM:  # CHECK PM 2.5
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message in VIRUS:
+                    virus = VirusCoronaModel().find_all()
+                    virus_totl = VirusCoronaModel().get_TotalCase()
+                    # print(virus_totl[0], virus_totl[1])
+                    virus_corona_stat.replyMsg(reply_token, virus, virus_totl[0], virus_totl[1], CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
                     reply_msg = DEFAULT_REPLY_WORDING
                     # Reply Message Default Post API
