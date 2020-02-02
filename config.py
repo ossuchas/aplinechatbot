@@ -107,3 +107,5 @@ API_AIRVISUAL_URI = "https://api.airvisual.com/v2"
 
 # Virus Corona
 VIRUS = ["ไวรัสโคโรนา", "โคโรนา", "virus", "corona", "อู่ฮั่น", "ไวรัสจีน", "ไวรัส"]
+
+HOT_ISSUE = "Hot Issue"

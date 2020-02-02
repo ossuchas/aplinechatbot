@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/virus_corona_stat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/tmp_virus_corona.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/menu_06_01_hotissue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
@@ -316,7 +315,8 @@
       <workItem from="1580295007602" duration="3112000" />
       <workItem from="1580332444712" duration="1668000" />
       <workItem from="1580355460039" duration="895000" />
-      <workItem from="1580608555829" duration="3961000" />
+      <workItem from="1580608555829" duration="5962000" />
+      <workItem from="1580639638188" duration="286000" />
     </task>
     <servers />
   </component>
@@ -356,22 +356,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576457529894" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1580612357663">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1580615382584">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580612357663" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1580612357662">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580615382584" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1580615382583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580612357662" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1580612357662">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580615382583" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1580615382583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580612357662" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1580612357662">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580615382583" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1580615382583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580612357662" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580615382583" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1576362230857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -406,7 +406,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1580612357646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1580639847304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

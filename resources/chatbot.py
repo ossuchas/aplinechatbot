@@ -19,7 +19,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     chatbot_register, menu_demo_app, menu_05_01_ex_rpt_period, \
     menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
     menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu, share_location, \
-    menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat
+    menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat, \
+    menu_06_01_hotissue
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -31,7 +32,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
     EXECUTIVE_PREFIX, BOOKING_INCOME, \
     RICH_MENU_MAIN, RICH_MENU_SECOND, \
-    CHECK_PM, VIRUS
+    CHECK_PM, VIRUS, HOT_ISSUE
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -385,6 +386,8 @@ class ChatBotRegister(Resource):
                 # elif message in CHECK_PM:  # CHECK PM 2.5
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message == HOT_ISSUE:
+                    menu_06_01_hotissue.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in VIRUS:
                     virus = VirusCoronaModel().find_all()
                     virus_totl = VirusCoronaModel().get_TotalCase()
