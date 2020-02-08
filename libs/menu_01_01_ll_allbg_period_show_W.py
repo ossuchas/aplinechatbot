@@ -600,70 +600,45 @@ def replyMsg(Reply_token: str =None, bg: str = None, ll: LeadLagModel = None, li
                                 "type": "box",
                                 "layout": "baseline",
                                 "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "2nd Walk++",
-                                        "size": "xs",
-                                        "flex": 0
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{ll.tg_walk2:,.0f}",
-                                        "size": "xs",
-                                        "align": "end",
-                                        "position": "absolute",
-                                        "offsetBottom": "1px",
-                                        "offsetEnd": "31%"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{ll.at_walk2:,.0f}",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": ll.icon_walk2,
-                                        "margin": "lg"
-                                    }
+                                    { "type": "text", "text": "2nd Walk++", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": f"{ll.tg_walk2:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                    { "type": "text", "text": f"{ll.at_walk2:,.0f}", "size": "xs", "align": "end" },
+                                    { "type": "icon", "url": ll.icon_walk2, "margin": "lg" }
                                 ]
                             },
                             {
                                 "type": "box",
                                 "layout": "baseline",
                                 "contents": [
-                                    {
-                                        "type": "text",
-                                        "text": "Conversion",
-                                        "size": "xs",
-                                        "flex": 0
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{ll.tg_conversion:,.0f}",
-                                        "size": "xs",
-                                        "align": "end",
-                                        "position": "absolute",
-                                        "offsetBottom": "1px",
-                                        "offsetEnd": "31%"
-                                    },
-                                    {
-                                        "type": "text",
-                                        "text": f"{ll.at_conversion:,.0f}",
-                                        "size": "xs",
-                                        "align": "end"
-                                    },
-                                    {
-                                        "type": "icon",
-                                        "url": ll.icon_conversion,
-                                        "margin": "lg"
-                                    }
+                                    { "type": "text", "text": "Conversion", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": f"{ll.tg_conversion:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                    { "type": "text", "text": f"{ll.at_conversion:,.0f}", "size": "xs", "align": "end" },
+                                    { "type": "icon", "url": ll.icon_conversion, "margin": "lg" }
                                 ],
                                 "backgroundColor": "#FAF5FF"
                             },
                             {
-                                "type": "separator"
-                            }
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    { "type": "text", "text": "Backlog ขายแล้วเพื่อโอน (Units)", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": f"{ll.tg_blunit:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                    { "type": "text", "text": f"{ll.at_blunit:,.0f}", "size": "xs", "align": "end" },
+                                    { "type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png", "margin": "lg" }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    { "type": "text", "text": "Backlog ขายแล้วเพื่อโอน (MB)", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": f"{ll.tg_blamount:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                    { "type": "text", "text": f"{ll.at_blamount:,.0f}", "size": "xs", "align": "end" },
+                                    { "type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png", "margin": "lg" }
+                                ],
+                                "backgroundColor": "#FAF5FF"
+                            },
+                            { "type": "separator" }
                         ]
                     },
                     "footer": {

@@ -640,32 +640,41 @@ def replyMsg(Reply_token: str = None, bg: str = None,
                                         "type": "box",
                                         "layout": "baseline",
                                         "contents": [
-                                            {
-                                                "type": "text",
-                                                "text": "Conversion",
-                                                "size": "xs",
-                                                "flex": 0
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": f"{ll.tg_conversion:,.0f}",
-                                                "size": "xs",
-                                                "align": "end",
-                                                "position": "absolute",
-                                                "offsetBottom": "1px",
-                                                "offsetEnd": "31%"
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": f"{ll.at_conversion:,.0f}",
-                                                "size": "xs",
-                                                "align": "end"
-                                            },
-                                            {
-                                                "type": "icon",
-                                                "url": ll.icon_conversion,
-                                                "margin": "lg"
-                                            }
+                                            { "type": "text", "text": "Conversion", "size": "xs", "flex": 0 },
+                                            { "type": "text", "text": f"{ll.tg_conversion:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                            { "type": "text", "text": f"{ll.at_conversion:,.0f}", "size": "xs", "align": "end" },
+                                            { "type": "icon", "url": ll.icon_conversion, "margin": "lg" }
+                                        ],
+                                        "backgroundColor": "#FAF5FF"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "contents": [
+                                            {"type": "text", "text": "Backlog ขายแล้วเพื่อโอน (Units)", "size": "xs",
+                                             "flex": 0},
+                                            {"type": "text", "text": f"{ll_l.tg_blunit:,.0f}", "size": "xs",
+                                             "align": "end", "position": "absolute", "offsetBottom": "1px",
+                                             "offsetEnd": "31%"},
+                                            {"type": "text", "text": f"{ll_l.at_blunit:,.0f}", "size": "xs",
+                                             "align": "end"},
+                                            {"type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png",
+                                             "margin": "lg"}
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "contents": [
+                                            {"type": "text", "text": "Backlog ขายแล้วเพื่อโอน (MB)", "size": "xs",
+                                             "flex": 0},
+                                            {"type": "text", "text": f"{ll_l.tg_blamount:,.0f}", "size": "xs",
+                                             "align": "end", "position": "absolute", "offsetBottom": "1px",
+                                             "offsetEnd": "31%"},
+                                            {"type": "text", "text": f"{ll_l.at_blamount:,.0f}", "size": "xs",
+                                             "align": "end"},
+                                            {"type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png",
+                                             "margin": "lg"}
                                         ],
                                         "backgroundColor": "#FAF5FF"
                                     },
@@ -1327,32 +1336,41 @@ def replyMsg(Reply_token: str = None, bg: str = None,
                                         "type": "box",
                                         "layout": "baseline",
                                         "contents": [
-                                            {
-                                                "type": "text",
-                                                "text": "Conversion",
-                                                "size": "xs",
-                                                "flex": 0
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": f"{ll_l.tg_conversion:,.0f}",
-                                                "size": "xs",
-                                                "align": "end",
-                                                "position": "absolute",
-                                                "offsetBottom": "1px",
-                                                "offsetEnd": "31%"
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": f"{ll_l.at_conversion:,.0f}",
-                                                "size": "xs",
-                                                "align": "end"
-                                            },
-                                            {
-                                                "type": "icon",
-                                                "url": ll_l.icon_conversion,
-                                                "margin": "lg"
-                                            }
+                                            { "type": "text", "text": "Conversion", "size": "xs", "flex": 0 },
+                                            { "type": "text", "text": f"{ll_l.tg_conversion:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
+                                            { "type": "text", "text": f"{ll_l.at_conversion:,.0f}", "size": "xs", "align": "end" },
+                                            { "type": "icon", "url": ll_l.icon_conversion, "margin": "lg" }
+                                        ],
+                                        "backgroundColor": "#FAF5FF"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "contents": [
+                                            {"type": "text", "text": "Backlog ขายแล้วเพื่อโอน (Units)", "size": "xs",
+                                             "flex": 0},
+                                            {"type": "text", "text": f"{ll.tg_blunit:,.0f}", "size": "xs",
+                                             "align": "end", "position": "absolute", "offsetBottom": "1px",
+                                             "offsetEnd": "31%"},
+                                            {"type": "text", "text": f"{ll.at_blunit:,.0f}", "size": "xs",
+                                             "align": "end"},
+                                            {"type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png",
+                                             "margin": "lg"}
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "contents": [
+                                            {"type": "text", "text": "Backlog ขายแล้วเพื่อโอน (MB)", "size": "xs",
+                                             "flex": 0},
+                                            {"type": "text", "text": f"{ll.tg_blamount:,.0f}", "size": "xs",
+                                             "align": "end", "position": "absolute", "offsetBottom": "1px",
+                                             "offsetEnd": "31%"},
+                                            {"type": "text", "text": f"{ll.at_blamount:,.0f}", "size": "xs",
+                                             "align": "end"},
+                                            {"type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png",
+                                             "margin": "lg"}
                                         ],
                                         "backgroundColor": "#FAF5FF"
                                     },
