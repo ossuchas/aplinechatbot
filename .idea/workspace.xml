@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tmp_virus_corona.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/tmp_virus_corona.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/crm_line_ll_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/crm_line_ll_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,6 +316,13 @@
       <workItem from="1580608555829" duration="5962000" />
       <workItem from="1580639638188" duration="891000" />
       <workItem from="1580641462395" duration="365000" />
+      <workItem from="1580677965244" duration="2417000" />
+      <workItem from="1580776879454" duration="2772000" />
+      <workItem from="1580854723022" duration="889000" />
+      <workItem from="1580860593801" duration="1806000" />
+      <workItem from="1580941120448" duration="285000" />
+      <workItem from="1581128925235" duration="2893000" />
+      <workItem from="1581151535692" duration="347000" />
     </task>
     <servers />
   </component>

@@ -72,6 +72,10 @@ class LeadLagModel(db.Model):
     tg_conversion = db.Column(db.Float)
     at_conversion = db.Column(db.Float)
     icon_conversion = db.Column(db.String(255))
+    tg_blunit = db.Column(db.Float)
+    at_blunit = db.Column(db.Float)
+    tg_blamount = db.Column(db.Float)
+    at_blamount = db.Column(db.Float)
 
     @classmethod
     def find_by_bg_period(cls, _type: str, _bg: str, _period: str, _flag: str) -> "LeadLagModel":
