@@ -73,7 +73,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": ":: Booking ::",
+                                        "text": ":: Booking + Offline ::",
                                         "size": "md",
                                         "weight": "bold",
                                         "align": "center",
@@ -435,7 +435,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                 "contents": [
                                     {
                                         "type": "text",
-                                        "text": ":: Net Price ::",
+                                        "text": ":: Net Booking ::",
                                         "size": "md",
                                         "weight": "bold",
                                         "align": "center",

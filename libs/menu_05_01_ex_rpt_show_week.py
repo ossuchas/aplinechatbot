@@ -48,7 +48,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
                     "type": "box",
                     "layout": "baseline",
                     "contents": [
-                        { "type": "text", "text": ":: Booking ::", "size": "md", "weight": "bold", "align": "center", "color": "#FFFFFF" }
+                        { "type": "text", "text": ":: Booking + Offline ::", "size": "md", "weight": "bold", "align": "center", "color": "#FFFFFF" }
                     ],
                     "backgroundColor": "#23ACE8"
                 },
@@ -194,7 +194,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
                     "type": "box",
                     "layout": "baseline",
                     "contents": [
-                        { "type": "text", "text": ":: Net Price ::", "size": "md", "weight": "bold", "align": "center", "color": "#FFFFFF" }
+                        { "type": "text", "text": ":: Net Booking ::", "size": "md", "weight": "bold", "align": "center", "color": "#FFFFFF" }
                     ],
                     "margin": "md",
                     "backgroundColor": "#23ACE8"
@@ -384,7 +384,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
                     "type": "box",
                     "layout": "baseline",
                     "contents": [
-                        {"type": "text", "text": ":: Booking ::", "size": "md", "weight": "bold", "align": "center",
+                        {"type": "text", "text": ":: Booking + Offline ::", "size": "md", "weight": "bold", "align": "center",
                          "color": "#FFFFFF"}
                     ],
                     "backgroundColor": "#23ACE8"
@@ -542,7 +542,7 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None,
                     "type": "box",
                     "layout": "baseline",
                     "contents": [
-                        {"type": "text", "text": ":: Net Price ::", "size": "md", "weight": "bold", "align": "center",
+                        {"type": "text", "text": ":: Net Booking ::", "size": "md", "weight": "bold", "align": "center",
                          "color": "#FFFFFF"}
                     ],
                     "margin": "md",

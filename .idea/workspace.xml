@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period_show_L_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period_show_L_C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period_show_W.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period_show_W.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show_L_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period_show_L_C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show_L_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_03_01_ll_allbg_byproject_period_show_L_C.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MISBatchReport" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -328,7 +322,8 @@
       <workItem from="1580941120448" duration="285000" />
       <workItem from="1581128925235" duration="2893000" />
       <workItem from="1581151535692" duration="2629000" />
-      <workItem from="1581201774666" duration="1678000" />
+      <workItem from="1581201774666" duration="2474000" />
+      <workItem from="1581286250486" duration="674000" />
     </task>
     <servers />
   </component>
@@ -364,26 +359,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1579136498358" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1576457529894">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1581287596624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576457529894" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1581202699617">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581287596624" />
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1581206002194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581202699617" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1581202699617">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581206002194" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1581206002194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581202699617" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1581202699617">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581206002194" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1581206002194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581202699617" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1581202699617">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581206002194" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1581206002194">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581202699617" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581206002194" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1576362230857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
