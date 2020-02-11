@@ -649,7 +649,7 @@ def replyMsg(Reply_token: str = None, ll: LeadLagModel = None, line_Acees_Token:
                                 "type": "box",
                                 "layout": "baseline",
                                 "contents": [
-                                    { "type": "text", "text": "Backlog ขายแล้วเพื่อโอน (Units)", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": "Backlog (Units)", "size": "xs", "flex": 0 },
                                     { "type": "text", "text": f"{ll.tg_blunit:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
                                     { "type": "text", "text": f"{ll.at_blunit:,.0f}", "size": "xs", "align": "end" },
                                     { "type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png", "margin": "lg" }
@@ -659,7 +659,7 @@ def replyMsg(Reply_token: str = None, ll: LeadLagModel = None, line_Acees_Token:
                                 "type": "box",
                                 "layout": "baseline",
                                 "contents": [
-                                    { "type": "text", "text": "Backlog ขายแล้วเพื่อโอน (MB)", "size": "xs", "flex": 0 },
+                                    { "type": "text", "text": "Backlog (MB)", "size": "xs", "flex": 0 },
                                     { "type": "text", "text": f"{ll.tg_blamount:,.0f}", "size": "xs", "align": "end", "position": "absolute", "offsetBottom": "1px", "offsetEnd": "31%" },
                                     { "type": "text", "text": f"{ll.at_blamount:,.0f}", "size": "xs", "align": "end" },
                                     { "type": "icon", "url": "https://i.ibb.co/Mp4pjzF/blank.png", "margin": "lg" }
