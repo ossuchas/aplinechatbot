@@ -14,7 +14,7 @@ class VirusCoronaModel(db.Model):
 
     @classmethod
     def find_all(cls) -> List["VirusCoronaModel"]:
-        return cls.query.all()
+        return cls.query.limit(30).all()
 
     @classmethod
     def get_TotalCase(cls) -> int:

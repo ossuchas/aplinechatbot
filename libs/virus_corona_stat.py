@@ -81,7 +81,8 @@ def replyMsg(Reply_token: str = None, virus: List["VirusCoronaModel"] = None,
                     "body": {
                         "type": "box",
                         "layout": "vertical",
-                        "contents":  new_contents
+                        "contents":
+                            new_contents
                         #     [
                         #     { "type": "separator" },
                         #     { "type": "box", "layout": "horizontal",
@@ -151,6 +152,8 @@ def replyMsg(Reply_token: str = None, virus: List["VirusCoronaModel"] = None,
                     }
                 }
         }
+
+    print(type_msg)
 
     data = {
         "replyToken": Reply_token,

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/virus_corona_stat.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/virus_corona_stat.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +329,21 @@
       <workItem from="1581324015578" duration="10000" />
       <workItem from="1581386173475" duration="1580000" />
       <workItem from="1581470230653" duration="2489000" />
-      <workItem from="1581541787956" duration="390000" />
+      <workItem from="1581541787956" duration="1121000" />
+      <workItem from="1581721143540" duration="2780000" />
+      <workItem from="1581736343676" duration="11000" />
+      <workItem from="1581802562642" duration="1884000" />
+      <workItem from="1581809861173" duration="68000" />
+      <workItem from="1581809949408" duration="18000" />
+      <workItem from="1582148665833" duration="1745000" />
+      <workItem from="1582182528735" duration="2883000" />
+      <workItem from="1582272949073" duration="773000" />
+      <workItem from="1582287471052" duration="649000" />
+      <workItem from="1582322813385" duration="813000" />
+      <workItem from="1582361474617" duration="1108000" />
+      <workItem from="1582427785110" duration="1163000" />
+      <workItem from="1582456654530" duration="114000" />
+      <workItem from="1582680466519" duration="607000" />
     </task>
     <servers />
   </component>
@@ -368,22 +383,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581287596624" />
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1581542241572">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom" timestamp="1582428232425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581542241572" />
-    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1581542241572">
+    <state width="1323" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582428232425" />
+    <state width="1323" height="175" key="GridCell.Tab.0.center" timestamp="1582428232425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581542241572" />
-    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1581542241572">
+    <state width="1323" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582428232425" />
+    <state width="1323" height="175" key="GridCell.Tab.0.left" timestamp="1582428232425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581542241572" />
-    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1581542241572">
+    <state width="1323" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582428232425" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right" timestamp="1582428232425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581542241572" />
+    <state width="1323" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582428232425" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1576362230857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -422,7 +437,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1581541908141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1582427988689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
