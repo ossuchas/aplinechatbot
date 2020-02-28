@@ -391,8 +391,12 @@ class ChatBotRegister(Resource):
                 elif message in VIRUS:
                     virus = VirusCoronaModel().find_all()
                     virus_totl = VirusCoronaModel().get_TotalCase()
-                    # print(virus_totl[0], virus_totl[1])
-                    virus_corona_stat.replyMsg(reply_token, virus, virus_totl[0], virus_totl[1], CHANNEL_ACCESS_TOKEN)
+                    print(virus_totl[0], virus_totl[1], virus_totl[2])
+                    virus_corona_stat.replyMsg(reply_token, virus,
+                                               virus_totl[0],
+                                               virus_totl[1],
+                                               virus_totl[2],
+                                               CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
                     reply_msg = DEFAULT_REPLY_WORDING
                     # Reply Message Default Post API
