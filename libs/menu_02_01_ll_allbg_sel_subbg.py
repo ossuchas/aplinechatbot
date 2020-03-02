@@ -164,12 +164,12 @@ def replyMsg(Reply_token: str =None, TextMessage: str = None, line_Acees_Token: 
                                     },
                                     {
                                         "type": "image",
-                                        "url": "https://i.ibb.co/7g7FcWd/subbg-v2-0-3-3.png",
-                                        "action": {
-                                            "type": "message",
-                                            "label": "action",
-                                            "text": "LL BY SubBG CD1[3.3]"
-                                        }
+                                        "url": "https://i.ibb.co/LgYyk46/subbg-v2-0-4-3.png"
+                                        # "action": {
+                                        #     "type": "message",
+                                        #     "label": "action",
+                                        #     "text": "LL BY SubBG CD1[3.3]"
+                                        # }
                                     },
                                     {
                                         "type": "image",
