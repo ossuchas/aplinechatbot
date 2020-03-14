@@ -83,7 +83,7 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                                             },
                                             {
                                                 "type": "image",
-                                                "url": "https://i.ibb.co/10QSYk8/thai-covid-19-v1-1.png",
+                                                "url": "https://i.ibb.co/qNJYPVS/thai-covid-19-v1-2.png",
                                                 "gravity": "center",
                                                 "aspectRatio": "30:9",
                                                 "size": "full",
