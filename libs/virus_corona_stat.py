@@ -90,6 +90,8 @@ def replyMsg(Reply_token: str = None, virus: List["VirusCoronaModel"] = None,
         }
     )
 
+    print(new_contents)
+
     type_msg = \
         {
             "type": "flex",
