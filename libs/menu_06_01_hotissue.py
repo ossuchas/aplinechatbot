@@ -61,24 +61,28 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                                                     "uri": "https://liff.line.me/1653928950-g09KoJWP"
                                                 }
                                             },
-                                            # {
-                                            #     "type": "image",
-                                            #     "url": "https://i.ibb.co/b3PKKwB/covid-19-v2-0.png",
-                                            #     "size": "full",
-                                            #     "aspectMode": "cover",
-                                            #     "aspectRatio": "30:9",
-                                            #     "gravity": "center",
-                                            #     # "action": {
-                                            #     #     "type": "message",
-                                            #     #     "label": "action",
-                                            #     #     "text": "ไวรัสโคโรนา"
-                                            #     # }
-                                            #     "action": {
-                                            #         "type": "uri",
-                                            #         "label": "action",
-                                            #         "uri": "https://liff.line.me/1653928950-rbE1Dl87"
-                                            #     }
-                                            # },
+                                            {
+                                                "type": "separator",
+                                                "margin": "sm"
+                                            },
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/b3PKKwB/covid-19-v2-0.png",
+                                                "size": "full",
+                                                "aspectMode": "cover",
+                                                "aspectRatio": "30:9",
+                                                "gravity": "center",
+                                                # "action": {
+                                                #     "type": "message",
+                                                #     "label": "action",
+                                                #     "text": "ไวรัสโคโรนา"
+                                                # }
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "action",
+                                                    "uri": "https://liff.line.me/1653928950-rbE1Dl87"
+                                                }
+                                            },
                                             # {
                                             #     "type": "separator",
                                             #     "margin": "sm"
@@ -95,22 +99,22 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
                                             #         "uri": "https://liff.line.me/1653928950-j3aOP6BE"
                                             #     }
                                             # },
-                                            # {
-                                            #     "type": "separator",
-                                            #     "margin": "sm"
-                                            # },
-                                            # {
-                                            #     "type": "image",
-                                            #     "url": "https://i.ibb.co/NCd7mqb/thai-covid-19-v1-3.png",
-                                            #     "gravity": "center",
-                                            #     "aspectRatio": "30:9",
-                                            #     "size": "full",
-                                            #     "action": {
-                                            #         "type": "uri",
-                                            #         "label": "action",
-                                            #         "uri": "https://liff.line.me/1653928950-rWE89QNw"
-                                            #     }
-                                            # }
+                                            {
+                                                "type": "separator",
+                                                "margin": "sm"
+                                            },
+                                            {
+                                                "type": "image",
+                                                "url": "https://i.ibb.co/NCd7mqb/thai-covid-19-v1-3.png",
+                                                "gravity": "center",
+                                                "aspectRatio": "30:9",
+                                                "size": "full",
+                                                "action": {
+                                                    "type": "uri",
+                                                    "label": "action",
+                                                    "uri": "https://liff.line.me/1653928950-rWE89QNw"
+                                                }
+                                            }
                                         ],
                                         "flex": 1
                                     }
