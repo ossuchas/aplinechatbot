@@ -20,7 +20,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_05_01_ex_rpt_show_year_quarter, menu_05_01_ex_rpt_show_week, \
     menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu, share_location, \
     menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat, \
-    menu_06_01_hotissue
+    menu_06_01_hotissue, menu_05_01_ex_rpt_show_year2date
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -369,12 +369,14 @@ class ChatBotRegister(Resource):
                     if period[0] != 'W':
                         if period[0] == 'A':
                             p_period = 'YTD'
+                            ex_model = ExecutiveReportModel().find_by_period(p_period)
+                            # print(f"kai AAA {p_period}")
+                            menu_05_01_ex_rpt_show_year2date.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
                         else:
                             p_period = 'QTD'
-
-                        # print(f"kai {p_period}")
-                        ex_model = ExecutiveReportModel().find_by_period(p_period)
-                        menu_05_01_ex_rpt_show_year_quarter.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
+                            ex_model = ExecutiveReportModel().find_by_period(p_period)
+                            # print(f"kai BBB {p_period}")
+                            menu_05_01_ex_rpt_show_year_quarter.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
                     else:
                         curr_ex_model = ExecutiveReportModel().find_current_week()
                         last_ex_model = ExecutiveReportModel().find_last_week()
