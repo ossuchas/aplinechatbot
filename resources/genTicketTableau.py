@@ -8,7 +8,7 @@ from libs.ap_genticket import APGenTicketTableau, APAuthenException
 
 class GenTicketTableau(Resource):
     @classmethod
-    def post(cls):
+    def get(cls):
         # user_json = request.get_json()
         try:
             response = APGenTicketTableau.ap_genticket()
