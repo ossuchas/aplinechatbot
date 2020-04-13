@@ -14,6 +14,7 @@ from resources.vw_crm_line_userroleproj import UserRoleProject
 from resources.vw_crm_line_userroleproj2 import UserRoleProject2
 from resources.chatbot_mst_user import ChatBotMstUserRole, ChatBotMstUserList
 from resources.genTicketTableau import GenTicketTableau
+from resources.log_linechatbot import LogLineChatBot
 
 app = Flask(__name__)
 
@@ -39,6 +40,7 @@ api.add_resource(UserRoleProject2, "/getroleproj2/<string:userid>")
 api.add_resource(ChatBotMstUserList, "/listuserrole")
 api.add_resource(ChatBotMstUserRole, "/userrole/<string:_user_empcode>")
 api.add_resource(GenTicketTableau, "/genticket")
+api.add_resource(LogLineChatBot, "/addlogchatbot")
 
 if __name__ == '__main__':
     db.init_app(app)
