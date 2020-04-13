@@ -7,12 +7,10 @@ from datetime import datetime
 from models.log_linechatbot import LogChatBotModel
 
 
-log_models = LogChatBotModel()
-
-
 class LogLineChatBot(Resource):
     @classmethod
     def post(cls):
+        log_models = LogChatBotModel()
 
         log_models.replyToken = '8ab9ecda51bf4eb89e3617ed0358ad3d'
         log_models.source_groupId = None
