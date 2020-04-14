@@ -10,6 +10,9 @@ from models.log_linechatbot import LogChatBotModel
 class LogLineChatBot(Resource):
     @classmethod
     def post(cls):
+        json_data = request.get_json()
+        # print(json_data)
+        msg_text_view = json_data["name"]
         log_models = LogChatBotModel()
 
         log_models.replyToken = '8ab9ecda51bf4eb89e3617ed0358ad3d'
@@ -18,7 +21,7 @@ class LogLineChatBot(Resource):
         log_models.source_type = 'user'
         log_models.timestamps = str(datetime.timestamp(datetime.now()))
         log_models.message_type = 'web'
-        log_models.message_text = 'Walk Summary by BG'
+        log_models.message_text = msg_text_view
         log_models.stickerId = None
         log_models.packageId = None
         log_models.beacon_hwid = None
