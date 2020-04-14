@@ -12,7 +12,7 @@ class LogLineChatBot(Resource):
     def post(cls):
         log_models = LogChatBotModel()
 
-        log_models.replyToken = '8ab9ecda51bf4eb89e3617ed0358ad3d'
+        log_models.replyToken = '999999999999999999999999999999999'
         log_models.source_groupId = None
         log_models.source_userId = 'U2afc49c6b047dd285e8c926ac62d7f62'
         log_models.source_type = 'user'
