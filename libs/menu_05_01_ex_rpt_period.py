@@ -106,8 +106,9 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": "https://liff.line.me/1653928950-DO3WAwBr"
-                                        }
+                                            # "uri": "https://liff.line.me/1653928950-DO3WAwBr"
+                                            "uri": "http://test-tableauwebapp.apthai.com/walksummary"
+    }
                                     }
                                 ]
                             }
