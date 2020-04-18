@@ -41,6 +41,27 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                 "contents": [
                                     {
                                         "type": "image",
+                                        "url": "https://drive.google.com/uc?id=1SRjj5BQ9hAtrxBwlpE33CGqkqVXzwqUG",
+                                        "size": "full",
+                                        "aspectMode": "fit",
+                                        "aspectRatio": "24:7",
+                                        "action": {
+                                            "type": "uri",
+                                            "label": "action",
+                                            "uri": "http://test-tableauwebapp.apthai.com/exrptview",
+                                            "altUri": {
+                                                "desktop": "http://test-tableauwebapp.apthai.com/exrptview"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
                                         "url": "https://i.ibb.co/1M4dwWq/calendar-y2d-v1-0.png",
                                         "size": "full",
                                         "aspectMode": "fit",
@@ -108,7 +129,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                             "label": "action",
                                             # "uri": "https://liff.line.me/1653928950-DO3WAwBr"
                                             "uri": "http://test-tableauwebapp.apthai.com/walksummary"
-    }
+                                        }
                                     }
                                 ]
                             }
