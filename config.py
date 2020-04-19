@@ -31,6 +31,7 @@ LINE_API_RICHMENU=os.environ.get("LINE_API_RICHMENU")
 # LINE_API="https://api.line.me/v2/bot/message/reply"
 LINE_API = os.environ.get("LINE_API")
 LINE_API_PUSH = os.environ.get("LINE_API_PUSH")
+TABLEAU_URL = os.environ.get("TABLEAU_URL")
 
 DEFAULT_REPLY_WORDING = "เจ้านายกำลังฝึกผมให้เข้าใจในเรื่องอื่นๆอยู่นะครับ ขอโทษทีตอนนี้ยังไม่พร้อมตอบเรื่องที่ถามมานะครับ"
 REPLY_WORDING = ["99999", "00000", "เสี่ยจัสติน", "เสี่ย"]

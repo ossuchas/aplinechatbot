@@ -2,7 +2,7 @@
 
 import requests
 import json
-from config import LINE_API
+from config import LINE_API, TABLEAU_URL
 
 
 def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
@@ -48,9 +48,9 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": "http://test-tableauwebapp.apthai.com/exrptview",
+                                            "uri": f"{TABLEAU_URL}/exrptview",
                                             "altUri": {
-                                                "desktop": "http://test-tableauwebapp.apthai.com/exrptview"
+                                                "desktop": f"{TABLEAU_URL}/exrptview"
                                             }
                                         }
                                     }
@@ -128,7 +128,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                             "type": "uri",
                                             "label": "action",
                                             # "uri": "https://liff.line.me/1653928950-DO3WAwBr"
-                                            "uri": "http://test-tableauwebapp.apthai.com/walksummary"
+                                            "uri": f"{TABLEAU_URL}/walksummary"
                                         }
                                     }
                                 ]

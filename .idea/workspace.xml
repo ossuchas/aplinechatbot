@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_period.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +382,8 @@
       <workItem from="1586867553565" duration="1735000" />
       <workItem from="1586898857765" duration="3052000" />
       <workItem from="1587245345037" duration="73000" />
-      <workItem from="1587245437404" duration="382000" />
+      <workItem from="1587245437404" duration="1107000" />
+      <workItem from="1587330513066" duration="1436000" />
     </task>
     <servers />
   </component>
@@ -414,30 +414,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583224394174" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1586903323784">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1587245823530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586903323784" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1586903323784">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587245823530" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1587245823530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586903323784" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1586903323784">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587245823530" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1587245823530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586903323784" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1586903323784">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587245823530" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1587245823530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586903323784" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587245823530" />
     <state x="370" y="80" width="810" height="568" key="find.popup" timestamp="1586411756946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="370" y="80" width="810" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586411756946" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586812193085">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587331474418">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586812193085" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587331474418" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
