@@ -35,27 +35,27 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                         "type": "box",
                         "layout": "vertical",
                         "contents": [
-                            {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://drive.google.com/uc?id=1SRjj5BQ9hAtrxBwlpE33CGqkqVXzwqUG",
-                                        "size": "full",
-                                        "aspectMode": "fit",
-                                        "aspectRatio": "24:7",
-                                        "action": {
-                                            "type": "uri",
-                                            "label": "action",
-                                            "uri": f"{TABLEAU_URL}/exrptview",
-                                            "altUri": {
-                                                "desktop": f"{TABLEAU_URL}/exrptview"
-                                            }
-                                        }
-                                    }
-                                ]
-                            },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "vertical",
+                            #     "contents": [
+                            #         {
+                            #             "type": "image",
+                            #             "url": "https://drive.google.com/uc?id=1SRjj5BQ9hAtrxBwlpE33CGqkqVXzwqUG",
+                            #             "size": "full",
+                            #             "aspectMode": "fit",
+                            #             "aspectRatio": "24:7",
+                            #             "action": {
+                            #                 "type": "uri",
+                            #                 "label": "action",
+                            #                 "uri": f"{TABLEAU_URL}/exrptview",
+                            #                 "altUri": {
+                            #                     "desktop": f"{TABLEAU_URL}/exrptview"
+                            #                 }
+                            #             }
+                            #         }
+                            #     ]
+                            # },
                             {
                                 "type": "box",
                                 "layout": "vertical",
