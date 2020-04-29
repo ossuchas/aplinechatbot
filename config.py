@@ -97,9 +97,21 @@ REGISTER_REJECT_MSG = "can not sign up, you are unauthorized!!"
 DEMO_APP = "Demo App"
 
 # Rich Menu
-RICH_MENU_MAIN = "richmenu-d8d6ac0c6ec6c8144a0779fae0765209"
-RICH_MENU_SECOND = "richmenu-698b7cddd9fcc578305bb3ed4c7ec984"
+RICH_MENU_MAIN = "richmenu-0fffa00a28636aeea4cdbb2673be6e8c"
+RICH_MENU_SECOND = "richmenu-ff31ac5e2075514e215a0a2d3bcdd035"
 
+RICH_MENU_MAIN_IT = os.environ.get("RICH_MENU_MAIN_IT")
+RICH_MENU_MAIN_LCM = os.environ.get("RICH_MENU_MAIN_LCM")
+RICH_MENU_MAIN_MKT = os.environ.get("RICH_MENU_MAIN_MKT")
+RICH_MENU_MAIN_SUBBG = os.environ.get("RICH_MENU_MAIN_SUBBG")
+RICH_MENU_MAIN_VIP = os.environ.get("RICH_MENU_MAIN_VIP")
+RICH_MENU_MAIN_VIP2 = os.environ.get("RICH_MENU_MAIN_VIP2")
+RICH_MENU_SECOND_IT = os.environ.get("RICH_MENU_SECOND_IT")
+RICH_MENU_SECOND_LCM = os.environ.get("RICH_MENU_SECOND_LCM")
+RICH_MENU_SECOND_MKT = os.environ.get("RICH_MENU_SECOND_MKT")
+RICH_MENU_SECOND_SUBBG = os.environ.get("RICH_MENU_SECOND_SUBBG")
+RICH_MENU_SECOND_VIP = os.environ.get("RICH_MENU_SECOND_VIP")
+RICH_MENU_SECOND_VIP2 = os.environ.get("RICH_MENU_SECOND_VIP2")
 
 # Check PM
 CHECK_PM = "ตรวจสอบค่า PM 2.5"

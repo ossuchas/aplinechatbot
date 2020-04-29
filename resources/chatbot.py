@@ -32,7 +32,11 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
     EXECUTIVE_PREFIX, BOOKING_INCOME, \
     RICH_MENU_MAIN, RICH_MENU_SECOND, \
-    CHECK_PM, VIRUS, HOT_ISSUE
+    CHECK_PM, VIRUS, HOT_ISSUE, \
+    RICH_MENU_MAIN_IT, RICH_MENU_MAIN_LCM, RICH_MENU_MAIN_MKT, \
+    RICH_MENU_MAIN_SUBBG, RICH_MENU_MAIN_VIP, RICH_MENU_MAIN_VIP2, \
+    RICH_MENU_SECOND_IT, RICH_MENU_SECOND_LCM, RICH_MENU_SECOND_MKT, \
+    RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -443,6 +447,7 @@ class ChatBotRegister(Resource):
             menu_06_01_pm_value.replyMsg(reply_token, header, pm_val, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'postback':
             param_data = payload['events'][0]['postback']['data']
+            print(param_data)
             richmenuId = None
             if param_data == 'next':
                 richmenuId = RICH_MENU_SECOND
