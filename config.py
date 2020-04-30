@@ -97,8 +97,12 @@ REGISTER_REJECT_MSG = "can not sign up, you are unauthorized!!"
 DEMO_APP = "Demo App"
 
 # Rich Menu
-RICH_MENU_MAIN = "richmenu-0fffa00a28636aeea4cdbb2673be6e8c"
-RICH_MENU_SECOND = "richmenu-ff31ac5e2075514e215a0a2d3bcdd035"
+# RICH_MENU_MAIN = "richmenu-0fffa00a28636aeea4cdbb2673be6e8c"
+# RICH_MENU_SECOND = "richmenu-ff31ac5e2075514e215a0a2d3bcdd035"
+# RICH_MENU_MAIN = "richmenu-0fffa00a28636aeea4cdbb2673be6e8c"
+# RICH_MENU_SECOND = "richmenu-ff31ac5e2075514e215a0a2d3bcdd035"
+RICH_MENU_MAIN = os.environ.get("RICH_MENU_MAIN")
+RICH_MENU_SECOND = os.environ.get("RICH_MENU_SECOND")
 
 RICH_MENU_MAIN_IT = os.environ.get("RICH_MENU_MAIN_IT")
 RICH_MENU_MAIN_LCM = os.environ.get("RICH_MENU_MAIN_LCM")
