@@ -69,42 +69,42 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
                                     }
                                 ]
                             },
-                            # {
-                            #     "type": "box",
-                            #     "layout": "vertical",
-                            #     "contents": [
-                            #         {
-                            #             "type": "image",
-                            #             "url": "https://drive.google.com/uc?id=1tywFtaMylCRrOIi5Di6-N85QJV515w1y",
-                            #             "size": "full",
-                            #             "aspectMode": "fit",
-                            #             "aspectRatio": "24:7",
-                            #             "action": {
-                            #                 "type": "uri",
-                            #                 "label": "action",
-                            #                 "uri": f"{TABLEAU_URL}/walkbg"
-                            #             }
-                            #         }
-                            #     ]
-                            # },
                             {
                                 "type": "box",
                                 "layout": "vertical",
                                 "contents": [
                                     {
                                         "type": "image",
-                                        "url": "https://drive.google.com/uc?id=1CMaaZsbTNics2VL65uT3gly9Ui85ej6y",
+                                        "url": "https://drive.google.com/uc?id=1tywFtaMylCRrOIi5Di6-N85QJV515w1y",
                                         "size": "full",
                                         "aspectMode": "fit",
                                         "aspectRatio": "24:7",
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": f"{TABLEAU_URL}/ds4indi?pTypeDesc={ptypeBG}&userId={userId}"
+                                            "uri": f"{TABLEAU_URL}/walksubbg&userId={userId}"
                                         }
                                     }
                                 ]
                             },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "vertical",
+                            #     "contents": [
+                            #         {
+                            #             "type": "image",
+                            #             "url": "https://drive.google.com/uc?id=1CMaaZsbTNics2VL65uT3gly9Ui85ej6y",
+                            #             "size": "full",
+                            #             "aspectMode": "fit",
+                            #             "aspectRatio": "24:7",
+                            #             "action": {
+                            #                 "type": "uri",
+                            #                 "label": "action",
+                            #                 "uri": f"{TABLEAU_URL}/ds4indi?pTypeDesc={ptypeBG}&userId={userId}"
+                            #             }
+                            #         }
+                            #     ]
+                            # },
                             {
                                 "type": "separator",
                                 "margin": "sm"
