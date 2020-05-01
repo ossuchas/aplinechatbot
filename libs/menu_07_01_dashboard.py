@@ -84,7 +84,7 @@ def replyMsg(Reply_token: str = None, userId: str = None, line_Acees_Token: str 
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": f"{TABLEAU_URL}/walksubbg"
+                                            "uri": f"{TABLEAU_URL}/ds4indi?pTypeDesc=1.SDH&userId={userId}"
                                         }
                                     }
                                 ]
