@@ -14,20 +14,6 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
         'Authorization': authorization
     }
 
-    bg = user.user_sub_no[0].strip()
-    ptypeBG = None
-    if not bg:
-        if bg == '1':
-            ptypeBG = '1.SDH'
-        elif bg == '2':
-            ptypeBG = '2.TH'
-        elif bg == '3':
-            ptypeBG = '3.CD1'
-        elif bg == '4':
-            ptypeBG = '4.CD2'
-    else:
-        print('Empty')
-
     type_msg = \
         {
             "type": "flex",
@@ -64,7 +50,7 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": f"{TABLEAU_URL}/walksummary&userId={userId}"
+                                            "uri": f"{TABLEAU_URL}/walksummary?userId={userId}"
                                         }
                                     }
                                 ]
@@ -82,7 +68,7 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": f"{TABLEAU_URL}/walksubbg&userId={userId}"
+                                            "uri": f"{TABLEAU_URL}/walksubbg?userId={userId}"
                                         }
                                     }
                                 ]

@@ -64,7 +64,7 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            "uri": f"{TABLEAU_URL}/walksummary&userId={userId}"
+                                            "uri": f"{TABLEAU_URL}/walksummary?userId={userId}"
                                         }
                                     }
                                 ]
