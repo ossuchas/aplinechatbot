@@ -15,8 +15,10 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
     }
 
     bg = user.user_sub_no[0].strip()
+    # print(bg)
     ptypeBG = None
-    if not bg:
+    if bg:
+        # print(bg)
         if bg == '1':
             ptypeBG = '1.SDH'
         elif bg == '2':
