@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/libs/menu_06_01_dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
       <recent name="C:\Users\suchat_s\Dropbox\AP\Project\96_Python\1Develop\1_3Technical Document\APLineChatBot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.menu_06_01_dashboard">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="APLineChatBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,6 +82,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="menu_06_01_dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="APLineChatBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/menu_06_01_dashboard.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -107,6 +129,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.menu_06_01_dashboard" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
@@ -396,7 +419,7 @@
       <workItem from="1588195546071" duration="2523000" />
       <workItem from="1588225769840" duration="1512000" />
       <workItem from="1588249118409" duration="793000" />
-      <workItem from="1588302547892" duration="786000" />
+      <workItem from="1588302547892" duration="2307000" />
     </task>
     <servers />
   </component>
@@ -427,22 +450,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583224394174" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1588166859502">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1588310607340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588166859502" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1588166859499">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588310607340" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1588310607340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588166859499" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1588166859499">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588310607340" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1588310607340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588166859499" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1588166859502">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588310607340" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1588310607340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588166859502" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588310607340" />
     <state x="370" y="80" width="810" height="568" key="find.popup" timestamp="1586411756946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -470,6 +493,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1588310592921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$menu_06_01_dashboard.coverage" NAME="menu_06_01_dashboard Coverage Results" MODIFIED="1588312589829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
