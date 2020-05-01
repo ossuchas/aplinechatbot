@@ -392,7 +392,7 @@ class ChatBotRegister(Resource):
                 #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 # elif message in CHECK_PM:  # CHECK PM 2.5
                 elif message == DASHBOARD_CARD:
-                    menu_07_01_dashboard.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                    menu_07_01_dashboard.replyMsg(reply_token, userId, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message == HOT_ISSUE:
