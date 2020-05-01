@@ -30,7 +30,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
     MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
-    EXECUTIVE_PREFIX, BOOKING_INCOME, \
+    EXECUTIVE_PREFIX, BOOKING_INCOME, DASHBOARD_CARD, \
     RICH_MENU_MAIN, RICH_MENU_SECOND, \
     CHECK_PM, VIRUS, HOT_ISSUE, \
     RICH_MENU_MAIN_IT, RICH_MENU_MAIN_LCM, RICH_MENU_MAIN_MKT, \
@@ -390,6 +390,9 @@ class ChatBotRegister(Resource):
                 # elif message in DEMO_APP:  # Demo App
                 #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 # elif message in CHECK_PM:  # CHECK PM 2.5
+                elif message == DASHBOARD_CARD:
+                    print("Kai Dashboard")
+                    menu_06_01_hotissue.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message == HOT_ISSUE:

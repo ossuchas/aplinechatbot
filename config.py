@@ -88,6 +88,8 @@ EXECUTIVE_PREFIX = "EX Period"
 EXECUTIVE_YTD = "EX Period As of Current"
 EXECUTIVE_QTD = "EX Period Quarter"
 
+# Dashboard
+DASHBOARD_CARD = "Dashboard"
 
 # Register
 REGISTER_MSG = "register=>emp: "
