@@ -5,8 +5,8 @@ import json
 from config import LINE_API, TABLEAU_URL
 
 
-def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
-    authorization = 'Bearer {}'.format(line_Acees_Token)
+def replyMsg(Reply_token: str = None, userId: str = None, line_Acees_Token: str = None):
+    authorization = f'Bearer {line_Acees_Token}'
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
@@ -127,8 +127,7 @@ def replyMsg(Reply_token: str = None, line_Acees_Token: str = None):
                                         "action": {
                                             "type": "uri",
                                             "label": "action",
-                                            # "uri": "https://liff.line.me/1653928950-DO3WAwBr"
-                                            "uri": f"{TABLEAU_URL}/walksummary"
+                                            "uri": f"{TABLEAU_URL}/walksummary?userId={userId}"
                                         }
                                     }
                                 ]

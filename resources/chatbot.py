@@ -360,7 +360,7 @@ class ChatBotRegister(Resource):
                     # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
-                        menu_05_01_ex_rpt_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                        menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)

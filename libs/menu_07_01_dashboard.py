@@ -8,7 +8,7 @@ from models.chatbot_mst_user import MstUserModel
 
 
 def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = None, line_Acees_Token: str = None):
-    authorization = 'Bearer {}'.format(line_Acees_Token)
+    authorization = f'Bearer {line_Acees_Token}'
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
