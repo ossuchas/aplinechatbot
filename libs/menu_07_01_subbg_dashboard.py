@@ -13,6 +13,7 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
+    subbg = user.user_sub_no
 
     bg = user.user_sub_no[0].strip()
     # print(bg)
@@ -103,6 +104,24 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
                                             "type": "uri",
                                             "label": "action",
                                             "uri": f"{TABLEAU_URL}/ds4indi?pTypeDesc={ptypeBG}&userId={userId}"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "image",
+                                        "url": "https://drive.google.com/uc?id=11Ky9LzWp2CYpv9FFUNXYsQql4EBxCyUa",
+                                        "size": "full",
+                                        "aspectMode": "fit",
+                                        "aspectRatio": "24:7",
+                                        "action": {
+                                            "type": "uri",
+                                            "label": "action",
+                                            "uri": f"{TABLEAU_URL}/walkbyproj?pTypeDesc={ptypeBG}&ProjectGroup={subbg}&userId={userId}"
                                         }
                                     }
                                 ]
