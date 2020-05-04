@@ -21,7 +21,8 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_04_01_acgrs_income_show_y2d, chatbot_rich_menu, share_location, \
     menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat, \
     menu_06_01_hotissue, menu_05_01_ex_rpt_show_year2date, \
-    menu_07_01_dashboard, menu_07_01_vip_dashboard
+    menu_07_01_subbg_dashboard, menu_07_01_vip_dashboard, \
+    menu_07_01_lcmmkt_dashboard
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -395,8 +396,10 @@ class ChatBotRegister(Resource):
                     user = MstUserModel().find_by_token_id(userId)
                     if user.user_type == 'VIP' or user.user_type == 'VIP2':
                         menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
-                    else:
-                        menu_07_01_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                    if user.user_type == 'LCM' or user.user_type == 'MKT':
+                        menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                    else:  # SUBBG
+                        menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message == HOT_ISSUE:
