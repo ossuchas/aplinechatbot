@@ -110,28 +110,28 @@ def replyMsg(Reply_token: str = None, userId: str = None, line_Acees_Token: str 
                                     }
                                 ]
                             },
-                            {
-                                "type": "separator",
-                                "margin": "sm"
-                            },
-                            {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "image",
-                                        "url": "https://i.ibb.co/k50VwY2/walk-summary-v3-0.png",
-                                        "size": "full",
-                                        "aspectMode": "fit",
-                                        "aspectRatio": "24:7",
-                                        "action": {
-                                            "type": "uri",
-                                            "label": "action",
-                                            "uri": f"{TABLEAU_URL}/walksummary?userId={userId}"
-                                        }
-                                    }
-                                ]
-                            }
+                            # {
+                            #     "type": "separator",
+                            #     "margin": "sm"
+                            # },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "vertical",
+                            #     "contents": [
+                            #         {
+                            #             "type": "image",
+                            #             "url": "https://i.ibb.co/k50VwY2/walk-summary-v3-0.png",
+                            #             "size": "full",
+                            #             "aspectMode": "fit",
+                            #             "aspectRatio": "24:7",
+                            #             "action": {
+                            #                 "type": "uri",
+                            #                 "label": "action",
+                            #                 "uri": f"{TABLEAU_URL}/walksummary?userId={userId}"
+                            #             }
+                            #         }
+                            #     ]
+                            # }
                         ]
                     },
                     "footer": {

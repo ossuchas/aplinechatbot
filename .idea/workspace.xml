@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/libs/menu_07_01_subbg_dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_07_01_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_07_01_lcmmkt_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,7 +423,8 @@
       <workItem from="1588460842987" duration="615000" />
       <workItem from="1588476014534" duration="1562000" />
       <workItem from="1588542953885" duration="607000" />
-      <workItem from="1588581838702" duration="747000" />
+      <workItem from="1588581838702" duration="2209000" />
+      <workItem from="1588627402432" duration="264000" />
     </task>
     <servers />
   </component>
