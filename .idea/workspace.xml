@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/APLineChatBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/APLineChatBot.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_year2date.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_year2date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/crm_line_exct_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/crm_line_exct_report.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,20 +14,6 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/APLineChatBot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1571951580762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,9 +40,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRM2SSMUnitTransfer" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -126,9 +116,25 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="APLineChatBot" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Python.menu_06_01_dashboard" />
       </list>
     </recent_temporary>
@@ -425,6 +431,34 @@
       <workItem from="1588542953885" duration="607000" />
       <workItem from="1588581838702" duration="2209000" />
       <workItem from="1588627402432" duration="264000" />
+      <workItem from="1588972066398" duration="1131000" />
+      <workItem from="1588978047400" duration="637000" />
+      <workItem from="1589058652684" duration="2944000" />
+      <workItem from="1589075058738" duration="2093000" />
+      <workItem from="1589155549680" duration="600000" />
+      <workItem from="1589198370971" duration="560000" />
+      <workItem from="1589202099077" duration="29000" />
+      <workItem from="1589231679507" duration="789000" />
+      <workItem from="1589233551251" duration="45000" />
+      <workItem from="1589233663484" duration="966000" />
+      <workItem from="1589428918611" duration="633000" />
+      <workItem from="1589437160284" duration="2402000" />
+      <workItem from="1589441617654" duration="598000" />
+      <workItem from="1589446906781" duration="19000" />
+      <workItem from="1589458231450" duration="1516000" />
+      <workItem from="1589490355118" duration="510000" />
+      <workItem from="1589504925196" duration="3120000" />
+      <workItem from="1589548150323" duration="152000" />
+      <workItem from="1589770532395" duration="642000" />
+      <workItem from="1590925471403" duration="518000" />
+      <workItem from="1591864880253" duration="132000" />
+      <workItem from="1591877915651" duration="614000" />
+      <workItem from="1592340604967" duration="381000" />
+      <workItem from="1592341476475" duration="161000" />
+      <workItem from="1592358075742" duration="889000" />
+      <workItem from="1592362253567" duration="492000" />
+      <workItem from="1592394989129" duration="34000" />
+      <workItem from="1593553367088" duration="1518000" />
     </task>
     <servers />
   </component>
@@ -451,26 +485,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1586396574335" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1583224394174">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592395020903">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583224394174" />
-    <state width="1323" height="146" key="GridCell.Tab.0.bottom" timestamp="1588369681239">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592395020903" />
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom" timestamp="1593554897878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="146" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588369681239" />
-    <state width="1323" height="146" key="GridCell.Tab.0.center" timestamp="1588369681239">
+    <state width="1323" height="195" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593554897878" />
+    <state width="1323" height="195" key="GridCell.Tab.0.center" timestamp="1593554897877">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="146" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588369681239" />
-    <state width="1323" height="146" key="GridCell.Tab.0.left" timestamp="1588369681239">
+    <state width="1323" height="195" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593554897877" />
+    <state width="1323" height="195" key="GridCell.Tab.0.left" timestamp="1593554897877">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="146" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588369681239" />
-    <state width="1323" height="146" key="GridCell.Tab.0.right" timestamp="1588369681239">
+    <state width="1323" height="195" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593554897877" />
+    <state width="1323" height="195" key="GridCell.Tab.0.right" timestamp="1593554897878">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="146" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588369681239" />
+    <state width="1323" height="195" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593554897878" />
     <state width="1323" height="215" key="GridCell.Tab.1.bottom" timestamp="1588312594151">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -487,10 +521,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="215" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588312594151" />
-    <state x="370" y="80" width="810" height="568" key="find.popup" timestamp="1586411756946">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1592341638834">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="370" y="80" width="810" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586411756946" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592341638834" />
+    <state x="370" y="80" width="810" height="568" key="find.popup" timestamp="1591879992940">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="370" y="80" width="810" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591879992940" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587331474418">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -512,7 +550,8 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1588369550113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1593554897856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1592341583335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/aplinechatbot$menu_06_01_dashboard.coverage" NAME="menu_06_01_dashboard Coverage Results" MODIFIED="1588312589829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs" />
   </component>
