@@ -84,6 +84,10 @@ class ExecutiveReportModel(db.Model):
     def find_Year2DateQ2(cls) -> "ExecutiveReportModel":
         return cls.query.filter_by(trans_id=6, period='YTD').first()
 
+    @classmethod
+    def find_Year2DateQ3(cls) -> "ExecutiveReportModel":
+        return cls.query.filter_by(trans_id=7, period='YTD').first()
+
     def save_to_db(self) -> None:
         db.session.add(self)
         db.session.commit()
