@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/crm_line_exct_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/crm_line_exct_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_year2date.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_year2date.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -478,7 +478,7 @@
       <workItem from="1599974171477" duration="1470000" />
       <workItem from="1601437839006" duration="1928000" />
       <workItem from="1601520147556" duration="659000" />
-      <workItem from="1601553346939" duration="712000" />
+      <workItem from="1601553346939" duration="1556000" />
     </task>
     <servers />
   </component>
