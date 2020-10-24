@@ -22,7 +22,7 @@ from libs import chatbot_helper, log_linechatbot as logs, \
     menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat, \
     menu_06_01_hotissue, menu_05_01_ex_rpt_show_year2date, \
     menu_07_01_subbg_dashboard, menu_07_01_vip_dashboard, \
-    menu_07_01_lcmmkt_dashboard
+    menu_07_01_lcmmkt_dashboard, menu_08_01_ll_byproj
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -30,7 +30,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     LL_MSG_All, LL_MSG_PROJ, MENU_02_VIP, \
     LL_MSG_SUB_PERIOD, LL_MSG_ALLBG_PERIOD, \
     AC_ACTUAL_INCOME, EXECUTIVE_REPORT, \
-    MENU_02_VIP_BG, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
+    MENU_02_VIP_BG, MENU_03_LCM, LL_MSG_ALLSUBBG_PERIOD, LL_MSG_AC_Y2D, \
     LL_MSG_AC_DAILY, REGISTER_MSG, DEMO_APP, REGISTER_REJECT_MSG, \
     EXECUTIVE_PREFIX, BOOKING_INCOME, DASHBOARD_CARD, \
     RICH_MENU_MAIN, RICH_MENU_SECOND, \
@@ -164,6 +164,12 @@ class ChatBotRegister(Resource):
                             else:
                                 reply_msg = "You are not authorized to access this menu."
                                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'PM':  # Modified by Suchat S. 2020-10-24 for add PM Role
+                            if userModel.user_sub_no.strip() == subbg:  # Check authorized by bg
+                                menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                         elif userModel.user_type == 'LCM':
                             if userModel.user_sub_no.strip() == subbg:
                                 menu_02_01_ll_allbg_subbg_period.replyMsg(reply_token, bg, subbg, CHANNEL_ACCESS_TOKEN)
@@ -246,6 +252,26 @@ class ChatBotRegister(Resource):
                                 reply_msg = "You are not authorized to access this menu."
                                 chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                         elif userModel.user_type == 'MKT':  # Modified by Suchat S. 2020-01-29 add MKT Role
+                            subbg = userModel.user_sub_no.strip()
+                            role = UserRoleProjModel().check_auth_lcm(userId, project, subbg)
+                            if role:
+                                if p_period[0] != 'W':
+                                    ll_model = LeadLagModel().find_by_project_period('PROJ', project, period, 'Y')
+                                    menu_03_01_ll_allbg_byproject_period_show.replyMsg(reply_token, ll_model,
+                                                                                       CHANNEL_ACCESS_TOKEN)
+                                else:
+                                    ll_model_current = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                             'Y')
+                                    ll_model_last_week = LeadLagModel().find_by_project_period('PROJ', project, period,
+                                                                                               'N')
+                                    menu_03_01_ll_allbg_byproject_period_show_L_C.replyMsg(reply_token,
+                                                                                           ll_model_current,
+                                                                                           ll_model_last_week,
+                                                                                           CHANNEL_ACCESS_TOKEN)
+                            else:
+                                reply_msg = "You are not authorized to access this menu."
+                                chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                        elif userModel.user_type == 'PM':  # Modified by Suchat S. 2020-10-24 add PM Role
                             subbg = userModel.user_sub_no.strip()
                             role = UserRoleProjModel().check_auth_lcm(userId, project, subbg)
                             if role:
@@ -396,10 +422,12 @@ class ChatBotRegister(Resource):
                     user = MstUserModel().find_by_token_id(userId)
                     if user.user_type == 'VIP' or user.user_type == 'VIP2':
                         menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
-                    if user.user_type == 'LCM' or user.user_type == 'MKT':
+                    if user.user_type == 'LCM' or user.user_type == 'MKT' or user.user_type == 'PM':
                         menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
                     else:  # SUBBG
                         menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                elif message == MENU_03_LCM:
+                    menu_08_01_ll_byproj.replyMsg(reply_token, userId, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
                     share_location.quickreplymsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message == HOT_ISSUE:

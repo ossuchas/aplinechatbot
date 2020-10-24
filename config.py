@@ -46,16 +46,9 @@ MENU_01_VIP = "LL BY BG"
 MENU_01_VIP_BG = "LL BY BG"
 MENU_02_VIP = "LL BY SubBG"
 MENU_02_VIP_BG = "LL BY SubBG"
-# MENU_02 = ['ยอดขาย2']
-# MENU_03 = ['ยอดขาย3']
-# MENU_04 = ['ยอดขาย4']
-# MENU_05 = ['menu_ยอดขาย5']
-# MENU_06 = ['menu_ยอดขาย6']
+# Modified by Suchat S. 2020-10-24 for Change LL By Project
+MENU_03_LCM = "LL BY Proj"
 
-# MENU_01_01_SDH = ['ยอดขายบ้านเดี่ยว']
-# MENU_02_01_TH = ['ยอดขายบ้านเดี่ยว']
-# MENU_03_01_CD1 = ['ยอดขายบ้านเดี่ยว']
-# MENU_04_01_CD2 = ['ยอดขายบ้านเดี่ยว']
 
 # Main Menu
 LL_MSG_All = "LL SDH All"
