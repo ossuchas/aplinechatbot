@@ -121,3 +121,6 @@ API_AIRVISUAL_URI = "https://api.airvisual.com/v2"
 VIRUS = ["ไวรัสโคโรนา", "โคโรนา", "virus", "corona", "อู่ฮั่น", "ไวรัสจีน", "ไวรัส"]
 
 HOT_ISSUE = "Hot Issue"
+
+# Get Url Ticket Tableau Server
+API_TABLEAU_TICKET = os.environ.get("API_TABLEAU_TICKET")

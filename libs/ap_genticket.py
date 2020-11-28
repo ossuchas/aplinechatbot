@@ -1,6 +1,7 @@
 import os
 from requests import Response, post
 import json
+from config import API_TABLEAU_TICKET
 
 
 class APAuthenException(Exception):
@@ -16,7 +17,8 @@ class APGenTicketTableau:
 
     @classmethod
     def ap_genticket(cls) -> Response:
-        url = "http://dashboard.apthai.com/trusted"
+        # url = "http://dashboard.apthai.com/trusted"
+        url = API_TABLEAU_TICKET
         # payload = (){"username": "admin", "taget_site": "CRM"})
         data = ({
             'username': 'admin',

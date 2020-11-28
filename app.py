@@ -29,7 +29,7 @@ app.config.from_envvar("APPLICATION_SETTING")
 
 @app.route('/')
 def hello_world():
-    return 'AP Line Chat Bot Hello World! v15.0.x'
+    return 'CRM@APLineChat Bot version v15.0.10'
 
 
 api.add_resource(ChatBot, "/webhook")
