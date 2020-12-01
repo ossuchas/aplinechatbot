@@ -410,15 +410,15 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     { "type": "text", "text": f"{ex.bg4_transferamount:,.2f}", "size": "xs", "align": "end" }
                                 ]
                             },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
-                                    { "type": "text", "text": f"{ex.bg4_up_transferunit:,.0f}", "size": "xs", "align": "end" },
-                                    { "type": "text", "text": f"{ex.bg4_up_transferamount:,.2f}", "size": "xs", "align": "end" }
-                                ]
-                            },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "baseline",
+                            #     "contents": [
+                            #         { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_transferunit:,.0f}", "size": "xs", "align": "end" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_transferamount:,.2f}", "size": "xs", "align": "end" }
+                            #     ]
+                            # },
                             { "type": "separator" },
                             {
                                 "type": "box",
