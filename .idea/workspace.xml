@@ -25,6 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.Jenkinsfile.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_week.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_show_week.py" afterDir="false" />
@@ -536,7 +538,7 @@
       <workItem from="1606537555385" duration="1441000" />
       <workItem from="1606603704211" duration="1218000" />
       <workItem from="1606611799909" duration="600000" />
-      <workItem from="1606790433360" duration="174000" />
+      <workItem from="1606790433360" duration="1034000" />
     </task>
     <servers />
   </component>

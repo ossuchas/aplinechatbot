@@ -126,15 +126,15 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     { "type": "text", "text": f"{ex.bg4_grosspresalesamount:,.2f}", "size": "xs", "align": "end" }
                                 ]
                             },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
-                                    { "type": "text", "text": f"{ex.bg4_up_grosspresalesunit:,.0f}", "size": "xs", "align": "end" },
-                                    { "type": "text", "text": f"{ex.bg4_up_grosspresalesamount:,.2f}", "size": "xs", "align": "end" }
-                                ]
-                            },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "baseline",
+                            #     "contents": [
+                            #         { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_grosspresalesunit:,.0f}", "size": "xs", "align": "end" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_grosspresalesamount:,.2f}", "size": "xs", "align": "end" }
+                            #     ]
+                            # },
                             { "type": "separator" },
                             {
                                 "type": "box",
@@ -221,15 +221,15 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     { "type": "text", "text": f"{ex.bg4_cancelamount:,.2f}", "size": "xs", "align": "end" }
                                 ]
                             },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
-                                    { "type": "text", "text": f"{ex.bg4_up_cancelunit:,.0f}", "size": "xs", "align": "end" },
-                                    { "type": "text", "text": f"{ex.bg4_up_cancelamount:,.2f}", "size": "xs", "align": "end" }
-                                ]
-                            },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "baseline",
+                            #     "contents": [
+                            #         { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_cancelunit:,.0f}", "size": "xs", "align": "end" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_cancelamount:,.2f}", "size": "xs", "align": "end" }
+                            #     ]
+                            # },
                             {
                                 "type": "box",
                                 "layout": "baseline",
@@ -315,15 +315,15 @@ def replyMsg(Reply_token: str = None, ex: ExecutiveReportModel = None, line_Acee
                                     { "type": "text", "text": f"{ex.bg4_netpresalesamount:,.2f}", "size": "xs", "align": "end" }
                                 ]
                             },
-                            {
-                                "type": "box",
-                                "layout": "baseline",
-                                "contents": [
-                                    { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
-                                    { "type": "text", "text": f"{ex.bg4_up_netpresalesunit:,.0f}", "size": "xs", "align": "end" },
-                                    { "type": "text", "text": f"{ex.bg4_up_netpresalesamount:,.2f}", "size": "xs", "align": "end" }
-                                ]
-                            },
+                            # {
+                            #     "type": "box",
+                            #     "layout": "baseline",
+                            #     "contents": [
+                            #         { "type": "text", "text": "CD2 Up-Country", "size": "xs", "align": "start", "offsetStart": "50px" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_netpresalesunit:,.0f}", "size": "xs", "align": "end" },
+                            #         { "type": "text", "text": f"{ex.bg4_up_netpresalesamount:,.2f}", "size": "xs", "align": "end" }
+                            #     ]
+                            # },
                             { "type": "separator" },
                             {
                                 "type": "box",

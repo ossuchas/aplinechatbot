@@ -8,6 +8,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Swap file
+*.swp
+
 # Distribution / packaging
 .Python
 build/
