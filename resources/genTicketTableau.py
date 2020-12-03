@@ -12,7 +12,9 @@ class GenTicketTableau(Resource):
         # user_json = request.get_json()
         try:
             response = APGenTicketTableau.ap_genticket()
-            return {"message": response.text}, 200
+            data = response.json()
+            # return {"message": response.text}, 200
+            return {"message": data["ticket_value"]}, 200
         except APAuthenException as e:
             return {"message": str(e)}, 401
         except:
