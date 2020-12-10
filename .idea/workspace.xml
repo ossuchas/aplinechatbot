@@ -25,18 +25,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Certificate.cer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrivateKey.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apthai-com.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Certificate.cer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/PrivateKey.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/apthai-com.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Certificate.cer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrivateKey.key" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/ap_genticket.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/ap_genticket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/genTicketTableau.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/genTicketTableau.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apthai-com.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Certificate.cer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/PrivateKey.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/apthai-com.pem" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -560,7 +557,13 @@
       <workItem from="1606874806401" duration="7470000" />
       <workItem from="1606945105197" duration="478000" />
       <workItem from="1606951463522" duration="260000" />
-      <workItem from="1606974358911" duration="6348000" />
+      <workItem from="1606974358911" duration="6792000" />
+      <workItem from="1606999862810" duration="594000" />
+      <workItem from="1607038777815" duration="3018000" />
+      <workItem from="1607132677934" duration="751000" />
+      <workItem from="1607250593671" duration="1520000" />
+      <workItem from="1607305800905" duration="598000" />
+      <workItem from="1607546740196" duration="1487000" />
     </task>
     <servers />
   </component>
@@ -598,7 +601,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1606991176971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1606991358124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aplinechatbot$menu_06_01_dashboard.coverage" NAME="menu_06_01_dashboard Coverage Results" MODIFIED="1588312589829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs" />
     <SUITE FILE_PATH="coverage/aplinechatbot$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1592341583335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
