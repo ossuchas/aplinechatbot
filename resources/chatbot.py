@@ -5,7 +5,7 @@ import re
 
 from datetime import datetime, timedelta
 
-from libs import chatbot_helper, log_linechatbot as logs, \
+from libs import chatbot_db_helper, chatbot_helper, log_linechatbot as logs, \
     beacon_helper, \
     leadlag_bg_all, menu_02_01_ll_sdh_period, \
     menu_01_01_ll_allbg_period, \
@@ -50,6 +50,8 @@ from models.vw_crm_line_actual_income import ActualIncomeByProjModel
 from models.crm_line_gross_income import GrossIncomeModel
 from models.vw_crm_line_userroleproj import UserRoleProjModel
 from models.tmp_virus_corona import VirusCoronaModel
+
+from models.chatbot_mst_conf import MstMsgConfigModel
 
 
 class ChatBot(Resource):
@@ -442,9 +444,12 @@ class ChatBotRegister(Resource):
                                                virus_totl[2],
                                                CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
-                    reply_msg = DEFAULT_REPLY_WORDING
+                    # reply_msg = DEFAULT_REPLY_WORDING
+                    msg = MstMsgConfigModel.find_by_id(1)
+                    reply_msg = msg.msg_json
+
                     # Reply Message Default Post API
-                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                    chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             else:
                 # print("not found")
                 if re.match(REGISTER_MSG, message):
