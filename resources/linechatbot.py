@@ -50,17 +50,13 @@ from models.vw_crm_line_actual_income import ActualIncomeByProjModel
 from models.crm_line_gross_income import GrossIncomeModel
 from models.vw_crm_line_userroleproj import UserRoleProjModel
 from models.tmp_virus_corona import VirusCoronaModel
-
 from models.chatbot_mst_conf import MstMsgConfigModel
 
 
-class ChatBot(Resource):
-    @classmethod
-    def get(cls):
-        return {"message": "Hello World"}, 200
+CHANNEL_ACCESS_TOKEN = "VcQrwT7JiBc31Z7pyFwVrZKUQ30WVpSdqyivGrD+Ly+vIYVehy5OZzMCfXooQ5ZzRQO98vA1Qst1/7cZTsupfhVV1czOyHNPQi0JXA80yav8eMJsI7iIGStPns1+X5kvERdx4mXL3H5JcyHUU2m4vAdB04t89/1O/w1cDnyilFU="
 
 
-class ChatBotRegister(Resource):
+class LineChatBot(Resource):
     @classmethod
     def post(cls):
         payload = request.get_json()
@@ -72,7 +68,6 @@ class ChatBotRegister(Resource):
 
         # get event type beacon or message
         events_type = payload['events'][0]['type']
-        # print(events_type)
 
         groupId = None
         userId = None
@@ -92,7 +87,6 @@ class ChatBotRegister(Resource):
         try:
             groupId = payload['events'][0]['source']['groupId']
             userId = payload['events'][0]['source']['userId']
-            # print(userId, groupId)
         except:
             userId = payload['events'][0]['source']['userId']
 
@@ -108,29 +102,17 @@ class ChatBotRegister(Resource):
         if msg_type == 'text':
             msg_text = payload['events'][0]['message']['text']
             message = msg_text
-            # print(userId)
             user = MstUserModel().check_auth_by_token_id(userId)
 
             if user:
-                # print("found")
                 if message == MENU_01_VIP:  # LL ALL BG
-                    menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                    # Modified by Suchat S. 2020-01-09 for all access this menu
-                    # # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
-                    # vip = MstUserModel().check_clevel_auth_by_token_id(userId)
-                    # if vip:
-                    #     # menu_01_01_ll_allbg_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                    #     menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                    # else:
-                    #     reply_msg = "You are not authorized to access this menu."
-                    #     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                    # menu_01_01_ll_allbg_sel_bg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                    menu_01_01_ll_allbg_sel_bg.replyMsgDB(reply_token, None, CHANNEL_ACCESS_TOKEN, MENU_01_VIP)
                 elif re.match(MENU_01_VIP_BG, message):  # Select BG
                     # LL[0] BY[1] BG[2] <1-4>[3]
                     bg = message.split(' ')[3]
-                    menu_01_01_ll_allbg_period.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
-                # elif message in MENU_01_01_SDH:
-                #     m1_SDH.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                # Lead Lag
+                    # menu_01_01_ll_allbg_period.replyMsg(reply_token, bg, CHANNEL_ACCESS_TOKEN)
+                    menu_01_01_ll_allbg_period.replyMsgDB(reply_token, bg, CHANNEL_ACCESS_TOKEN, MENU_01_VIP_BG)
                 elif message in LL_MSG_All:
                     leadlag_bg_all.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in MENU_02_VIP:  # menu_02_01_ll_allbg_subbg
@@ -140,7 +122,8 @@ class ChatBotRegister(Resource):
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                     else:
-                        menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                        # menu_02_01_ll_allbg_sel_subbg.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
+                        menu_02_01_ll_allbg_sel_subbg.replyMsgDB(reply_token, None, CHANNEL_ACCESS_TOKEN, MENU_02_VIP)
                 elif re.match(MENU_02_VIP_BG, message):  # Select Sub BG
                     # LL[0] BY[1] SubBG[2] <1-4>[1.0][3]
                     value = message.split(' ')[3]
@@ -206,7 +189,6 @@ class ChatBotRegister(Resource):
                     value = message.split(',')
                     project = value[0].split(':')[1].strip()
                     p_period = value[1].split(':')[1].strip()
-                    # print(f"{value}, {project}, {p_period}")
 
                     period = None
                     if p_period[0] == 'Q':  # Quarter
@@ -296,7 +278,6 @@ class ChatBotRegister(Resource):
                         elif userModel.user_type == 'LCM':
                             subbg = userModel.user_sub_no.strip()
                             role = UserRoleProjModel().check_auth_lcm(userId, project, subbg)
-                            # print(role)
                             if role:
                                 if p_period[0] != 'W':
                                     # ll_model = LeadLagModel().find_by_subbg_period('SUBBG', bg, subbg, period, 'Y')
@@ -348,10 +329,6 @@ class ChatBotRegister(Resource):
                 elif re.match(LL_MSG_SUB_PERIOD, message):
                     menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in AC_ACTUAL_INCOME:  # Actual income select period
-                    # actual_income = ActualIncomeModel().find_all()
-                    # menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
-
-                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
                         menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
@@ -363,18 +340,13 @@ class ChatBotRegister(Resource):
                     menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
                 elif re.match(LL_MSG_AC_DAILY, message):  # Actual income select Daily by Project
                     yesterday = datetime.now() - timedelta(days=1)
-                    # print(type(yesterday))
                     before_yesterday = datetime.now() - timedelta(days=2)
 
                     values = ActualIncomeByProjModel().find_by_date(datetime.now().strftime('%Y%m%d'))
 
                     p_yesterday = ActualIncomeByProjModel().get_previousday("1")[0]
-                    # print(p_yesterday)
                     last_values = ActualIncomeByProjModel().find_by_date(p_yesterday.strftime('%Y%m%d'))
-                    # last_values = ActualIncomeByProjModel().find_by_date(yesterday.strftime('%Y%m%d'))
-                    # before_last_values = ActualIncomeByProjModel().find_by_date(before_yesterday.strftime('%Y%m%d'))
                     p_before_yesterday = ActualIncomeByProjModel().get_previousday("2")[0]
-                    # print(p_before_yesterday)
                     before_last_values = ActualIncomeByProjModel().find_by_date(p_before_yesterday.strftime("%Y%m%d"))
 
                     menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
@@ -386,17 +358,14 @@ class ChatBotRegister(Resource):
                                                                  p_before_yesterday.strftime('%d/%m/%Y'),
                                                                  CHANNEL_ACCESS_TOKEN)
                 elif message in EXECUTIVE_REPORT:
-                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
-                        menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
-                        # Kai
-                        # menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN, EXECUTIVE_REPORT)
+                        # menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
+                        menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN, EXECUTIVE_REPORT)
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif re.match(BOOKING_INCOME, message):
-                    # print(message)
                     grs_model = GrossIncomeModel().find_all()
                     menu_04_01_acgrs_income_show_y2d.replyMsg(reply_token, grs_model, CHANNEL_ACCESS_TOKEN)
                 elif re.match(EXECUTIVE_PREFIX, message):  # Executive by period
@@ -406,30 +375,32 @@ class ChatBotRegister(Resource):
                         if period[0] == 'A':
                             p_period = 'YTD'
                             ex_model = ExecutiveReportModel().find_by_period(p_period)
-                            # print(f"kai AAA {p_period}")
                             menu_05_01_ex_rpt_show_year2date.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
                         else:
                             p_period = 'QTD'
                             ex_model = ExecutiveReportModel().find_by_period(p_period)
-                            # print(f"kai BBB {p_period}")
                             menu_05_01_ex_rpt_show_year_quarter.replyMsg(reply_token, ex_model, CHANNEL_ACCESS_TOKEN)
                     else:
                         curr_ex_model = ExecutiveReportModel().find_current_week()
                         last_ex_model = ExecutiveReportModel().find_last_week()
                         menu_05_01_ex_rpt_show_week.replyMsg(reply_token, curr_ex_model, last_ex_model,
                                                              CHANNEL_ACCESS_TOKEN)
-
-                # elif message in DEMO_APP:  # Demo App
-                #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                # elif message in CHECK_PM:  # CHECK PM 2.5
                 elif message == DASHBOARD_CARD:
                     user = MstUserModel().find_by_token_id(userId)
                     if user.user_type == 'VIP' or user.user_type == 'VIP2':
-                        menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # Kai
+                        # menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_vip_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                            DASHBOARD_CARD, user.user_type)
                     if user.user_type == 'LCM' or user.user_type == 'MKT' or user.user_type == 'PM':
-                        menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # Kai
+                        # menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_lcmmkt_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                               DASHBOARD_CARD, user.user_type)
                     else:  # SUBBG
-                        menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_subbg_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                              DASHBOARD_CARD, user.user_type)
                 elif message == MENU_03_LCM:
                     menu_08_01_ll_byproj.replyMsg(reply_token, userId, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
@@ -439,21 +410,18 @@ class ChatBotRegister(Resource):
                 elif message in VIRUS:
                     virus = VirusCoronaModel().find_all()
                     virus_totl = VirusCoronaModel().get_TotalCase()
-                    print(virus_totl[0], virus_totl[1], virus_totl[2])
                     virus_corona_stat.replyMsg(reply_token, virus,
                                                virus_totl[0],
                                                virus_totl[1],
                                                virus_totl[2],
                                                CHANNEL_ACCESS_TOKEN)
                 elif message in REPLY_WORDING:
-                    # reply_msg = DEFAULT_REPLY_WORDING
                     msg = MstMsgConfigModel.find_by_id(1)
                     reply_msg = msg.msg_json
 
                     # Reply Message Default Post API
                     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             else:
-                # print("not found")
                 if re.match(REGISTER_MSG, message):
                     register_flag = 'Y'
                     txt_temp = msg_text
@@ -461,30 +429,23 @@ class ChatBotRegister(Resource):
                     value = text.split(',')
                     register_empid = value[0].strip().lower()
                     register_email = value[1].strip().lower()
-                    # print(register_empid, register_email)
 
                     # reply_msg = "We have received your registration. Please wait for confirmation within 2 minute."
                     reply_msg = "We have received your registration. Within 2 minutes, \
                                 you will be able to use CRM chatbot."
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
-                    # chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                    # print("Register Msg")
                 else:
-                    # reply_msg = "You are not authorized to access this menu. please register from link line://app/1653377835-peowRY0O"
-                    # chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                     if not groupId:
                         if not re.match(REGISTER_REJECT_MSG, message):
                             chatbot_register.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'image':  # Image Upload to Line Bot
             image_id = payload['events'][0]['message']['id']
             contentProvider = payload['events'][0]['message']['contentProvider']['type']
-            print(f"{image_id} , {contentProvider}")
         elif msg_type == 'location':
             location_id = payload['events'][0]['message']['id']
             address = payload['events'][0]['message']['address']
             latitude = payload['events'][0]['message']['latitude']
             longitude = payload['events'][0]['message']['longitude']
-            # print(f"{location_id}, {latitude}, {longitude}")
 
             # GET PM2.5 Value from API xx
             city, state, country, pm_val, temperature, icon_weather = check_pm_airvisual.getpm(latitude, longitude)
@@ -504,16 +465,6 @@ class ChatBotRegister(Resource):
             chatbot_rich_menu.replyMsg(userId=userId,
                                        richMenuId=richmenuId,
                                        line_aceess_token=CHANNEL_ACCESS_TOKEN)
-            # param_data = payload['events'][0]['postback']['data']
-            # param_date = payload['events'][0]['postback']['params']['date']
-            # date_val = param_date.replace("-", "").strip()
-            # # print(param_data, date_val)
-            # if re.match(LL_MSG_AC_DAILY, param_data):  # Actual income select Daily by Project
-            #     values = ActualIncomeByProjModel().find_by_date(date_val)
-            #     menu_04_01_actual_income_show_daily.replyMsg(reply_token, None,
-            #                                                  values,
-            #                                                  param_date,
-            #                                                  CHANNEL_ACCESS_TOKEN)
         elif msg_type == 'beacon':
             beacon_hwid = payload['events'][0]['beacon']['hwid']
             beacon_dm = payload['events'][0]['beacon']['dm']
@@ -527,11 +478,6 @@ class ChatBotRegister(Resource):
             if user:
                 log = LogChatBotModel().find_by_token_beacon_today(userId)
 
-                # Check Revisit..!!
-                # if log:
-                #     msg_text = "Hello World Beacon K.{} Revisit..!!".format(user.user_full_name)
-                # else:
-                #     msg_text = "Hello World Beacon K.{} New Walk..".format(user.user_full_name)
                 if not log:
                     msg_text = "Hello World Beacon K.{} New Walk..".format(user.user_full_name)
 
@@ -554,3 +500,14 @@ class ChatBotRegister(Resource):
                             register_flag, register_empid, register_email)
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
+
+        # if msg_type == 'text':
+        #     msg_text = payload['events'][0]['message']['text']
+        #     message = msg_text
+        #
+        #     msg = MstMsgConfigModel.find_by_id(1)
+        #     reply_msg = msg.msg_json
+        #     print(reply_msg)
+        #
+        #     # Reply Message Default Post API
+        #     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)

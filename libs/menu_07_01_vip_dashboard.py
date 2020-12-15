@@ -3,8 +3,12 @@
 import requests
 import json
 from config import LINE_API, TABLEAU_URL
+from string import Template
 
 from models.chatbot_mst_user import MstUserModel
+
+from models.chatbot_mst_conf import MstMsgConfigModel
+from schemas.chatbot_mst_conf import MstMsgConfSchema
 
 
 def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = None, line_Acees_Token: str = None):
@@ -145,3 +149,33 @@ def replyMsg(Reply_token: str = None, user: MstUserModel = None, userId: str = N
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
     return 201
+
+
+def replyMsgDB(Reply_token: str = None, user: MstUserModel = None, userId: str = None, line_Acees_Token: str = None,
+               msg_value: str = None, user_type: str = None):
+    authorization = f"Bearer {line_Acees_Token}"
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': authorization
+    }
+
+    msg = MstMsgConfigModel.find_by_msg_value_ds(msg_value, user_type)
+    msg_schema = MstMsgConfSchema().dumps(msg)
+
+    msg_obj = json.loads(msg_schema)
+
+    template = Template(msg_obj['msg_json'])
+    msg_json = template.substitute(TABLEAU_URL=TABLEAU_URL, userId=userId)
+
+    type_msg = json.loads(msg_json)
+
+    data = {
+        "replyToken": Reply_token,
+        "messages": [
+            type_msg
+        ]
+    }
+
+    session = requests.Session()
+    response = session.post(LINE_API, data=json.dumps(data), headers=headers)
+    return response, 201

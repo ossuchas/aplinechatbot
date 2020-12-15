@@ -139,3 +139,24 @@ def replyMsg(Reply_token: str =None, bg: str = None, subbg: str = None, line_Ace
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
     return 201
+
+
+def replyMsgDB(Reply_token: str = None, bg: str = None, subbg: str = None, line_Acees_Token: str = None, msg_value: str = None):
+    authorization = 'Bearer {}'.format(line_Acees_Token)
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': authorization
+    }
+
+    type_msg = None
+
+    data = {
+        "replyToken": Reply_token,
+        "messages": [
+            type_msg
+        ]
+    }
+
+    session = requests.Session()
+    response = session.post(LINE_API, data=json.dumps(data), headers=headers)
+    return response, 201

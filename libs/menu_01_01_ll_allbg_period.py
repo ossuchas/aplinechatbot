@@ -4,6 +4,9 @@ import requests
 import json
 from config import LINE_API
 
+from models.chatbot_mst_conf import MstMsgConfigModel
+from schemas.chatbot_mst_conf import MstMsgConfSchema
+
 
 def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = None):
     authorization = 'Bearer {}'.format(line_Acees_Token)
@@ -139,3 +142,29 @@ def replyMsg(Reply_token: str =None, bg: str = None, line_Acees_Token: str = Non
     session = requests.Session()
     response = session.post(LINE_API, data=json.dumps(data), headers=headers)
     return 201
+
+
+def replyMsgDB(Reply_token: str = None, bg: str = None, line_Acees_Token: str = None, msg_value: str = None):
+    authorization = f"Bearer {line_Acees_Token}"
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': authorization
+    }
+    msg_value = f"LL BY BG {bg}"
+
+    msg = MstMsgConfigModel.find_by_msg_value(msg_value)
+    msg_schema = MstMsgConfSchema().dumps(msg)
+
+    msg_obj = json.loads(msg_schema)
+    type_msg = json.loads(msg_obj['msg_json'])
+
+    data = {
+        "replyToken": Reply_token,
+        "messages": [
+            type_msg
+        ]
+    }
+
+    session = requests.Session()
+    response = session.post(LINE_API, data=json.dumps(data), headers=headers)
+    return response, 201

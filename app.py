@@ -18,6 +18,7 @@ from resources.vw_crm_line_userroleproj2 import UserRoleProject2
 from resources.chatbot_mst_user import ChatBotMstUserRole, ChatBotMstUserList
 from resources.genTicketTableau import GenTicketTableau
 from resources.log_linechatbot import LogLineChatBot
+from resources.linechatbot import LineChatBot
 
 app = Flask(__name__)
 
@@ -46,8 +47,10 @@ api.add_resource(ChatBotMstUserRole, "/userrole/<string:_user_empcode>")
 api.add_resource(GenTicketTableau, "/genticket")
 api.add_resource(LogLineChatBot, "/addlogchatbot")
 
+# Line Chatbot Webhook
+api.add_resource(LineChatBot, "/chatbot/webhook")
+
 if __name__ == '__main__':
     db.init_app(app)
     ma.init_app(app)
     app.run(host="0.0.0.0", port=5000, debug=True)
-    # app.run(host="0.0.0.0", port=5000, debug=True, ssl_context=context)
