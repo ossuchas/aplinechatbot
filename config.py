@@ -129,3 +129,6 @@ CRM_GETTOKEN_URL = os.environ.get("CRM_GETTOKEN_URL")
 CRM_CLIENT_ID = os.environ.get("CRM_CLIENT_ID")
 CRM_CLIENT_SECRET = os.environ.get("CRM_CLIENT_SECRET")
 CRM_API_PROC = os.environ.get("CRM_API_PROC")
+
+# VERSION
+VERSION = ["version", "Version", "-v", "--version"]

@@ -28,21 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1329df5a-7143-4bcb-9d80-da7718bfcf1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/linechatbot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_period.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_sel_bg.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_01_01_ll_allbg_sel_bg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_sel_subbg.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_sel_subbg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_02_01_ll_allbg_subbg_period.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_period.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_05_01_ex_rpt_period.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_07_01_lcmmkt_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_07_01_lcmmkt_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_07_01_subbg_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_07_01_subbg_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/menu_07_01_vip_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/menu_07_01_vip_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/chatbot_mst_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/chatbot_mst_conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/chatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/chatbot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/linechatbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/linechatbot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -586,7 +575,10 @@
       <workItem from="1607943827511" duration="696000" />
       <workItem from="1607949438167" duration="302000" />
       <workItem from="1607989392514" duration="602000" />
-      <workItem from="1608023022424" duration="5050000" />
+      <workItem from="1608023022424" duration="5891000" />
+      <workItem from="1608080110480" duration="2984000" />
+      <workItem from="1608162091301" duration="271000" />
+      <workItem from="1608162381635" duration="860000" />
     </task>
     <servers />
   </component>
@@ -624,7 +616,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1608035927350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aplinechatbot$app.coverage" NAME="app Coverage Results" MODIFIED="1608162831519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aplinechatbot$menu_06_01_dashboard.coverage" NAME="menu_06_01_dashboard Coverage Results" MODIFIED="1588312589829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs" />
     <SUITE FILE_PATH="coverage/aplinechatbot$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1592341583335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/aplinechatbot$APLineChatBot.coverage" NAME="APLineChatBot Coverage Results" MODIFIED="1572129218864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

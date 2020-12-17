@@ -3,6 +3,8 @@ from flask_restful import Resource
 from flask import request
 import re
 
+from requests import get
+
 from datetime import datetime, timedelta
 
 from libs import chatbot_db_helper, chatbot_helper, log_linechatbot as logs, \
@@ -38,7 +40,8 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     RICH_MENU_MAIN_IT, RICH_MENU_MAIN_LCM, RICH_MENU_MAIN_MKT, \
     RICH_MENU_MAIN_SUBBG, RICH_MENU_MAIN_VIP, RICH_MENU_MAIN_VIP2, \
     RICH_MENU_SECOND_IT, RICH_MENU_SECOND_LCM, RICH_MENU_SECOND_MKT, \
-    RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2
+    RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2, \
+    VERSION
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -421,6 +424,13 @@ class LineChatBot(Resource):
 
                     # Reply Message Default Post API
                     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message in VERSION:
+                    url = "https://apchatbotapi.apthai.com"
+                    headers = {"Content-Type": "application/json"}
+                    response = get(url=url, headers=headers)
+                    reply_msg = response.text
+
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             else:
                 if re.match(REGISTER_MSG, message):
                     register_flag = 'Y'
@@ -501,13 +511,3 @@ class LineChatBot(Resource):
 
         return {"message": "Register Line Push and Reply Message Successful"}, 201
 
-        # if msg_type == 'text':
-        #     msg_text = payload['events'][0]['message']['text']
-        #     message = msg_text
-        #
-        #     msg = MstMsgConfigModel.find_by_id(1)
-        #     reply_msg = msg.msg_json
-        #     print(reply_msg)
-        #
-        #     # Reply Message Default Post API
-        #     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
