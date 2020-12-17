@@ -41,7 +41,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     RICH_MENU_MAIN_SUBBG, RICH_MENU_MAIN_VIP, RICH_MENU_MAIN_VIP2, \
     RICH_MENU_SECOND_IT, RICH_MENU_SECOND_LCM, RICH_MENU_SECOND_MKT, \
     RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2, \
-    VERSION
+    VERSION, VERSION_TEST
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -392,9 +392,8 @@ class ChatBotRegister(Resource):
                     # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
-                        menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
-                        # Kai
-                        # menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN, EXECUTIVE_REPORT)
+                        # menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
+                        menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN, EXECUTIVE_REPORT)
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
@@ -421,18 +420,20 @@ class ChatBotRegister(Resource):
                         last_ex_model = ExecutiveReportModel().find_last_week()
                         menu_05_01_ex_rpt_show_week.replyMsg(reply_token, curr_ex_model, last_ex_model,
                                                              CHANNEL_ACCESS_TOKEN)
-
-                # elif message in DEMO_APP:  # Demo App
-                #     menu_demo_app.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
-                # elif message in CHECK_PM:  # CHECK PM 2.5
                 elif message == DASHBOARD_CARD:
                     user = MstUserModel().find_by_token_id(userId)
                     if user.user_type == 'VIP' or user.user_type == 'VIP2':
-                        menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # menu_07_01_vip_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_vip_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                            DASHBOARD_CARD, user.user_type)
                     if user.user_type == 'LCM' or user.user_type == 'MKT' or user.user_type == 'PM':
-                        menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # menu_07_01_lcmmkt_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_lcmmkt_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                               DASHBOARD_CARD, user.user_type)
                     else:  # SUBBG
-                        menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        # menu_07_01_subbg_dashboard.replyMsg(reply_token, user, userId, CHANNEL_ACCESS_TOKEN)
+                        menu_07_01_subbg_dashboard.replyMsgDB(reply_token, user, userId, CHANNEL_ACCESS_TOKEN,
+                                                              DASHBOARD_CARD, user.user_type)
                 elif message == MENU_03_LCM:
                     menu_08_01_ll_byproj.replyMsg(reply_token, userId, CHANNEL_ACCESS_TOKEN)
                 elif message == CHECK_PM:
@@ -457,6 +458,13 @@ class ChatBotRegister(Resource):
                     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in VERSION:
                     url = "https://apchatbotapi.apthai.com"
+                    headers = {"Content-Type": "application/json"}
+                    response = get(url=url, headers=headers)
+                    reply_msg = response.text
+
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message in VERSION_TEST:
+                    url = "https://test-apchatbotapi.apthai.com"
                     headers = {"Content-Type": "application/json"}
                     response = get(url=url, headers=headers)
                     reply_msg = response.text

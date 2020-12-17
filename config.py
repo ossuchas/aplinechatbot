@@ -132,3 +132,6 @@ CRM_API_PROC = os.environ.get("CRM_API_PROC")
 
 # VERSION
 VERSION = ["version", "Version", "-v", "--version"]
+
+# VERSION Test
+VERSION_TEST = ["-vt"]
