@@ -41,7 +41,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     RICH_MENU_MAIN_SUBBG, RICH_MENU_MAIN_VIP, RICH_MENU_MAIN_VIP2, \
     RICH_MENU_SECOND_IT, RICH_MENU_SECOND_LCM, RICH_MENU_SECOND_MKT, \
     RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2, \
-    VERSION
+    VERSION, VERSION_TEST
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -426,6 +426,13 @@ class LineChatBot(Resource):
                     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in VERSION:
                     url = "https://apchatbotapi.apthai.com"
+                    headers = {"Content-Type": "application/json"}
+                    response = get(url=url, headers=headers)
+                    reply_msg = response.text
+
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message in VERSION_TEST:
+                    url = "https://test-apchatbotapi.apthai.com"
                     headers = {"Content-Type": "application/json"}
                     response = get(url=url, headers=headers)
                     reply_msg = response.text
