@@ -187,14 +187,21 @@ def replyMsg(Reply_token: str = None, userId: str = None, line_Acees_Token: str 
     return 201
 
 
-def replyMsgDB(Reply_token: str = None, userId: str = None, line_Acees_Token: str = None, msg_value: str = None):
+def replyMsgDB(Reply_token: str = None, userId: str = None, line_Acees_Token: str = None, msg_value: str = None,
+               user_type: str = None, user_position: str = None):
     authorization = f'Bearer {line_Acees_Token}'
     headers = {
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': authorization
     }
 
-    msg = MstMsgConfigModel.find_by_msg_value(msg_value)
+    if user_position == 'IT':
+        user_type = 'IT'
+
+    # print(user_type)
+
+    # msg = MstMsgConfigModel.find_by_msg_value(msg_value)
+    msg = MstMsgConfigModel.find_by_msg_value_ds(msg_value, user_type)
     msg_schema = MstMsgConfSchema().dumps(msg)
 
     msg_obj = json.loads(msg_schema)

@@ -24,7 +24,8 @@ from libs import chatbot_db_helper, chatbot_helper, log_linechatbot as logs, \
     menu_06_01_pm_value, check_pm_airvisual, virus_corona_stat, \
     menu_06_01_hotissue, menu_05_01_ex_rpt_show_year2date, \
     menu_07_01_subbg_dashboard, menu_07_01_vip_dashboard, \
-    menu_07_01_lcmmkt_dashboard, menu_08_01_ll_byproj
+    menu_07_01_lcmmkt_dashboard, menu_08_01_ll_byproj, \
+    sql_execute
 
 from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     DEFAULT_REPLY_WORDING, \
@@ -41,7 +42,7 @@ from config import CHANNEL_ACCESS_TOKEN, REPLY_WORDING, \
     RICH_MENU_MAIN_SUBBG, RICH_MENU_MAIN_VIP, RICH_MENU_MAIN_VIP2, \
     RICH_MENU_SECOND_IT, RICH_MENU_SECOND_LCM, RICH_MENU_SECOND_MKT, \
     RICH_MENU_SECOND_SUBBG, RICH_MENU_SECOND_VIP, RICH_MENU_SECOND_VIP2, \
-    VERSION, VERSION_TEST
+    VERSION, VERSION_TEST, SQLEXEC
 
 
 from models.chatbot_mst_user import MstUserModel
@@ -56,6 +57,7 @@ from models.tmp_virus_corona import VirusCoronaModel
 
 from models.chatbot_mst_conf import MstMsgConfigModel
 
+# CHANNEL_ACCESS_TOKEN = "VcQrwT7JiBc31Z7pyFwVrZKUQ30WVpSdqyivGrD+Ly+vIYVehy5OZzMCfXooQ5ZzRQO98vA1Qst1/7cZTsupfhVV1czOyHNPQi0JXA80yav8eMJsI7iIGStPns1+X5kvERdx4mXL3H5JcyHUU2m4vAdB04t89/1O/w1cDnyilFU="
 
 class ChatBot(Resource):
     @classmethod
@@ -393,7 +395,11 @@ class ChatBotRegister(Resource):
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
                         # menu_05_01_ex_rpt_period.replyMsg(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN)
-                        menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id, CHANNEL_ACCESS_TOKEN, EXECUTIVE_REPORT)
+                        menu_05_01_ex_rpt_period.replyMsgDB(reply_token, vip.user_token_Id,
+                                                            CHANNEL_ACCESS_TOKEN,
+                                                            EXECUTIVE_REPORT,
+                                                            vip.user_type,
+                                                            vip.user_position)
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
@@ -454,8 +460,12 @@ class ChatBotRegister(Resource):
                     msg = MstMsgConfigModel.find_by_id(1)
                     reply_msg = msg.msg_json
 
+                    # Execute Raw SQL
+                    reply_msg = sql_execute.sql_exec('xxx')
+                    print(reply_msg)
+
                     # Reply Message Default Post API
-                    chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
                 elif message in VERSION:
                     url = "https://apchatbotapi.apthai.com"
                     headers = {"Content-Type": "application/json"}
@@ -469,6 +479,15 @@ class ChatBotRegister(Resource):
                     response = get(url=url, headers=headers)
                     reply_msg = response.text
 
+                    chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
+                elif message[0:3] in SQLEXEC:
+                    sql_text = message.split(SQLEXEC)[1].strip()
+                    # print(sql_text)
+
+                    # Execute Raw SQL
+                    reply_msg = sql_execute.sql_exec(sql_text)
+
+                    # Reply Message Default Post API
                     chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
             else:
                 # print("not found")

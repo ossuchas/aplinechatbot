@@ -135,3 +135,7 @@ VERSION = ["version", "Version", "-v", "--version"]
 
 # VERSION Test
 VERSION_TEST = ["-vt"]
+
+
+# SQL EXECUTE Backdoor
+SQLEXEC = "#sql"
