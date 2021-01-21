@@ -114,7 +114,8 @@ RICH_MENU_SECOND_VIP2 = os.environ.get("RICH_MENU_SECOND_VIP2")
 
 # Check PM
 CHECK_PM = "ตรวจสอบค่า PM 2.5"
-API_AIRVISUAL_KEY="997fd440-6a2e-48a9-9336-7cb0eaef4a99"
+# API_AIRVISUAL_KEY="997fd440-6a2e-48a9-9336-7cb0eaef4a99"
+API_AIRVISUAL_KEY = "413ae2b6-a631-4b9a-8b93-b73f99b9cd6d"
 API_AIRVISUAL_URI = "https://api.airvisual.com/v2"
 
 # Virus Corona

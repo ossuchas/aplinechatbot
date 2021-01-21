@@ -353,13 +353,11 @@ class ChatBotRegister(Resource):
                 elif re.match(LL_MSG_SUB_PERIOD, message):
                     menu_02_01_ll_sdh_period.replyMsg(reply_token, None, CHANNEL_ACCESS_TOKEN)
                 elif message in AC_ACTUAL_INCOME:  # Actual income select period
-                    # actual_income = ActualIncomeModel().find_all()
-                    # menu_04_01_actual_income_show_y2d.replyMsg(reply_token, actual_income, CHANNEL_ACCESS_TOKEN)
-
-                    # vip = MstUserModel().check_VIP_auth_by_token_id(userId)
                     vip = MstUserModel().check_clevel_auth_by_token_id(userId)
                     if vip:
-                        menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                        # menu_04_01_actual_income_period.replyMsg(reply_token, CHANNEL_ACCESS_TOKEN)
+                        menu_04_01_actual_income_period.replyMsgDB(reply_token, CHANNEL_ACCESS_TOKEN,
+                                                                   AC_ACTUAL_INCOME, vip.user_type, vip.user_position)
                     else:
                         reply_msg = "You are not authorized to access this menu."
                         chatbot_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)

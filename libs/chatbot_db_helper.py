@@ -12,7 +12,12 @@ def replyMsg(reply_token, db_text_msg, line_aceess_token):
         'Authorization': authorization
     }
 
-    type_msg = json.loads(db_text_msg)
+    type_msg = {
+        "type": "text",
+        "text": db_text_msg
+    }
+
+    # type_msg = json.loads(db_text_msg)
 
     data = {
         "replyToken": reply_token,

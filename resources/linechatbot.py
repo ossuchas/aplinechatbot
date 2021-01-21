@@ -421,6 +421,7 @@ class LineChatBot(Resource):
                 elif message in REPLY_WORDING:
                     msg = MstMsgConfigModel.find_by_id(1)
                     reply_msg = msg.msg_json
+                    reply_msg = "Fuck up #2"
 
                     # Reply Message Default Post API
                     chatbot_db_helper.replyMsg(reply_token, reply_msg, CHANNEL_ACCESS_TOKEN)
